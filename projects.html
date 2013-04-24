@@ -1,0 +1,20 @@
+---
+layout: layout
+title: Web Development Projects &middot; Martin Bean
+permalink: /projects/
+---
+        <h1>Projects</h1>
+        <p>A selection of web development projects I have worked on.</p>
+        <div class="projects clearfix">
+{% for project in site.categories.projects %}
+          <article class="project">
+            <figure class="thumb">
+              <img src="{{ site.project_thumbs_dir }}{{ project.thumb }}" alt="{{ project.title }} screen-shot" />
+            </figure>
+            <h1 class="title">
+              <a href="{{ project.url }}" rel="bookmark">{{ project.title }}</a>
+            </h1>
+            <p class="summary">{{ project.excerpt }}</p>
+          </article>
+{% endfor %}
+        </div>

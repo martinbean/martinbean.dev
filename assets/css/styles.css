@@ -1,0 +1,337 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+html {
+    font-size: 100%;
+    text-rendering: optimizeLegibility;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    color: #5c5f66;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.5;
+    text-shadow: 0 0.1em 0.1em rgba(255,255,255,0.5);
+    background: #eef1f4 url(../img/bg.png) fixed repeat 50% 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #2b2e36;
+    font-weight: 500;
+    margin: 0.5em 0 0.5em;
+}
+h1 {
+    font-size: 2em;
+    margin-top: 0;
+}
+h2 {
+    font-size: 1.66em;
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1.33em;
+}
+h5 {
+    font-size: 1.25em;
+}
+h6 {
+    font-size: 1em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+ol,
+ul {
+    margin: 0 0 1em 2em;
+}
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    margin-bottom: 0;
+}
+
+ol li {
+    list-style: decimal;
+}
+ul li {
+    list-style: disc;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+em,
+i {
+    font-style: italic;
+}
+
+pre,
+code {
+    font-family: 'Ubuntu Mono', monospace;
+}
+pre {
+    color: #bdc0c4;
+    background: #2b2e36;
+    text-shadow: 0 -0.1em 0 rgba(0,0,0,0.75);
+    margin-bottom: 0.75em;
+    padding: 12px 18px;
+    padding-right: 0;
+    overflow: auto;
+    border-radius: 6px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.25);
+}
+code {
+    color: #9e373e;
+}
+
+abbr[title] {
+    border-bottom: 2px dotted #cfdcdc;
+    cursor: help;
+}
+abbr.initialism {
+    font-size: 90%;
+    text-transform: uppercase;
+}
+
+a {
+    color: #54877e;
+    text-decoration: none;
+    border-bottom: 2px solid #cfdcdc;
+    -webkit-transition: color 0.2s ease-out;
+}
+a:hover,
+a:active,
+a:focus {
+    color: #9e373e;
+    border-bottom-color: #dac2c6;
+}
+a:active,
+a:focus {
+    position: relative;
+    top: 1px;
+}
+
+a.prev:before {
+    content: '\2190\00a0';
+}
+a.thumb > img {
+    opacity: 0.9;
+}
+a.thumb:hover {
+    border-bottom-color: #fff;
+}
+a.thumb:hover > img {
+    opacity: 1;
+}
+
+figure {
+    margin: 0;
+}
+img {
+    max-width: 100%;
+    -ms-interpolation-mode: bicubic;
+}
+
+.thumb {
+    display: block;
+    border: 5px solid #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+.thumb > img {
+    display: block;
+}
+
+.nav {
+    margin: 0;
+}
+.nav li {
+    display: block;
+    margin: 0;
+    float: left;
+    list-style: none;
+}
+.nav a {
+    text-decoration: none;
+    display: block;
+}
+
+[role="banner"] {
+    padding: 1.5em 0;
+}
+[role="banner"] a {
+    border-bottom: none;
+}
+[role="banner"] h1 {
+    font-size: 3em;
+    line-height: 1;
+    margin-bottom: 0;
+    float: left;
+}
+[role="banner"] nav {
+    padding-top: 1.5em;
+    float: right;
+}
+[role="banner"] nav li {
+    font-weight: bold;
+    margin-left: 1.5em;
+}
+
+[role="main"] {
+    width: 65.8119658%;
+    float: left;
+}
+
+[role="complementary"] {
+    width: 31.6239316%;
+    padding-top: 4em;
+    float: right;
+}
+
+[role="contentinfo"] {
+    margin-top: 1em;
+    padding-bottom: 1em;
+}
+[role="contentinfo"] .container {
+    padding-top: 1em;
+    border-top: 0.5em solid #cfdcdc;
+}
+[role="contentinfo"] p {
+    margin-bottom: 0;
+}
+
+.clearfix {
+    zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+    content: '';
+    display: table;
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
+
+.container {
+    width: 90%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.about .thumb {
+    margin-left: 1em;
+    float: right;
+    border-radius: 80px;
+}
+
+.projects .project {
+    width: 48.717948717948715%;
+    margin-bottom: 30px;
+    margin-left: 2.564102564102564%;
+    float: left;
+}
+.projects .project:nth-child(2n+1) {
+    margin-left: 0;
+    clear: left;
+}
+.projects .project .thumb {
+    max-height: 200px;
+    margin-bottom: 10px;
+}
+.projects .title,
+.projects .summary {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.projects .title {
+    font-size: 1.66em;
+}
+.projects .summary {
+    margin-bottom: 0;
+}
+
+.project .thumb {
+    margin-bottom: 20px;
+}
+
+.hfeed .hentry {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #cfdcdc;
+}
+.hfeed .hentry .title {
+    font-size: 1.66em;
+    margin-top: 0;
+}
+
+@media (max-width: 480px) {
+    .about figure {
+        margin: 0;
+        margin-bottom: 1em;
+        float: none;
+    }
+    .about figure img {
+        margin: 0 auto;
+    }
+    
+    .projects .project {
+        text-align: center;
+        width: auto;
+        margin-left: 0;
+        float: none;
+    }
+    .projects .project .thumb {
+        max-width: 355px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (max-width: 767px) {
+    [role="banner"] {
+        text-align: center;
+    }
+    [role="banner"] h1,
+    [role="banner"] nav {
+        float: none;
+    }
+    [role="banner"] nav {
+        padding-top: 1em;
+    }
+    [role="banner"] nav li {
+        display: inline-block;
+        margin: 0 0.5em;
+        float: none;
+    }
+    
+    [role="main"],
+    [role="complementary"] {
+        width: auto;
+        float: none;
+    }
+    [role="complementary"] {
+        margin-top: 2em;
+        padding-top: 1em;
+        border-top: 1em solid #cfdcdc;
+    }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .about figure {
+        margin: 0;
+        margin-bottom: 1em;
+        float: none;
+    }
+    .about figure img {
+        margin: 0 auto;
+    }
+}

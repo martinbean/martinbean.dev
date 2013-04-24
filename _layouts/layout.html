@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en_GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Martin Bean" />
+{% if page.meta_description %}
+    <meta name="description" content="{{ page.meta_description }}" />
+{% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }}</title>
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="/assets/ico/favicon.ico" rel="shortcut icon" />
+    <link href="//plus.google.com/110489464750063548232" rel="publisher" />
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Ubuntu+Mono" rel="stylesheet" />
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header role="banner">
+      <div class="container clearfix">
+        <h1>
+          <a href="/" rel="home">Martin Bean</a>
+        </h1>
+        <nav role="navigation">
+          <ul class="nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact me</a></li>
+          </ul>
+        </nav>
+      </div>    
+    </header>
+    <div class="container clearfix">
+      <section role="main">
+{{ content }}
+      </section>
+      <aside role="complementary">
+        <article class="widget about">
+          <figure class="thumb">
+            <img src="http://www.gravatar.com/avatar/6b17165d23ead15e66854ff882c59e0c&amp;s=80" alt="Martin Bean" />
+          </figure>
+          <p>Hi, I&rsquo;m Martin, a 24 year old <strong>freelance web developer</strong> based in <strong>Newcastle upon Tyne, <abbr class="initialism" title="United Kingdom">UK</abbr></strong>.
+            I specialise in front-end development with <abbr class="initialism" title="HyperText Markup Language">HTML</abbr>, <abbr class="initialism" title="Cascading Style Sheets">CSS</abbr> and JavaScript; and server-side development using the <abbr class="initialism" title="Linux, Apache, PHP &amp; MySQL">LAMP</abbr> stack.</p>
+        </article>
+      </aside>
+    </div>
+    <footer role="contentinfo">
+      <div class="container">
+        <p class="copyright">&copy; Martin Bean 2013. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+  </body>
+</html>

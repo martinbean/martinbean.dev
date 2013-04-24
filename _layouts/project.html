@@ -1,0 +1,15 @@
+---
+layout: layout
+---
+        <article class="project">
+          <h1 class="title">{{ page.title }}</h1>
+          {{ content }}
+          <figure>
+{% for image in page.images %}
+            <div class="thumb">
+              <img src="{{ site.project_images_dir }}{{ image }}" alt="{{ page.title}} screen-shot" />
+            </div>
+{% endfor %}
+          </figure>
+          <p><a class="prev" href="/projects/">Back to Projects</a></p>
+        </article>
