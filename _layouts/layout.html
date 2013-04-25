@@ -45,10 +45,9 @@
     </div>
     <footer role="contentinfo">
       <div class="container">
-        <p class="copyright">&copy; Martin Bean 2013. All rights reserved.</p>
+        <p class="copyright">&copy; Martin Bean {{ 'now'|date:'%Y' }}. All rights reserved.</p>
       </div>
     </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/assets/js/scripts.js"></script>
+{% include google_analytics.html %}
   </body>
 </html>
