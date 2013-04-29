@@ -20,6 +20,10 @@ GEM
     pygments.rb (0.3.7)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
+    rack (1.5.2)
+    rack-jekyll (0.4.0)
+      jekyll (~> 0.12.0)
+      rack (~> 1.5.0)
     syntax (1.0.0)
     yajl-ruby (1.1.0)
 
@@ -28,3 +32,4 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  rack-jekyll
