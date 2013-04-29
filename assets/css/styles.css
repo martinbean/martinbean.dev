@@ -154,6 +154,7 @@ img {
 }
 .thumb > img {
     display: block;
+    border-radius: 5px;
 }
 
 .nav {
@@ -238,6 +239,9 @@ img {
     float: right;
     border-radius: 80px;
 }
+.about .thumb > img {
+    border-radius: 80px;
+}
 
 .projects .project {
     width: 48.717948717948715%;
@@ -276,6 +280,40 @@ img {
 .hfeed .hentry .title {
     font-size: 1.66em;
     margin-top: 0;
+}
+
+.btn-starbucks {
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 2;
+    text-align: center;
+    text-decoration: none;
+    background-color: #007042;
+    background-image: none;
+    position: relative;
+    display: block;
+    width: auto;
+    height: 2em;
+    margin: 37px 0 0;
+    padding: 0 54px 0 15px;
+    border: none;
+    border-radius: 3px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.btn-starbucks:hover,
+.btn-starbucks:active,
+.btn-starbucks:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #005f38;
+}
+.btn-starbucks > img {
+    position: absolute;
+    right: 3px;
+    bottom: -10px;
 }
 
 @media (max-width: 480px) {

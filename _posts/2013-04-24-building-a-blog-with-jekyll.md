@@ -21,7 +21,7 @@ Next you need to install the Jekyll “gem”. A gem is package in Ruby parlance
 
 ## Setup the directory structure
 
-The next step is to then setup the directory structure for Jekyll:
+With Ruby and the Jekyll gem installed, we can then setup the directory structure required for Jekyll:
 
     _layouts/
         default.html
@@ -34,7 +34,7 @@ Just create blanks files for the files above.
 
 ## Create a default layout
 
-The next step is to create a default layout. This is just simple HTML, with a couple of delimiters for the page title and content:
+Layouts in Jekyll are just plain old HTML, with a couple of delimiters in to render the page’s title and content:
 
     <!DOCTYPE html>
     <html lang="en">
@@ -71,7 +71,7 @@ So far, nice and simple. Next step is to create your home page which will displa
     </div>
 
 You’ll notice at the top of **index.html** are some properties delimited by three dashes (`---`). This is what’s called [YAML Front Matter](https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter) and is basically meta data for your page.
-In the above example, we’re simply setting which layout to use (`default`, which will make Jekyll use <strong>_layouts/default.html</strong> to render the page) and a title for the page.
+In the above example, we’re setting which layout to use (`default`, which will make Jekyll use <strong>_layouts/default.html</strong> to render the page) and a title for the page.
 
 ## Creating the initial post
 
