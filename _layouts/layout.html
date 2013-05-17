@@ -41,14 +41,14 @@
           <figure class="thumb">
             <img src="http://www.gravatar.com/avatar/6b17165d23ead15e66854ff882c59e0c&amp;s=80" alt="Martin Bean" />
           </figure>
-          <p>Hi, I&rsquo;m Martin, a {% age %} year old <strong>freelance web developer</strong> based in <strong>Newcastle upon Tyne, <abbr class="initialism" title="United Kingdom">UK</abbr></strong>.
+          <p>Hi, I&rsquo;m Martin, a 24 year old <strong>freelance web developer</strong> based in <strong>Newcastle upon Tyne, <abbr class="initialism" title="United Kingdom">UK</abbr></strong>.
             I specialise in front-end development with <abbr class="initialism" title="HyperText Markup Language">HTML</abbr>, <abbr class="initialism" title="Cascading Style Sheets">CSS</abbr> and JavaScript; and server-side development using the <abbr class="initialism" title="Linux, Apache, PHP &amp; MySQL">LAMP</abbr> stack.</p>
         </article>
       </aside>
     </div>
     <footer role="contentinfo">
       <div class="container">
-        <p class="copyright">&copy; Martin Bean 2013. All rights reserved.</p>
+        <p class="copyright">&copy; Martin Bean {{ now|date('Y') }}. All rights reserved.</p>
       </div>
     </footer>
 {% include google_analytics.html %}
