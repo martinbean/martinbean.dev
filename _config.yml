@@ -1,5 +1,3 @@
-auto: true
-
 exclude:  [ Gemfile, Gemfile.lock, Procfile, vendor, gems ]
 
 permalink: /blog/:year/:month/:day/:title/
