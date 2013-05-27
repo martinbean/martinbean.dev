@@ -11,13 +11,13 @@ meta_description: Home of Martin Bean, a freelance web developer based in Newcas
         </div>
         <div class="latest-posts">
           <h1>Latest Posts</h1>
-          <div class="hfeed">
+          <div class="hfeed" itemscope itemprop="Blog">
 {% for post in site.posts %}
-            <article class="hentry entry">
-              <h1 class="entry-title">
-                <a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a>
+            <article class="hentry entry" itemscope itemprop="BlogPosting">
+              <h1 class="entry-title" itemprop="name">
+                <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
               </h1>
-              <p>Posted on <time class="published" pubdate="pubdate">{{ post.date|date_to_string }}</time></p>
+              <p>Posted on <time class="published" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
             </article>
 {% endfor %}
           </div>
