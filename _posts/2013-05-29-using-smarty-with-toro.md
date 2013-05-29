@@ -102,7 +102,7 @@ After that, using it in your handlers is as simple as:
         public function get()
         {
             $view = new View();
-            $view->set('title', 'Home');
+            $view->assign('title', 'Home');
             $view->display('home');
         }
     }
