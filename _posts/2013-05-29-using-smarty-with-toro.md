@@ -81,7 +81,7 @@ The final step is to flesh out the `display` method, which would give us a compi
 
     public function display($templateName)
     {
-        $this->templateEngine->display($templateName);
+        $this->templateEngine->display($templateName . $this->templateExtension);
     }
 
 Again, it just wraps Smarty’s method of the same name in this instance.
