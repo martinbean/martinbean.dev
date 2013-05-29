@@ -12,7 +12,7 @@ meta_description: Home of Martin Bean, a freelance web developer based in Newcas
         <div class="latest-posts">
           <h1>Latest Posts</h1>
           <div class="hfeed" itemscope itemprop="Blog">
-{% for post in site.posts %}
+{% for post in site.posts limit:3 %}
             <article class="hentry entry" itemscope itemprop="BlogPosting">
               <h1 class="entry-title" itemprop="name">
                 <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
