@@ -11,13 +11,13 @@ meta_description: Home of Martin Bean, freelance web developer based in Newcastl
         </div>
         <div class="latest-posts">
           <h1>Latest Posts</h1>
-          <div class="hfeed" itemscope itemprop="Blog">
+          <div class="hfeed" itemscope itemtype="http://schema.org/Blog">
 {% for post in site.posts limit:3 %}
-            <article class="hentry entry" itemscope itemprop="BlogPosting">
+            <article class="hentry entry" itemscope itemtype="http://schema.org/BlogPosting">
               <h1 class="entry-title" itemprop="name">
                 <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
               </h1>
-              <p>Posted on <time class="published" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
+              <p>Posted on <time class="published" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
             </article>
 {% endfor %}
           </div>
