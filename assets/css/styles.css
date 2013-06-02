@@ -277,8 +277,8 @@ img {
     margin-bottom: 1em;
     border-bottom: 1px solid #cfdcdc;
 }
-.hfeed .hentry .title {
-    font-size: 1.66em;
+.hfeed .hentry .entry-title {
+    font-size: 1.75em;
     margin-top: 0;
 }
 
