@@ -1,0 +1,24 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Martin Bean&rsquo;s Blog</title>
+    <link href="http://martinbean.co.uk/feed.xml" rel="self" />
+    <link href="http://martinbean.co.uk/" />
+    <updated>{{ site.time|date_to_xmlschema }}</updated>
+    <author>
+        <name>Martin Bean</name>
+        <email>martin@martinbean.co.uk</email>
+    </author>
+{% for post in site.posts %}
+    <entry>
+        <title>{{ post.title }}</title>
+        <link href="{{ post.permalink }}" />
+        <updated>{{ post.date|date_to_xmlschema }}</updated>
+{% if post.excerpt %}
+        <content type="html">{{ post.excerpt }}</content>
+{% endif %}
+    </entry>
+{% endfor %}
+</feed>
