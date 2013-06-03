@@ -1,8 +1,3 @@
-exclude:  [ Gemfile, Gemfile.lock, Procfile, vendor, gems ]
-
 permalink: /blog/:year/:month/:day/:title/
-
-project_images_dir: /assets/img/projects/images/
-project_images_dir: /assets/img/projects/thumbs/
 
 google_analytics_id: UA-4799998-6
