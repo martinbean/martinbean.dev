@@ -193,14 +193,19 @@ img {
 }
 
 [role="main"] {
-    width: 65.8119658%;
+    width: 60%;
     float: left;
 }
 
 [role="complementary"] {
-    width: 31.6239316%;
+    width: 30%;
     padding-top: 4em;
     float: right;
+}
+[role="complementary"] article + article {
+    margin-top: 20px;
+    padding-top: 25px;
+    border-top: 1px solid #cfdcdc;
 }
 
 [role="contentinfo"] {
@@ -314,6 +319,14 @@ img {
     position: absolute;
     right: 3px;
     bottom: -10px;
+}
+
+.post-image {
+    margin-bottom: 20px;
+}
+.post-image.pull-right {
+    margin-left: 20px;
+    float: right;
 }
 
 @media (max-width: 480px) {
