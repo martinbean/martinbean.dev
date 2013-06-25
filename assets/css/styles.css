@@ -194,7 +194,6 @@ img {
 
 [role="main"] {
     width: 100%;
-    max-width: 936px; /* 80% of .container max-width */
 }
 .has-sidebar [role="main"] {
     width: 60%;
@@ -308,9 +307,15 @@ img {
 .project {
     margin-bottom: 3em;
     padding: 1.5em;
+    padding-bottom: 0;
 }
 .project:last-child {
     margin-bottom: 0;
+}
+.project .details {
+    width: auto;
+    max-width: 45em;
+    margin: 0 auto;
 }
 .project .name {
     font-size: 1.66em;
@@ -406,5 +411,20 @@ img {
     }
     .about figure img {
         margin: 0 auto;
+    }
+}
+@media (min-width: 1154px) {
+    .project {
+        overflow: auto;
+    }
+    .project .details {
+        width: 50%;
+        float: left;
+    }
+    .project .thumbnail {
+        width: 50%;
+        margin: 0;
+        margin: 0 -1.5em 0 0;
+        float: right;
     }
 }
