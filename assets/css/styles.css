@@ -193,7 +193,13 @@ img {
 }
 
 [role="main"] {
+    width: 100%;
+    max-width: 936px; /* 80% of .container max-width */
+}
+.has-sidebar [role="main"] {
     width: 60%;
+    margin: 0;
+    max-width: none;
     float: left;
 }
 
@@ -248,36 +254,6 @@ img {
     border-radius: 80px;
 }
 
-.projects .project {
-    width: 48.717948717948715%;
-    margin-bottom: 30px;
-    margin-left: 2.564102564102564%;
-    float: left;
-}
-.projects .project:nth-child(2n+1) {
-    margin-left: 0;
-    clear: left;
-}
-.projects .project .thumb {
-    max-height: 200px;
-    margin-bottom: 10px;
-}
-.projects .title,
-.projects .summary {
-    margin-left: 5px;
-    margin-right: 5px;
-}
-.projects .title {
-    font-size: 1.66em;
-}
-.projects .summary {
-    margin-bottom: 0;
-}
-
-.project .thumb {
-    margin-bottom: 20px;
-}
-
 .hfeed .hentry {
     margin-bottom: 1em;
     border-bottom: 1px solid #cfdcdc;
@@ -329,6 +305,61 @@ img {
     float: right;
 }
 
+.project {
+    margin-bottom: 3em;
+    padding: 1.5em;
+}
+.project:last-child {
+    margin-bottom: 0;
+}
+.project .name {
+    font-size: 1.66em;
+}
+.project .thumbnail {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 20em;
+    margin: 0 -1.5em -1.5em;
+}
+.project a {
+    -webkit-transition: all 0.2s ease-out;
+}
+
+.project.inverse {
+    color: #fff;
+    text-shadow: 0 0.1em 0.1em rgba(0,0,0,0.25);
+}
+.project.inverse abbr[title] {
+    border-bottom-color: rgba(255,255,255,0.5);
+}
+.project.inverse .name {
+    color: #fff;
+}
+
+.project.scs {
+    background: #f24343;
+}
+.project.scs .thumbnail {
+    background-image: url(../img/projects/scs.png);
+}
+
+.project.bdaily {
+    background: #fff;
+}
+.project.bdaily .name {
+    color: #d4481b;
+}
+.project.bdaily .thumbnail {
+    background-image: url(../img/projects/bdaily.png);
+}
+
+.project.jww {
+    background: #003;
+}
+.project.jww .thumbnail {
+    background-image: url(../img/projects/jww.png);
+}
+
 @media (max-width: 480px) {
     .about figure {
         margin: 0;
@@ -337,18 +368,6 @@ img {
     }
     .about figure img {
         margin: 0 auto;
-    }
-    
-    .projects .project {
-        text-align: center;
-        width: auto;
-        margin-left: 0;
-        float: none;
-    }
-    .projects .project .thumb {
-        max-width: 355px;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 @media (max-width: 767px) {

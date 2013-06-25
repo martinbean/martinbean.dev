@@ -29,15 +29,17 @@
           <ul class="nav">
             <li><a href="/">Home</a></li>
             <li><a href="/blog/">Blog</a></li>
+            <li><a href="/projects/">Projects</a></li>
             <li><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
       </div>    
     </header>
-    <div class="container clearfix">
+    <div class="container clearfix{% if page.sidebar != false %} has-sidebar{% endif %}">
       <section role="main">
 {{ content }}
       </section>
+{% if page.sidebar != false %}
       <aside role="complementary">
         <article class="widget about">
           <figure class="thumb">
@@ -55,6 +57,7 @@
           </p>
         </article>
       </aside>
+{% endif %}
     </div>
     <footer role="contentinfo">
       <div class="container">
