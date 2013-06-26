@@ -435,3 +435,8 @@ img {
         float: right;
     }
 }
+@media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .project .thumbnail {
+        background-size: 517px auto;
+    }
+}
