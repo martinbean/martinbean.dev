@@ -348,6 +348,13 @@ img {
     background-image: url(../img/projects/scs.png);
 }
 
+.project.lostbox {
+    background: #266087;
+}
+.project.lostbox .thumbnail {
+    background-image: url(../img/projects/lostbox.png);
+}
+
 .project.bdaily {
     background: #fff;
 }
