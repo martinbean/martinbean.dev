@@ -78,7 +78,7 @@ In the above example, we’re setting which layout to use (`default`, which will
 Finally, add some content to your initial post. Open <strong>_posts/2013-04-24-hello-world.md</strong> and add the following:
 
     ---
-    layout: layout
+    layout: default
     title: Hello, World
     ---
     
