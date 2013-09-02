@@ -341,6 +341,13 @@ img {
     color: #fff;
 }
 
+.project.just-dance {
+    background: #202140 url(../img/projects/just-dance-bg.jpg) no-repeat 50% 50%;
+}
+.project.just-dance .thumbnail {
+    background-image: url(../img/projects/just-dance.png);
+}
+
 .project.scs {
     background: #f24343;
 }
