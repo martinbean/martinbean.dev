@@ -341,6 +341,13 @@ img {
     color: #fff;
 }
 
+.project.bamma {
+    background: #f24343 url(../img/projects/bamma-bg.jpg) no-repeat 50% 0;
+}
+.project.bamma .thumbnail {
+    background-image: url(../img/projects/bamma.png);
+}
+
 .project.just-dance {
     background: #202140 url(../img/projects/just-dance-bg.jpg) no-repeat 50% 50%;
 }
