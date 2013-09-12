@@ -342,7 +342,7 @@ img {
 }
 
 .project.bamma {
-    background: #f24343 url(../img/projects/bamma-bg.jpg) no-repeat 50% 0;
+    background: #000 url(../img/projects/bamma-bg.jpg) no-repeat 50% 0;
 }
 .project.bamma .thumbnail {
     background-image: url(../img/projects/bamma.png);
