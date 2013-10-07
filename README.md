@@ -1,4 +1,4 @@
-# martinbean.github.com
+# martinbean.github.io
 
 Source code of [martinbean.co.uk](http://martinbean.co.uk/), which is built on [Jekyll](https://github.com/mojombo/jekyll) and hosted by [GitHub Pages](http://pages.github.com/).
 
