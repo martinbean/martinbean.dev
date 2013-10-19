@@ -106,6 +106,14 @@ abbr.initialism {
     text-transform: uppercase;
 }
 
+del {
+	color: rgba(92,95,102,0.75);
+	text-decoration: line-through;
+}
+ins {
+	text-decoration: none;
+}
+
 a {
     color: #54877e;
     text-decoration: none;

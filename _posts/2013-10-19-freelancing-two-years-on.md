@@ -4,7 +4,7 @@ title: Freelancing&#58; Two Years On
 ---
 I was talking to a friend who is also a web developer, who earlier this year jumped into freelancing.
 He mentioned he was going to write a blog post and asked if I had written about my experiences freelancing.
-I said I hadn’t and he suggested I should as he’d like to read it, so without further ado here it is for one else is interested too!
+I said I hadn’t and he suggested I should as he’d like to read it, so without further ado here it is for any one else who is interested too.
 
 # Leaving full-time employment
 I had worked as a web developer for various agencies in the region for a few years.
@@ -42,8 +42,10 @@ I also had to make the decision of setting up as a sole trader or a limited comp
 I choose sole trader for various reasons.
 
 Running a limited company involves more paperwork.
-I’d also be the only person in the “company” but limited companies require a minimum of two directors (and a secretary).
-I’d have to name another person as part of the company just to set it up, which just seemed like hassle.
+I’d also be the only person in the “company”
+<del>but limited companies require a minimum of two directors (and a secretary).
+I’d have to name another person as part of the company just to set it up, which just seemed like hassle.</del>
+<ins>[Michael Peacock](http://www.michaelpeacock.co.uk) informs me that the rules on limited companies has changed, and that only one director is needed.</ins>
 
 Finances also work differently.
 As a sole trader, I *am* the company so my finances are the company’s and vice versa.
