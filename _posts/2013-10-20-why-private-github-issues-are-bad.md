@@ -31,5 +31,8 @@ I’ve also got to respond **individually** to each private issue, as visibility
 If ten people have broached the same issue, then that’s ten threads of conversation I’ve got to maintain.
 If I’m a developer with a full time job and I maintain an open source project in my spare time, this is now valuable time I’ve got to spend communicating rather than **fixing** the actual issue.
 
+There’s also another major flaw: what if someone just writes about the security issue in a public issue any way?
+Private issues just doesn’t solve the problem.
+
 What are your thoughts on private issues on GitHub (and other code hosting websites to maintain fairness)?
 Let me know if the comments below; I’d be interested to hear your views.
