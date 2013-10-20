@@ -22,7 +22,6 @@ On Twitter, [@trodrigues](https://github.com/trodrigues) was one of the people w
 I shared my concerns, and this was his response:
 
 <blockquote class="twitter-tweet"><p><a href="https://twitter.com/martinbean">@martinbean</a> <a href="https://twitter.com/github">@github</a> then you just wouldn&#39;t allow it in your projects. problem solved</p>&mdash; Tiago Rodrigues (@trodrigues) <a href="https://twitter.com/trodrigues/statuses/385398823830716416">October 2, 2013</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Yes. Problem solved. A problem created by the introduction of private issues in the first place.
 
