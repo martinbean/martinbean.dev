@@ -1,5 +1,6 @@
 ---
 layout: post
+meta_description: A review of this year’s PHP North West conference, held in Manchester, UK.
 title: PHP North West 2013 Conference
 ---
 October marks the calendar for one of the biggest PHP conferences in the UK: [PHP North West](http://conference.phpnw.org.uk/) in Manchester. 2013 was no exception.

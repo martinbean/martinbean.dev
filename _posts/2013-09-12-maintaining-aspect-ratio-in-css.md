@@ -1,5 +1,6 @@
 ---
 title: Maintaining Aspect Ratio in CSS
+meta_description: A little CSS trick on how to maintain aspect ratio of block-level elements in fluid designs.
 layout: default
 ---
 # Maintaining Aspect Ratio in CSS

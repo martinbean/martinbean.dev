@@ -1,5 +1,6 @@
 ---
 title: Getting to grips with CakePHP’s events system
+meta_description: Demystifying the events system in CakePHP 2.
 layout: post
 ---
 [CakePHP](http://cakephp.org/) seems to get a slightly unfavourable reputation when compared to the likes of [Symfony](http://symfony.com/) or [Zend Framework](http://framework.zend.com/) due to its lack of namespaces and not playing nicely with [Composer](http://getcomposer.org/) out of the box.

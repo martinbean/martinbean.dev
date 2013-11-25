@@ -1,5 +1,6 @@
 ---
 layout: post
+meta_description: The community is urging GitHub to add private issues. I explain why I think they’re a bad idea.
 title: Why Private GitHub Issues Are Bad
 ---
 There’s been a discussion recently about whether or not [GitHub](https://github.com/) should introduce private issues.
