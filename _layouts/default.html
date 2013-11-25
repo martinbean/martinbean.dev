@@ -7,6 +7,15 @@
     <meta name="description" content="{{ page.meta_description }}" />
 {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% if page.twitter_card %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@martinbean" />
+    <meta name="twitter:creator" content="@martinbean" />
+{% if page.meta_description %}
+    <meta name="twitter:description" content="{{ page.meta_description }}" />
+{% endif %}
+    <meta name="twitter:title" content="{{ page.title }}" />
+{% endif %}
     <title>{{ page.title }}</title>
     <link href="/feed.xml" rel="alternate" type="application/atom+xml" title="Martin Bean&rsquo;s Blog" />
     <link href="//plus.google.com/110489464750063548232" rel="author" />
