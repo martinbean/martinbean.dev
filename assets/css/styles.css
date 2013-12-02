@@ -165,10 +165,9 @@ samp {
   font-family: "Ubuntu Mono", monospace; }
 
 code {
-  color: #31576a;
-  font-size: 90%;
+  color: #41748d;
+  font-size: 100%;
   background-color: transparent;
-  padding: 2px 4px;
   white-space: nowrap; }
 
 pre {
@@ -212,6 +211,12 @@ a {
   a img {
     display: block;
     border: none; }
+
+figure {
+  margin: 0; }
+  figure img {
+    display: block;
+    max-width: 100%; }
 
 .header {
   text-align: center; }

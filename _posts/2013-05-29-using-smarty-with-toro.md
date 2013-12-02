@@ -17,14 +17,15 @@ Once you’ve downloaded both libraries, create an **index.php** file and includ
 
 In your **index.php**, set up Toro with a default route:
 
-    <?php
+{% highlight php %}
+<?php
+require('/path/to/Toro.php');
+require('/path/to/Smarty.class.php');
 
-    require('/path/to/Toro.php');
-    require('/path/to/Smarty.class.php');
-
-    Toro::serve(array(
-        '/' => 'HomeHandler'
-    ));
+Toro::serve(array(
+    '/' => 'HomeHandler'
+));
+{% endhighlight %}
 
 ## Creating the home handler
 
@@ -33,30 +34,34 @@ Create this class and then include it in your **index.php** file after Toro and 
 
 Your handler class should look like this:
 
-    <?php
-    class HomeHandler
+{% highlight php %}
+<?php
+class HomeHandler
+{
+    public function get()
     {
-        public function get()
-        {
-            // TODO
-        }
+        // TODO
     }
+}
+{% endhighlight %}
 
 ## Creating a view handler
 
 I like to wrap my view logic into a class that I can then include in my handlers in Toro projects.
 The class is simple, and has a signature that looks a little like this:
 
-    <?php
-    class View
-    {
-        protected $templateEngine;
-        protected $templateExtension;
+{% highlight php %}
+<?php
+class View
+{
+    protected $templateEngine;
+    protected $templateExtension;
 
-        public function __construct() {}
-        public function assign($key, $value) {}
-        public function display($templateName) {}
-    }
+    public function __construct() {}
+    public function assign($key, $value) {}
+    public function display($templateName) {}
+}
+{% endhighlight %}
 
 The theory is, I can change my template engine from Smarty to say, Twig, without having to re-write any view logic in my handlers.
 
@@ -64,26 +69,32 @@ The theory is, I can change my template engine from Smarty to say, Twig, without
 
 First, let’s flesh out the constructor. Here I’ll set up Smarty and any configuration variables.
 
-    public function __construct()
-    {
-        $this->templateEngine = new Smarty();
-        $this->templateEngine->setTemplateDir('/path/to/templates');
-    }
+{% highlight php %}
+public function __construct()
+{
+    $this->templateEngine = new Smarty();
+    $this->templateEngine->setTemplateDir('/path/to/templates');
+}
+{% endhighlight %}
 
 Next, the `assign` method is where you would set template data.
 This can just act as a wrapper for Smarty’s own `assign` method, as no other processing is needed:
 
-    public function assign($key, $value)
-    {
-        $this->templateEngine->assign($key, $value);
-    }
+{% highlight php %}
+public function assign($key, $value)
+{
+    $this->templateEngine->assign($key, $value);
+}
+{% endhighlight %}
 
 The final step is to flesh out the `display` method, which would give us a compiled template back.
 
-    public function display($templateName)
-    {
-        $this->templateEngine->display($templateName . $this->templateExtension);
-    }
+{% highlight php %}
+public function display($templateName)
+{
+    $this->templateEngine->display($templateName . $this->templateExtension);
+}
+{% endhighlight %}
 
 Again, it just wraps Smarty’s method of the same name in this instance.
 
@@ -97,16 +108,18 @@ Simply replace `protected $templateExtension;` with `protected $templateExtensio
 To use your view handler, you will need to include the class in your **index.php** file.
 After that, using it in your handlers is as simple as:
 
-    <?php
-    class HomeHandler
+{% highlight php %}
+<?php
+class HomeHandler
+{
+    public function get()
     {
-        public function get()
-        {
-            $view = new View();
-            $view->assign('title', 'Home');
-            $view->display('home');
-        }
+        $view = new View();
+        $view->assign('title', 'Home');
+        $view->display('home');
     }
+}
+{% endhighlight %}
 
 ## Conclusion
 

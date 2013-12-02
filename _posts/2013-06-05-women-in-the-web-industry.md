@@ -1,10 +1,10 @@
 ---
 layout: post
-meta_description: Opening that can of worms: a male’s take on women in the web industry.
+meta_description: Opening that can of worms—a male’s take on women in the web industry.
 title: Women in the Web Industry
 ---
 <figure class="post-image pull-right thumb">
-  <img src="/assets/img/posts/2013-06-05-women-in-the-web-industry/can-of-worms.jpg" alt="Can of worms" />
+![Can of worms](/assets/img/posts/2013-06-05-women-in-the-web-industry/can-of-worms.jpg)
 </figure>
 
 Here we go…
