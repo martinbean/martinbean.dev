@@ -8,10 +8,14 @@ meta_description: Freelance web developer based in Newcastle upon Tyne, UK speci
           <div class="hfeed" itemscope itemtype="http://schema.org/Blog">
 {% for post in site.posts limit:5 %}
             <article class="hentry entry" itemscope itemtype="http://schema.org/BlogPosting">
-              <h1 class="entry-title" itemprop="name">
-                <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
-              </h1>
-              <p>Posted on <time class="published" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
+              <footer class="entry-meta">
+                <p>Posted on <time class="published" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
+              </footer>
+              <header class="entry-header">
+                <h1 class="entry-title" itemprop="name">
+                  <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+                </h1>
+              </header>
             </article>
 {% endfor %}
           </div>

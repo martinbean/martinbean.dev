@@ -33,7 +33,7 @@ A user has to activate their account by clicking a link in an email.
 
 One approach would be just to put the code that sends the activation email in the `User` model itself:
 
-```php
+{% highlight php %}
 <?php
 class User extends AppModel {
     
@@ -54,7 +54,7 @@ class User extends AppModel {
         }
     }
 }
-```
+{% endhighlight %}
 
 But this is mixing concerns.
 We don’t want the code that sends the activation email in our `User` model.
@@ -67,7 +67,7 @@ We can implement the Observer pattern.
 
 First we can remove the email sending code from our `afterSave()` callback method, and instead raise an event:
 
-```php
+{% highlight php %}
 <?php
 App::uses('CakeEvent', 'Event');
 
@@ -83,7 +83,7 @@ class User extends AppModel {
         }
     }
 }
-```
+{% endhighlight %}
 
 As you can see, our `afterSave()` method is now much leaner.
 
@@ -109,7 +109,7 @@ For this handler, I’m going to call it `UserListener` and save it as **UserLis
 Event listeners in CakePHP implement the `CakeEventListener` interface, and as a result need to implement one method called `implementedEvents()`.
 The skeleton code for the listener class then looks like this:
 
-```php
+{% highlight php %}
 <?php
 App::uses('CakeEventListener', 'Event');
 
@@ -119,29 +119,29 @@ class UserListener implements CakeEventListener {
         // TODO
     }
 }
-```
+{% endhighlight %}
 
 The `implementedEvents()` method expects an associative array mapping event names to methods that should handle such events.
 So let’s flesh that out with the one event we’re raising:
 
-```php
+{% highlight php %}
 public function implementedEvents() {
     return array(
         'Model.User.created' => 'sendActivationEmail'
     );
 }
-```
+{% endhighlight %}
 
 Simples.
 
 So now, we need to actually create that `sendActivationEmail()` method we’ve specified.
 This is where we would put the code to be ran when a user is created.
 
-```php
+{% highlight php %}
 public function sendActivationEmail(CakeEvent $event) {
     // TODO
 }
-```
+{% endhighlight %}
 
 The method is passed one argument: an instance of `CakeEvent`.
 In fact, this would be the `CakeEvent` instance you raise in your `User` model.
@@ -149,7 +149,7 @@ We set some data there (an ID and the current record’s data), and that data is
 
 So now we know what we’re getting, let’s flesh our listener method out some more with that email sending code:
 
-```php
+{% highlight php %}
 public function sendActivationEmail(CakeEvent $event) {
     $this->User = ClassRegistry::init('User');
     
@@ -176,7 +176,7 @@ public function sendActivationEmail(CakeEvent $event) {
     $email->emailFormat('text');
     $email->send();
 }
-```
+{% endhighlight %}
 
 The code above is doing the following:
 
@@ -190,10 +190,10 @@ And that’s all there is to our listener class.
 Because we’re using the `CakeEmail` and `Security` classes in CakePHP, it’s a good idea to make sure they’re loaded.
 At the top of the file, add these two lines:
 
-```php
+{% highlight php %}
 App::uses('CakeEmail', 'Network/Email');
 App::uses('Security', 'Utility');
-```
+{% endhighlight %}
 
 ## Attaching the listener
 
@@ -206,13 +206,13 @@ We need to create an instance of our event listener class and attach it to the `
 The code is simple.
 At the bottom of your **bootstrap.php** add the following code:
 
-```php
+{% highlight php %}
 App::uses('ClassRegistry', 'Utility');
 App::uses('UserListener', 'Event');
 
 $user = ClassRegistry::init('User');
 $user->getEventManager()->attach(new UserListener());
-```
+{% endhighlight %}
 
 As you can see, we’re using CakePHP’s `ClassRegistry` utility class to load the `User` model; and then using the `User` model’s event manager to attach our `UserListener` class.
 So now when the `User` model fires an event, our `UserListener` class (and any other listener classes attached to it) will be listening for it.

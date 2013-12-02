@@ -1,0 +1,63 @@
+@mixin animation($animation) {
+       -moz-animation: $animation;
+    -webkit-animation: $animation;
+            animation: $animation;
+}
+
+@mixin border-radius($border-radius) {
+       -moz-border-radius: $border-radius;
+    -webkit-border-radius: $border-radius;
+            border-radius: $border-radius;
+}
+
+@mixin box-shadow($box-shadow) {
+       -moz-box-shadow: $box-shadow;
+    -webkit-box-shadow: $box-shadow;
+            box-shadow: $box-shadow;
+}
+
+@mixin box-sizing($box-sizing) {
+       -moz-box-sizing: $box-sizing;
+    -webkit-box-sizing: $box-sizing;
+            box-sizing: $box-sizing;
+}
+
+@mixin clearfix() {
+    zoom: 1;
+    
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+        min-height: 1px;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin make-grid($columns, $gutter, $prefix) {
+    @for $i from 1 through $columns {
+        .col-#{$prefix}-#{$i} {
+            width: (($i / $columns) * 100%);
+            padding-left: ($gutter / 2);
+            padding-right: ($gutter / 2);
+            
+            @if $i < $columns {
+                float: left;
+            }
+        }
+    }
+}
+
+@mixin text-size-adjust($text-size-adjust) {
+        -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+}
+
+@mixin transition($transition) {
+       -moz-transition: $transition;
+    -webkit-transition: $transition;
+            transition: $transition;
+}
