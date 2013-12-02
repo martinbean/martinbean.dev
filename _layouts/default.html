@@ -22,62 +22,48 @@
     <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
     <link href="/assets/ico/favicon.ico" rel="shortcut icon" />
     <link href="//plus.google.com/110489464750063548232" rel="publisher" />
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Ubuntu+Mono" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Titillium+Web:600|Ubuntu+Mono" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
     <link href="/assets/css/styles.css" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="/assets/js/html5shiv.js"></script>
     <![endif]-->
   </head>
   <body>
-    <header role="banner">
-      <div class="container clearfix">
-        <h1>
-          <a href="/" rel="home">Martin Bean</a>
-        </h1>
-        <nav role="navigation">
-          <ul class="nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/projects/">Projects</a></li>
-            <li><a href="/contact/">Contact</a></li>
-          </ul>
-        </nav>
+    <header class="header" role="banner">
+      <div class="container">
+        <div class="header-inner clearfix">
+          <h1 class="site-name">
+            <a href="/" rel="home">Martin Bean</a>
+          </h1>
+          <nav role="navigation">
+            <ul class="nav">
+              <li><a href="/">Home</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/projects/">Projects</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>    
     </header>
-    <div class="container clearfix{% if page.sidebar != false %} has-sidebar{% endif %}">
-      <section role="main">
+    <div class="container">
+      <div class="row">
+        <section class="col col-md-8" role="main">
 {{ content }}
-      </section>
-{% if page.sidebar != false %}
-      <aside role="complementary">
-        <article class="widget about">
-          <figure class="thumb">
-            <img src="http://www.gravatar.com/avatar/6b17165d23ead15e66854ff882c59e0c&amp;s=80" alt="Martin Bean" />
-          </figure>
-          <p>Hi, I&rsquo;m Martin Bean, a {{ site.my_age }} year old <strong>freelance web developer</strong> born in County Durham but now based in <strong>Newcastle upon Tyne, <abbr class="initialism" title="United Kingdom">UK</abbr></strong>.</p>
-          <p>I specialise in both front-end development and server-side development with <abbr class="initialism" title="PHP: Hypertext Proprocessor">PHP</abbr>, MySQL and related technologies, and also drink coffee in copious amounts. Like my work? <a href="/buy-me-a-coffee">Buy me a coffee</a>!</p>
-          <a href="https://twitter.com/martinbean" class="twitter-follow-button" data-show-count="true">Follow @martinbean</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </article>
-        <article class="availability">
-          <p>Available to hire for freelance web development from <strong>{{ site.available_date }}</strong>.</p>
-          <p>I&rsquo;m available to work on web development projects either as part of larger teams, or as a sole contractor on projects, no matter the size or scope.
-            <a href="/contact">Contact me</a> to discuss your requirements.
-          </p>
-        </article>
-        <article class="google-badge-wrapper">
-          <script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
-          <div class="g-person" data-href="https://plus.google.com/+MartinBean" data-layout="landscape"></div>
-        </article>
-      </aside>
-{% endif %}
+        </section>
+{% include sidebar.html %}
+      </div>
     </div>
-    <footer role="contentinfo">
+    <footer class="footer" role="contentinfo">
       <div class="container">
-        <p class="copyright">&copy; {{ site.time|date:"%Y" }} Martin Bean. All rights reserved.</p>
+        <div class="footer-inner">
+          <p><del>Hand-crafted</del> <ins>Created with an <abbr class="initialism" title="Integrated Development Environment">IDE</abbr> on a Mac</ins> in Newcastle upon Tyne, UK.</p>
+          <p class="copyright">&copy; {{ site.time|date:"%Y" }} Martin Bean. All rights reserved.</p>
+        </div>
       </div>
     </footer>
 {% include google_analytics.html %}
-	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
 </html>
