@@ -1,0 +1,49 @@
+.header {
+    text-align: center;
+    
+    .header-inner {
+        margin-bottom: $line-height-computed;
+        padding: $line-height-computed 0;
+        border-bottom: ($line-height-computed / 4) solid rgba($text-color, 0.075);
+    }
+    
+    .site-name {
+        margin-bottom: 0;
+    }
+    
+    .nav {
+        font-weight: bold;
+        
+        li {
+            display: inline-block;
+            margin: 0 ($line-height-computed / 2);
+            float: none;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    
+    @media (min-width: $screen-md-min) {
+        text-align: left;
+        
+        .site-name {
+            float: left;
+        }
+        
+        .nav {
+            padding-top: 1.1875em;
+            float: right;
+            
+            li {
+                display: block;
+                float: left;
+                margin-left: ($grid-gutter-width);
+                margin-right: 0;
+            }
+        }
+    }
+}

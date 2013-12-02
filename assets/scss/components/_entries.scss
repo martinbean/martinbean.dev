@@ -1,0 +1,23 @@
+.hfeed {
+    .entry {
+        margin-bottom: $line-height-computed;
+        padding-bottom: $line-height-computed;
+        border-bottom: 0.1em solid rgba($text-color, 0.075);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    .entry-title {
+        font-size: $font-size-h2;
+        margin-bottom: 0;
+    }
+    
+    .entry-meta {
+        color: rgba($text-color, 0.75);
+        
+        p {
+            margin-bottom: 0;
+        }
+    }
+}

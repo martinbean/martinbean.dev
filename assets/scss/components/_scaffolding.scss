@@ -1,0 +1,22 @@
+@import 'reset';
+
+*,
+*:before,
+*:after {
+    @include box-sizing(border-box);
+}
+
+html {
+    font-size: 100%;
+    text-rendering: optimizeLegibility;
+    @include text-size-adjust(100%);
+}
+body {
+    color: $text-color;
+    font-family: $font-family-base;
+    font-style: normal;
+    font-weight: normal;
+    line-height: $line-height-base;
+    text-shadow: 0 0.1em 0.1em rgba(255,255,255,0.6);
+    background: $body-bg url(../img/bg.gif) repeat fixed 50% 0;
+}
