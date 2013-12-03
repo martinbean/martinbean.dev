@@ -79,7 +79,7 @@ class User extends AppModel {
                 'id' => $this->id,
                 'data' => $this->data[$this->alias]
             ));
-            $this->getEventHandler()->dispatch($event);
+            $this->getEventManager()->dispatch($event);
         }
     }
 }
