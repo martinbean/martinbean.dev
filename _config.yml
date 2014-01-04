@@ -7,3 +7,6 @@ available_date: March 2014
 my_age: 24
 
 markdown: rdiscount
+
+paginate: 10
+paginate_path: "blog/page/:num"

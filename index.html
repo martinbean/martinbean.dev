@@ -3,20 +3,19 @@ layout: default
 title: Martin Bean &middot; Freelance web developer
 meta_description: Freelance web developer based in Newcastle upon Tyne, UK specialising in front-end development, and server-side development with PHP and related technologies.
 ---
-        <div class="latest-posts">
-          <h1>Latest Posts</h1>
-          <div class="hfeed" itemscope itemtype="http://schema.org/Blog">
-{% for post in site.posts limit:5 %}
-            <article class="hentry entry" itemscope itemtype="http://schema.org/BlogPosting">
-              <footer class="entry-meta">
-                <p>Posted on <time class="published" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
-              </footer>
-              <header class="entry-header">
-                <h1 class="entry-title" itemprop="name">
-                  <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
-                </h1>
-              </header>
-            </article>
+        <h1>Latest Posts</h1>
+        <div class="hfeed" itemscope itemtype="http://schema.org/Blog">
+{% for post in paginator.posts %}
+          <article class="hentry entry" itemscope itemtype="http://schema.org/BlogPosting">
+            <footer class="entry-meta">
+              <p>Posted on <time class="published" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
+            </footer>
+            <header class="entry-headre">
+              <h1 class="entry-title" itemprop="name">
+                <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+              </h1>
+            </header>
+          </article>
 {% endfor %}
-          </div>
         </div>
+{% include pagination.html %}
