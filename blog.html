@@ -5,7 +5,7 @@ permalink: /blog/
 ---
         <h1>Blog</h1>
         <div class="hfeed" itemscope itemtype="http://schema.org/Blog">
-{% for post in site.posts %}
+{% for post in site.posts limit:10 %}
           <article class="hentry entry" itemscope itemtype="http://schema.org/BlogPosting">
             <footer class="entry-meta">
               <p>Posted on <time class="published" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
