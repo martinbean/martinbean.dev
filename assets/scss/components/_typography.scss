@@ -50,19 +50,13 @@ ul {
         }
     }
     
-    &.list-contact {
-        li {
-            position: relative;
-            padding-left: 1.5em;
-            
-            .fa {
-                position: absolute;
-                top: 50%;
-                left: 0;
-                display: block;
-                width: 1em;
-                margin-top: -0.45em;
-            }
+    &.fa-ul {
+        & > li {
+            list-style: none;
+        }
+        
+        .fa {
+            line-height: inherit;
         }
     }
 }

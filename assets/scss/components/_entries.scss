@@ -3,9 +3,6 @@
         margin-bottom: $line-height-computed;
         padding-bottom: $line-height-computed;
         border-bottom: 0.1em solid rgba($text-color, 0.075);
-        &:last-child {
-            margin-bottom: 0;
-        }
     }
     
     .entry-title {
