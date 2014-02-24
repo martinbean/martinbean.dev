@@ -1,19 +1,17 @@
 .hfeed {
     .entry {
         margin-bottom: $line-height-computed;
-        padding-bottom: $line-height-computed;
-        border-bottom: 0.1em solid rgba($text-color, 0.075);
+        padding-bottom: ($line-height-computed - 1px);
+        border-bottom: 1px solid lighten($brand-primary, 40%);
     }
     
     .entry-title {
         font-size: $font-size-h2;
-        margin-bottom: 0;
+        margin-top: 0;
     }
     
-    .entry-meta {
-        color: rgba($text-color, 0.75);
-        
-        p {
+    .entry-summary {
+        p:last-child {
             margin-bottom: 0;
         }
     }

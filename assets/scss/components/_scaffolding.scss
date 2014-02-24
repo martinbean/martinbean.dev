@@ -10,13 +10,14 @@ html {
     font-size: 100%;
     text-rendering: optimizeLegibility;
     @include text-size-adjust(100%);
+    @include font-smoothing(antialiased);
 }
+
 body {
     color: $text-color;
     font-family: $font-family-base;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     line-height: $line-height-base;
-    text-shadow: 0 0.1em 0.1em rgba(255,255,255,0.6);
-    background: $body-bg url(../img/bg.gif) repeat fixed 50% 0;
+    background: $body-bg;
 }

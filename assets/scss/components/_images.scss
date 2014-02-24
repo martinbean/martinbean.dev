@@ -10,3 +10,7 @@ img {
     max-width: 100%;
     -ms-interpolation-mode: bicubic;
 }
+
+.img-circle {
+    @include border-radius(50%);
+}

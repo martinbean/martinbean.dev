@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="author" content="Martin Bean" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{% if page.meta_description %}
+    <meta name="description" content="{{ page.meta_description }}" />
+{% endif %}
+{% if page.twitter_card %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@martinbean" />
+    <meta name="twitter:creator" content="@martinbean" />
+    <meta name="twitter:title" content="{{ page.title }}" />
+{% if page.meta_description %}
+    <meta name="twitter:description" content="{{ page.meta_description }}" />
+{% endif %}
+{% endif %}
+    <link href="/feed.xml" rel="alternate" type="application/atom+xml" title="Latest posts from Martin Bean" />
+    <link href="//plus.google.com/+MartinBean" rel="author" />
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="/assets/ico/favicon.ico" rel="shortcut icon" />
+    <link href="//plus.google.com/+MartinBean" rel="publisher" />
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Open+Sans:400,600,700|Droid+Sans+Mono:400" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <script src="/assets/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class="header" role="banner">
+      <div class="container">
+        <a class="site-name" href="/" rel="home">
+          <img src="//gravatar.com/avatar/6b17165d23ead15e66854ff882c59e0c?s=48" alt="" class="avatar img-circle" />
+          Martin Bean
+        </a>
+        <nav class="nav" role="navigation">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects/">Projects</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact Me</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+{{ content }}
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <p class="copyright">&copy; {{ site.time|date:'%Y' }} Martin Bean. All rights reserved.</p>
+      </div>
+    </footer>
+{% include google_analytics.html %}
+  </body>
+</html>

@@ -1,0 +1,26 @@
+.services-intro {
+    text-align: center;
+}
+
+.service {
+    margin-bottom: $line-height-computed;
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+}
+
+.service-name {
+    margin-top: 0;
+}
+
+.service-summary {
+    & > p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .service {
+        width: 33.3333333%;
+        float: left;
+    }
+}

@@ -1,0 +1,29 @@
+.testimonial {
+    padding-bottom: ($line-height-computed - 1px);
+    margin-bottom: $line-height-computed;
+    border-bottom: 1px solid lighten($brand-primary, 40%);
+    &:nth-child(odd) {
+        padding-left: 63px;
+        .avatar {
+            margin-left: -63px;
+            float: left;
+        }
+    }
+    &:nth-child(even) {
+        padding-right: 63px;
+        .avatar {
+            margin-right: -63px;
+            float: right;
+        }
+    }
+    
+    .avatar {
+        margin-top: 3px;
+    }
+}
+
+// TODO: Move this
+.hire-me {
+    text-align: center;
+    padding: ($line-height-computed) 0;
+}

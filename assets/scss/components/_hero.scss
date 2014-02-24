@@ -1,0 +1,35 @@
+.hero {
+    margin-bottom: $line-height-computed;
+    padding: $line-height-computed 0;
+}
+
+.hero-home {
+    text-align: center;
+    text-shadow: 0 0.1em 0.1em rgba(0,0,0,0.25);
+    background-color: $brand-primary;
+    @include gradient(top, $brand-primary, darken($brand-primary, 10%));
+    margin-top: ($line-height-computed * -1);
+    
+    .container {
+        max-width: $container-sm;
+    }
+    
+    h1,
+    p {
+        color: white;
+    }
+    
+    h1 {
+        font-weight: 300;
+        margin-top: 0;
+    }
+    p {
+        font-size: floor($font-size-base * 1.15);
+        font-weight: 200;
+        line-height: 1.33333333;
+    }
+    
+    .btn {
+        margin: 1em 0;
+    }
+}

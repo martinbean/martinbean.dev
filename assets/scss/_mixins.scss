@@ -36,6 +36,15 @@
     }
 }
 
+@mixin font-smoothing($font-smoothing) {
+    -webkit-font-smoothing: $font-smoothing;
+}
+
+@mixin gradient($direction, $start-color, $end-color) {
+    background-color: mix($start-color, $end-color);
+    background-image: -webkit-linear-gradient($direction, $start-color, $end-color);
+}
+
 @mixin make-grid($columns, $gutter, $prefix) {
     @for $i from 1 through $columns {
         .col-#{$prefix}-#{$i} {

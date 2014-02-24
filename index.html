@@ -1,21 +1,78 @@
 ---
-layout: default
+layout: home
 title: Martin Bean &middot; Freelance web developer
-meta_description: Freelance web developer based in Newcastle upon Tyne, UK specialising in front-end development, and server-side development with PHP and related technologies.
 ---
-        <h1>Latest Posts</h1>
-        <div class="hfeed" itemscope itemtype="http://schema.org/Blog">
-{% for post in paginator.posts %}
-          <article class="hentry entry" itemscope itemtype="http://schema.org/BlogPosting">
-            <footer class="entry-meta">
-              <p>Posted on <time class="published" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
-            </footer>
-            <header class="entry-headre">
-              <h1 class="entry-title" itemprop="name">
-                <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
-              </h1>
-            </header>
-          </article>
-{% endfor %}
+    <div class="container">
+      <section class="services">
+        <div class="services-intro">
+          <h1>Services</h1>
+          <p class="lead">I&rsquo;m a PHP developer who is also proficient at front-end development. I&rsquo;ve worked with many frameworks, <abbr class="initialism" title="Content Management Systems">CMS</abbr> and e-commerce platforms. I also enjoy creating bespoke solutions; and writing and consuming <abbr class="initialism" title="Representational state transfer">REST</abbr>ful web services and <abbr class="initialism" title="Application Programming Interface">API</abbr>s.</p>
         </div>
-{% include pagination.html %}
+        <div class="row">
+          <article class="service">
+            <div class="service-inner">
+              <h2 class="service-name">PHP development</h2>
+              <div class="service-summary">
+                <p>I&rsquo;m available to work on projects either as part of larger teams, or as a sole contractor on projects, no matter the size or scope.</p>
+              </div>
+            </div>
+          </article>
+          <article class="service">
+            <div class="service-inner">
+              <h2 class="service-name"><abbr class="initialism" title="Minimum Viable Product">MVP</abbr> development</h2>
+              <div class="service-summary">
+                <p>Are you a start-up? Do you have a web app idea? I can help by building you a minimum viable product in one week to help you get your idea to market.</p>
+              </div>
+            </div>
+          </article>
+          <article class="service">
+            <div class="service-inner">
+              <h2 class="service-name">Consultancy</h2>
+              <div class="service-summary">
+                <p>Do you just need advice for your website or web app? I&rsquo;m happy to discuss your project and its needs, and advise you on your next steps.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+    <section class="clients">
+      <div class="container">
+        <div class="clients-inner">
+          <p>Clients I&rsquo;ve worked with:</p>
+          <ul class="client-list">
+            <li class="client-item"><img src="/assets/img/clients/ubisoft.png" alt="Ubisoft" class="client-logo" /></li>
+            <li class="client-item"><img src="/assets/img/clients/scs.png" alt="ScS" class="client-logo" /></li>
+            <li class="client-item"><img src="/assets/img/clients/bamma.png" alt="BAMMA" class="client-logo" /></li>
+            <li class="client-item"><img src="/assets/img/clients/bdaily.png" alt="Bdaily" class="client-logo" /></li>
+            <li class="client-item"><img src="/assets/img/clients/lostbox.png" alt="Lostbox" class="client-logo" /></li>
+            <li class="client-item"><img src="/assets/img/clients/jw-wood.png" alt="JW Wood" class="client-logo" /></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="testimonials">
+      <div class="container">
+        <h1>Testimonials</h1>
+        <article class="testimonial">
+          <img src="//gravatar.com/avatar/a29b6346fbd1c4638716a848941ab6b7?s=48" alt="Michael Peacock" class="avatar img-circle" />
+          <blockquote>
+            <p>I worked with Martin for six months on a project initially involving the refactoring of a large legacy codebase and subsequently the development of new features.</p>
+            <p>Martin quickly integrated with the team, and adapted to our development setup. He was able to quickly adapt to new tools, technologies and frameworks and worked at a rapid pace in refactoring the code, and developing new features. On particular strength is Martin&rsquo;s ability to track down and fix issues in code&mdash;reporting issues on GitHub, discussing things with open source project maintainers and trying a range of approaches to find solutions to problems in third party code.</p>
+            <p>I enjoyed working with Martin and hope to get the chance to work with him on another project in the future.</p>
+            <small>Michael Peacock, Bdaily</small>
+          </blockquote>
+        </article>
+        <article class="testimonial">
+          <img src="/assets/img/testimonials/steve-gilroy.png" alt="Steve Gilroy" class="avatar img-circle" />
+          <blockquote>
+            <p>I have worked with Martin on a number of projects for the ScS website and associated online collateral. At each step of the way, I have found him to be extremely knowledgeable in his field and precise at delivering to our brief. I would certainly work with him again and I would recommend him to any others looking for an expert in web development.</p>
+            <small>Steve Gilroy, ScS</small>
+          </blockquote>
+        </article>
+      </div>
+    </section>
+    <section class="hire-me">
+      <p>Want to work with me? Get in touch!</p>
+      <a class="btn btn-primary" href="/contact/">Contact me</a>
+    </section>

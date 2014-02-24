@@ -1,12 +1,19 @@
 .project {
     text-align: center;
-    margin-bottom: 1.5em;
-    padding-bottom: 1.5em;
-    border-bottom: 0.1em solid rgba($text-color, 0.075);
+    @include gradient(top, lighten($brand-primary, 45%), darken(white, 2.5%));
+    padding: $line-height-computed 0 ($line-height-computed / 2);
+    @include clearfix();
     &:last-child {
         margin-bottom: 0;
         padding-bottom: 0;
         border-bottom: none;
+    }
+    
+    figure {
+        img {
+            display: block;
+            margin: 0 auto;
+        }
     }
     
     .name {
@@ -16,9 +23,34 @@
         & > p:last-child {
             margin-bottom: 0;
         }
+    }
+}
+
+@media (min-width: $screen-md-min) {
+    .project {
+        text-align: left;
+        &:nth-child(odd) {
+            figure {
+                float: right;
+            }
+            .project-details {
+                float: left;
+            }
+        }
+        &:nth-child(even) {
+            figure {
+                float: left;
+            }
+            .project-details {
+                float: right;
+            }
+        }
         
-        @media (min-width: $screen-md-min) {
-            margin-top: -0.75em;
+        figure,
+        .project-details {
+            width: 50%;
+            padding-left: ($grid-gutter-width / 2);
+            padding-right: ($grid-gutter-width / 2);
         }
     }
 }

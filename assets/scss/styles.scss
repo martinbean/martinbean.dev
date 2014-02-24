@@ -1,6 +1,8 @@
-@import 'variables';
+@charset 'utf-8';
 
-@import 'components/mixins';
+@import 'variables';
+@import 'mixins';
+
 @import 'components/scaffolding';
 @import 'components/typography';
 @import 'components/links';
@@ -8,8 +10,13 @@
 @import 'components/header';
 @import 'components/footer';
 @import 'components/grid';
+@import 'components/buttons';
 @import 'components/availability';
 @import 'components/entries';
+@import 'components/hero';
 @import 'components/pagination';
+@import 'components/clients';
 @import 'components/projects';
+@import 'components/services';
+@import 'components/testimonials';
 @import 'components/widgets';

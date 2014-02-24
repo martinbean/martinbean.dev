@@ -1,49 +1,62 @@
 .header {
+    color: #fff;
+    line-height: ($line-height-computed * 2);
     text-align: center;
+    text-shadow: 0 0.1em 0.1em rgba(0,0,0,0.25);
+    background-color: $brand-primary;
+    margin-bottom: $line-height-computed;
+    padding: ($line-height-computed / 1.5) 0;
     
-    .header-inner {
-        margin-bottom: $line-height-computed;
-        padding: $line-height-computed 0;
-        border-bottom: ($line-height-computed / 4) solid rgba($text-color, 0.075);
+    a {
+        color: rgba(white, 0.75);
+        &:hover,
+        &:focus {
+            color: white;
+            text-decoration: none;
+        }
     }
     
     .site-name {
+        color: #fff;
+        text-transform: uppercase;
+        display: inline-block;
         margin-bottom: 0;
+        
+        .avatar {
+            display: inline;
+            margin-right: 0.5em;
+            vertical-align: middle;
+        }
     }
     
     .nav {
-        font-weight: bold;
-        
-        li {
-            display: inline-block;
-            margin: 0 ($line-height-computed / 2);
-            float: none;
-            &:first-child {
-                margin-left: 0;
-            }
-            &:last-child {
-                margin-right: 0;
+        ul {
+            margin: 0;
+            li {
+                display: inline-block;
+                margin: 0 0.5em;
+                list-style: none;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }
-    
-    @media (min-width: $screen-md-min) {
+}
+
+@media (min-width: $screen-sm-min) {
+    .header {
         text-align: left;
         
         .site-name {
+            margin-bottom: 0;
             float: left;
         }
-        
         .nav {
-            padding-top: 1.1875em;
             float: right;
-            
-            li {
-                display: block;
-                float: left;
-                margin-left: ($grid-gutter-width);
-                margin-right: 0;
-            }
         }
     }
 }
