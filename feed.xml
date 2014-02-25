@@ -3,7 +3,7 @@ layout: nil
 ---
 <?xml version="1.0" encoding="utf-8" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Martin Bean&rsquo;s Blog</title>
+    <title>Latest blog posts from Martin Bean</title>
     <link href="http://martinbean.co.uk/feed.xml" rel="self" />
     <link href="http://martinbean.co.uk/" />
     <updated>{{ site.time|date_to_xmlschema }}</updated>
