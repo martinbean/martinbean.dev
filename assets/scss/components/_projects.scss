@@ -1,6 +1,6 @@
 .project {
     text-align: center;
-    @include gradient(top, lighten($brand-primary, 45%), darken(white, 2.5%));
+    @include gradient(top, lighten($brand-primary, 42.5%), darken(white, 2.5%));
     padding: $line-height-computed 0 ($line-height-computed / 2);
     @include clearfix();
     &:last-child {
@@ -14,6 +14,12 @@
             display: block;
             margin: 0 auto;
         }
+    }
+    
+    figure,
+    .project-details {
+        padding-left: ($grid-gutter-width / 2);
+        padding-right: ($grid-gutter-width / 2);
     }
     
     .name {
@@ -49,8 +55,6 @@
         figure,
         .project-details {
             width: 50%;
-            padding-left: ($grid-gutter-width / 2);
-            padding-right: ($grid-gutter-width / 2);
         }
     }
 }
