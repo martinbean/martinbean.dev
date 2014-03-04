@@ -50,19 +50,19 @@ ul {
     ul {
         margin-bottom: 0;
     }
-    
+
     &.list-unstyled {
         margin-left: 0;
         & > li {
             list-style: none;
         }
     }
-    
+
     &.fa-ul {
         & > li {
             list-style: none;
         }
-        
+
         .fa {
             line-height: inherit;
             margin-top: -1px;
@@ -89,7 +89,7 @@ i {
 abbr[title] {
     border-bottom: 1px dotted $abbr-border-color;
     cursor: help;
-    
+
     &.initialism {
         font-size: 90%;
         text-transform: uppercase;
@@ -113,7 +113,7 @@ samp {
 
 code {
     color: $code-color;
-    font-size: 100%;
+    font-size: 90%;
     background-color: $code-bg;
     white-space: nowrap;
 }
@@ -131,7 +131,7 @@ pre {
     word-wrap: break-word;
     @include border-radius($border-radius-base);
     -webkit-font-smoothing: antialiased;
-    
+
     code {
         color: inherit;
         font-size: inherit;
@@ -152,7 +152,7 @@ blockquote {
         color: $brand-primary;
         content: '\201d';
     }
-    
+
     small {
         color: lighten($text-color, 25%);
         font-style: italic;
@@ -160,6 +160,17 @@ blockquote {
             content: '\2014 \00a0';
         }
     }
+}
+
+kbd {
+  color: #f5f5f5;
+  font-size: 85%;
+  text-shadow: 0 0.1em 0 rgba(0,0,0,0.75);
+  background-color: #222;
+  padding: 0.1em 0.3em;
+  border: 0.1em solid #111;
+  border-radius: 0.25em;
+  white-space: nowrap;
 }
 
 .text-muted {

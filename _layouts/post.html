@@ -8,7 +8,7 @@ layout: master
             <h1 class="entry-title">{{ page.title }}</h1>
           </header>
           <footer class="entry-meta">
-            <p><time class="published" datetime="{{ page.date|date_to_xmlschema }}" pubdate>Posted {{ page.date|date_to_long_string }}</time></p>
+            <p class="text-muted"><time class="published" datetime="{{ page.date|date_to_xmlschema }}" pubdate>Posted {{ page.date|date_to_long_string }}</time></p>
           </footer>
           <div class="entry-content">
 {{ content }}
