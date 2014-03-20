@@ -13,9 +13,11 @@ title: Web Development Blog &middot; Martin Bean
               <h1 class="entry-title" itemprop="name">
                 <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
               </h1>
-              <p class="text-muted">Posted on <time class="published" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time></p>
             </header>
-            <div class="entry-summary">
+            <footer class="entry-meta">
+              <time class="published text-muted" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time>
+            </footer>
+            <div class="entry-summary" itemprop="description">
               <p>{{ post.excerpt|strip_html }}</p>
             </div>
           </article>

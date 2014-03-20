@@ -1,5 +1,7 @@
 .services-intro {
     text-align: center;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .service {
@@ -9,6 +11,8 @@
 }
 
 .service-name {
+    color: $text-color;
+    font-size: 1.125em;
     margin-top: 0;
 }
 
