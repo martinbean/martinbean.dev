@@ -144,18 +144,20 @@ pre {
 }
 
 blockquote {
-    p:before {
+    p:first-of-type:before {
         color: $brand-primary;
         content: '\201c';
+        display: inline;
+        margin-left: -0.33em;
     }
     p:last-of-type:after {
         color: $brand-primary;
         content: '\201d';
+        display: inline;
     }
 
     small {
         color: lighten($text-color, 25%);
-        font-style: italic;
         &:before {
             content: '\2014 \00a0';
         }

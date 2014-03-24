@@ -2,28 +2,37 @@
     padding-bottom: ($line-height-computed - 1px);
     margin-bottom: $line-height-computed;
     border-bottom: 1px solid lighten($brand-primary, 40%);
-    &:nth-child(odd) {
-        padding-left: 63px;
+
+    .testimonial-author {
+        position: relative;
+        display: block;
+        padding-left: 60px;
+        &:before {
+            content: '';
+        }
+
         .avatar {
-            margin-left: -63px;
+            display: block;
+            width: 48px;
+            height: 48px;
+            margin-left: -60px;
             float: left;
         }
-    }
-    &:nth-child(even) {
-        padding-right: 63px;
-        .avatar {
-            margin-right: -63px;
-            float: right;
+
+        .name {
+            font-weight: normal;
+            display: block;
         }
-    }
-    
-    .avatar {
-        margin-top: 3px;
+
+        .company {
+            font-style: normal;
+            display: block;
+        }
     }
 }
 
 // TODO: Move this
 .hire-me {
     text-align: center;
-    padding: ($line-height-computed) 0;
+    padding: $line-height-computed 0;
 }
