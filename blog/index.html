@@ -7,7 +7,7 @@ title: Web Development Blog &middot; Martin Bean
           <h1>Blog</h1>
         </header>
         <div class="hfeed" itemscope itemtype="http://schema.org/Blog">
-{% for post in site.posts limit:10 %}
+{% for post in paginator.posts %}
           <article class="hentry entry" itemscope itemtype="http://schema.org/BlogPosting">
             <header class="entry-header">
               <h1 class="entry-title" itemprop="name">
