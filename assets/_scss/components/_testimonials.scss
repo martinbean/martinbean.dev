@@ -4,12 +4,11 @@
     border-bottom: 1px solid lighten($brand-primary, 40%);
 
     .testimonial-author {
+        color: lighten($text-color, 25%);
         position: relative;
         display: block;
         padding-left: 60px;
-        &:before {
-            content: '';
-        }
+        overflow: auto;
 
         .avatar {
             display: block;
@@ -19,14 +18,8 @@
             float: left;
         }
 
-        .name {
-            font-weight: normal;
-            display: block;
-        }
-
-        .company {
-            font-style: normal;
-            display: block;
+        abbr {
+            border-bottom: none;
         }
     }
 }
