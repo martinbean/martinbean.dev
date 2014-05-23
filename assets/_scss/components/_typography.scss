@@ -37,7 +37,7 @@ p {
     margin-bottom: 0.75em;
     &.lead {
         font-size: floor($font-size-base * 1.15);
-        font-weight: 200;
+        font-weight: 400;
         line-height: 1.33333333;
         margin-bottom: $line-height-computed;
     }
