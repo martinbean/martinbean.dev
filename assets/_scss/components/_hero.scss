@@ -1,6 +1,6 @@
 .hero {
-    margin-bottom: $line-height-computed;
-    padding: $line-height-computed 0;
+    margin-bottom: ($line-height-computed * 2);
+    padding: ($line-height-computed * 2) 0;
 }
 
 .hero-home {
@@ -8,7 +8,7 @@
     text-shadow: 0 0.1em 0.1em rgba(0,0,0,0.25);
     background-color: $brand-primary;
     @include gradient(top, $brand-primary, darken($brand-primary, 10%));
-    margin-top: ($line-height-computed * -1);
+    margin-top: ($line-height-computed * -2);
     
     .container {
         max-width: $container-sm;

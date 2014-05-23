@@ -4,7 +4,7 @@
     text-align: center;
     text-shadow: 0 0.1em 0.1em rgba(0,0,0,0.25);
     background-color: $brand-primary;
-    margin-bottom: $line-height-computed;
+    margin-bottom: ($line-height-computed * 2);
     padding: ($line-height-computed / 1.5) 0;
     
     a {
