@@ -51,6 +51,9 @@ $code-bg: transparent;
 $pre-color: darken($brand-primary, 30%);
 $pre-bg: desaturate(lighten($brand-primary, 42.5%), 15%);
 
+$well-bg: desaturate(lighten($brand-primary, 42.5%), 15%);
+$well-border: darken($well-bg, 7.5%);
+
 $grid-columns: 12;
 $grid-gutter-width: 1.875em;
 
