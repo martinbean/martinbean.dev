@@ -3,8 +3,8 @@ layout: post
 meta_description: Re-using controllers for admin and non-admin routes in Laravel
 title: Re-using controllers for admin and non-admin routes in Laravel
 ---
-I’ve been using Laravel a lot recently, and grown to like it quite a lot.
-Another thing I’m fond of is RESTful web services, and naturally fell in favor with resource controllers within Laravel.
+I’ve been using Laravel a lot recently, and grown to like it quite a bit.
+Another thing I’m fond of is RESTful web services, and naturally fell in favour with resource controllers within Laravel.
 
 Most web development projects require a public front-end and some sort of administration interface, and a project I recently worked on was no different.
 
