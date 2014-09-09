@@ -41,12 +41,12 @@ This leaves the directory structure in Laravel 4.3 looking like thus:
   * views
   * work
 
-As you can, under the **app** directory there are three new directories: **Console**, **Http**, and **Providers**.
+You can see that under the **app** directory there are three new sub-directories: **Console**, **Http**, and **Providers**.
 In another makes-sense move, Laravel 4.3 has grouped logic into how the application is accessed.
-So for example: you don’t use controllers when running Artisan console commands, so these have been placed under the *Http* sub-directory.
-Similarly, you don’t need route filters for console commands.
+So for example: you don’t use controllers when running Artisan console commands, so controllers have been placed in the **Http** sub-directory.
+Similarly, you don’t need say, route filters when running console commands.
 
-There’s a new **Requests** sub-directory, and [requests](#requests) are something new to Laravel 4.3 but are going to save developers a _lot_ of time.
+There’s also a new **Requests** sub-directory, and [requests](#requests) are something new to Laravel 4.3 but are going to save developers a _lot_ of time.
 More on those below.
 
 Laravel 4.3 will also make more use of service providers, hence the introduction of the **Providers** sub-directory.
@@ -58,32 +58,32 @@ This is without a doubt my favourite feature in Laravel 4.3, and personally one 
 Previously, things like controllers and model classes were auto-loaded by Composer.
 In 4.3, Laravel’s gone down the [PSR-4](http://www.php-fig.org/psr/psr-4/) route of auto-loading classes and for this your application’s classes now needs a name-space.
 
-Out of the box, this will simply be `App`. However, you can change this with a simply Artisan command.
-In a console, simply run:
+Out of the box, this will simply be `App`. However, you can change this to something more unique with an Artisan command.
+In a console, run:
 
     $ php artisan app:name Acme
 
-And this will update _all_ class’s name-space to `Acme`.
+And this will update the name-space of _all_ your classes to be `Acme`.
 
-**Note:** If you want to use a name-space more than one level deep, i.e. the common `Vendor\Project` approach, then use _two_ back-slashes, i.e.
+**Note:** If you want to use a name-space more than one level deep, i.e. as per the common `Vendor\Project` convention, then use _two_ back-slashes, i.e.
 
     $ php artisan app:name Acme\\AwesomeProject
 
 <h2 id="requests">Requests</h2>
 
 Laravel 4.3 introduces the notion of “requests”.
-This is wrapping up logic that you would perform as part of a request, but are more than just a route filter.
-A prime candidate: validation.
+This is wrapping up logic that you would perform as part of a <abbr class="initialism" title="HyperText Transfer Protocol">HTTP</abbr> request, but are more than just a route filter.
+A prime candidate: data validation.
 
 Validation in Laravel is primarily performed using the in-built `Validator` class.
 But even then, every developer has their own way of doing validation.
 
-One method (that I used) was to store validation rules in a `$rules` array in your model class, and for your model class to also have a `isValid()` method that performed the validation and returned the result.
-Purists would deride me (and others) for this approach, but it was simply and did the job for smaller apps.
+One method (that I have admittedly used) was to store validation rules in a `$rules` array in your model class, and for your model class to also have an `isValid()` method that performed the actual validation against its set attributes and return the result.
+Purists would deride me (and others) for this approach, but it was simple and did the job for smaller apps.
 
-Laravel has wrapped validation into request objects that can also contain authentication.
+Laravel has wrapped validation into request objects that can also contain authorisation.
 Thinking in the case of registering, you would want to validate the data first.
-A request object for this would look something like this:
+A request object for that would look something like this:
 
 ```php
 <?php namespace App\Http\Requests\Auth;
@@ -108,9 +108,9 @@ class RegisterRequest extends FormRequest {
 }
 ```
 
-As you can see, there’s a `rules()` method that returns an array of rules you would before pass to `Validator::make()`,
+There’s a `rules()` method that returns an array of rules you would before pass to `Validator::make()`,
 and also an `authorize()` method where you would provide any user authorisation.
-You want all users to be able to register, so you just simply return `true`.
+Usually you want all users to be able to register, so you just simply return `true`.
 
 So how do you use this request class? This neatly leads me on to another feature…
 
@@ -118,7 +118,7 @@ So how do you use this request class? This neatly leads me on to another feature
 
 In Laravel, you could place type-hinted parameters to a controller’s `__construct` method,
 and Laravel’s <abbr class="initialism" title="Inversion of Control">IoC</abbr> container would resolve it to that class
-(or if it was an interface, its bound implementation in the IoC container).
+(or if it was an interface, its bound implementation in the container).
 This lead to being able to do things like:
 
 ```php
@@ -126,7 +126,7 @@ This lead to being able to do things like:
 
 class UserController extends BaseController {
 
-  public function __construct(User $users)
+  public function __construct(UserRepositoryInterface $users)
   {
     $this->users = $users;
   }
@@ -134,7 +134,7 @@ class UserController extends BaseController {
 }
 ```
 
-Well, now developers can do the same with methods too.
+Well, now developers can do the same with methods.
 This means you can do something like:
 
 ```php
@@ -163,8 +163,8 @@ class AuthController extends Controller {
 }
 ```
 
-If you look at the `postRegister()` method, you’ll seee the `RegisterRequest` class is being injected.
-Laravel will resolve this like parameters specified in the constructor’s arguments list,
+If you look at the `postRegister()` method, you’ll see the `RegisterRequest` class is being injected.
+Laravel will resolve this just like it resolves parameters specified in the constructor’s arguments list,
 instantiate it, _and_ also automatically perform validation based on the request’s rules.
 That means if validation fails, code in your `postRegister()` method is _never_ executed.
 If name-spacing is my favourite part of Laravel 4.3, then this is a very close second!
@@ -174,9 +174,11 @@ With the above, you can flesh out the `postRegister()` method like this:
 ```php
 public function postRegister(RegisterRequest $request)
 {
-  $user = App\User::create($request->all());
+    $user = App\User::create($request->all());
 
-  return redirect('/');
+    $this->auth->login($user);
+
+    return redirect('/');
 }
 ```
 This would create a new user.
@@ -193,7 +195,7 @@ There are new Artisan commands, such as ones to generate boilerplate request cla
 ### Auth controllers
 
 Not only will Laravel 4.3 help set an ubiquitous approach to validation, but user authentication too.
-There’s a handy new Artisan command that will generate your both an authentication _and_ password reminders controller!
+There’s a handy new Artisan command that will generate you both an authentication _and_ password reminders controller!
 This means you’ll seldom have to create a controller to handle logging in, registering, or resetting passwords again.
 
 The command:
@@ -205,14 +207,14 @@ The `AuthController` class earlier is an excerpt from what the command generates
 ### Shortcuts
 
 There are also shortcuts to `View::make()` and `Redirect`.
-You’ve seen the redirect one above already: you can now simply call `redirect()`.
+You’ve seen the redirect one above already: you can now just call `redirect()`.
 Similarly, you can call `view()` as you would `View::make()`, passing the template name as the first parameter and view data as the second.
 
 ### Socialite
 
-There’s also a new package called “Socialite” that will make working with third parties like Facebook and Twitter a breeze, and all by a common interface.
+There’s also a new package called “Socialite” that will make working with third parties like Facebook and Twitter a breeze, and all via a common interface.
 In fact, Laravel 4.3’s really going to town with interfaces, pushing the “program to interfaces and not implementations” paradigm.
-So much so, there’s even a dedicate [Contracts](https://github.com/illuminate/contracts) repository housing all the interfaces Laravel’s [Illuminate](https://github.com/illuminate) framework uses under the hood.
+So much so, there’s even a dedicated [Contracts](https://github.com/illuminate/contracts) repository housing all the interfaces Laravel’s [Illuminate](https://github.com/illuminate) framework uses under the hood.
 
 This means you can pretty much see Laravel’s public <abbr class="initialism" title="Application Programming Interface">API</abbr> at a glance.
 If you’re creating a new implementation for something (i.e. a database driver or custom authentication driver), then you can quickly look up the methods you need to implement so you don’t need to re-factor your app to use your new package.
