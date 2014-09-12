@@ -1,21 +1,20 @@
 ---
 layout: post
-meta_description: "Laravel 4.3 is coming in November, and some fundamental changes are coming for a minor version release. So what are they?"
-title: What’s new in Laravel 4.3
+meta_description: "Laravel 5 is coming in November, and some fundamental changes are coming for a minor version release. So what are they?"
+title: What’s new in Laravel 5
 ---
-Laravel 4.3 is coming in November, and some fundamental changes are coming for a minor version release.
-So what are they?
+Laravel 5 is coming in November, and some fundamental changes. So, what are they?
 
 ## New directory structure
 
-With Laravel 4.3 comes an overhaul of the directory structure of the starter app.
-In 4.3, the **app** directory now only contains application logic.
+With Laravel 5 comes an overhaul of the directory structure of the starter app.
+In version 5, the **app** directory now only contains application logic.
 That’s pretty obvious when you think about it.
 So if **app** only contains application logic what about, well, everything else?
 
 Directories like **config**, **database**, **storage** and **tests** have been moved to the root.
 The **lang** and **views** directories have been placed in a new **resources** directory, again in the root.
-This leaves the directory structure in Laravel 4.3 looking like thus:
+This leaves the directory structure in Laravel 5 looking like thus:
 
 * app
   * Console
@@ -42,21 +41,21 @@ This leaves the directory structure in Laravel 4.3 looking like thus:
   * work
 
 You can see that under the **app** directory there are three new sub-directories: **Console**, **Http**, and **Providers**.
-In another makes-sense move, Laravel 4.3 has grouped logic into how the application is accessed.
+In another makes-sense move, Laravel 5 has grouped logic into how the application is accessed.
 So for example: you don’t use controllers when running Artisan console commands, so controllers have been placed in the **Http** sub-directory.
 Similarly, you don’t need say, route filters when running console commands.
 
-There’s also a new **Requests** sub-directory, and [requests](#requests) are something new to Laravel 4.3 but are going to save developers a _lot_ of time.
+There’s also a new **Requests** sub-directory, and [requests](#requests) are something new to Laravel 5 but are going to save developers a _lot_ of time.
 More on those below.
 
-Laravel 4.3 will also make more use of service providers, hence the introduction of the **Providers** sub-directory.
+Laravel 5 will also make more use of service providers, hence the introduction of the **Providers** sub-directory.
 
 ## Name-spacing!
 
-This is without a doubt my favourite feature in Laravel 4.3, and personally one I’m surprised has taken this long to come to Laravel: it’s name-spacing of the default app.
+This is without a doubt my favourite feature in Laravel 5, and personally one I’m surprised has taken this long to come to Laravel: it’s name-spacing of the default app.
 
 Previously, things like controllers and model classes were auto-loaded by Composer.
-In 4.3, Laravel’s gone down the [PSR-4](http://www.php-fig.org/psr/psr-4/) route of auto-loading classes and for this your application’s classes now needs a name-space.
+In version 5, Laravel’s gone down the [PSR-4](http://www.php-fig.org/psr/psr-4/) route of auto-loading classes and for this your application’s classes now needs a name-space.
 
 Out of the box, this will simply be `App`. However, you can change this to something more unique with an Artisan command.
 In a console, run:
@@ -71,7 +70,7 @@ And this will update the name-space of _all_ your classes to be `Acme`.
 
 <h2 id="requests">Requests</h2>
 
-Laravel 4.3 introduces the notion of “requests”.
+Laravel 5 introduces the notion of “requests”.
 This is wrapping up logic that you would perform as part of a <abbr class="initialism" title="HyperText Transfer Protocol">HTTP</abbr> request, but are more than just a route filter.
 A prime candidate: data validation.
 
@@ -167,7 +166,7 @@ If you look at the `postRegister()` method, you’ll see the `RegisterRequest` c
 Laravel will resolve this just like it resolves parameters specified in the constructor’s arguments list,
 instantiate it, _and_ also automatically perform validation based on the request’s rules.
 That means if validation fails, code in your `postRegister()` method is _never_ executed.
-If name-spacing is my favourite part of Laravel 4.3, then this is a very close second!
+If name-spacing is my favourite part of Laravel 5, then this is a very close second!
 
 With the above, you can flesh out the `postRegister()` method like this:
 
@@ -182,19 +181,19 @@ public function postRegister(RegisterRequest $request)
 }
 ```
 This would create a new user.
-The `all()` method may look familiar to you and that’s because it is: request classes in Laravel 4.3 extend `FormRequest`, which in turn extends `Request`.
+The `all()` method may look familiar to you and that’s because it is: request classes in Laravel 5 extend `FormRequest`, which in turn extends `Request`.
 That means you have access to form data and able to use methods like `all()` and `get()` to get at it.
 There’s also a magic getter so you can access form data as properties, i.e. `$request->email`.
 So in the above example, I’m just passing all form data to my user model’s `create()` method, which will mass-assign fillable keys.
 
 ## Other new stuff
 
-There is a whole host of other new stuff in Laravel 4.3.
+There is a whole host of other new stuff in Laravel 5.
 There are new Artisan commands, such as ones to generate boilerplate request classes.
 
 ### Auth controllers
 
-Not only will Laravel 4.3 help set an ubiquitous approach to validation, but user authentication too.
+Not only will Laravel 5 help set an ubiquitous approach to validation, but user authentication too.
 There’s a handy new Artisan command that will generate you both an authentication _and_ password reminders controller!
 This means you’ll seldom have to create a controller to handle logging in, registering, or resetting passwords again.
 
@@ -213,7 +212,7 @@ Similarly, you can call `view()` as you would `View::make()`, passing the templa
 ### Socialite
 
 There’s also a new package called “Socialite” that will make working with third parties like Facebook and Twitter a breeze, and all via a common interface.
-In fact, Laravel 4.3’s really going to town with interfaces, pushing the “program to interfaces and not implementations” paradigm.
+In fact, Laravel 5’s really going to town with interfaces, pushing the “program to interfaces and not implementations” paradigm.
 So much so, there’s even a dedicated [Contracts](https://github.com/illuminate/contracts) repository housing all the interfaces Laravel’s [Illuminate](https://github.com/illuminate) framework uses under the hood.
 
 This means you can pretty much see Laravel’s public <abbr class="initialism" title="Application Programming Interface">API</abbr> at a glance.
@@ -221,17 +220,17 @@ If you’re creating a new implementation for something (i.e. a database driver 
 
 I’m currently learning Objective-C, so the above makes sense when you think about a language like C (or one of its many derivative) where it defines public APIs in **.h** (header) files, and then implements it in the main **.c** files.
 
-## Play with Laravel 4.3
+## Play with Laravel 5
 
 Do you like to live on the edge?
 Thinking about using Laravel for an upcoming project and want to get to grips with the next version?
-If like me you couldn’t wait to get your hands on 4.3 when learning what’s in store, you can check out the code today.
+If like me you couldn’t wait to get your hands on version 5 when learning what’s in store, you can check out the code today.
 
-Assuming you have Composer installed on your machine (and you should), you can get Laravel 4.3 by running the following command:
+Assuming you have Composer installed on your machine (and you should), you can get Laravel 5 by running the following command:
 
-    $ composer create-project laravel/laravel laravel-4.3 dev-develop
+    $ composer create-project laravel/laravel laravel-5 dev-develop
 
-This will install Laravel 4.3 to a new directory called **laravel-4.3**.
+This will install Laravel 5 to a new directory called **laravel-5**.
 Simply change that if you want your directory called something else.
 
-Happy tinkering! And do let me know your favourite features, or anything new that you’ve found in Laravel 4.3 yourself.
+Happy tinkering! And do let me know your favourite features, or anything new that you’ve found in Laravel 5 yourself.
