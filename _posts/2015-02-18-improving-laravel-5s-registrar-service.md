@@ -115,7 +115,7 @@ Looking at the code for that class, we can see it implements an interface called
 
 Our final dependency is the `bcrypt` helper, which lives in [this file][3].
 Looking at the function, we can see it calls `hash` from the service container, and then the `make` method on that object.
-Referring back to the façade class reference, we find `hash` is bound to `Illuminate\Hashing\HasherInterface`.
+Referring back to the façade class reference, we find `hash` is bound to `Illuminate\Contracts\Hashing\Hasher`.
 Perfect, an interface! We now have the three interfaces we need to add to the `Registrar` constructor.
 
 ## Adding the constructor
@@ -123,7 +123,7 @@ Perfect, an interface! We now have the three interfaces we need to add to the `R
 Open the `Registrar` class and create a constructor like this:
 
 ```php
-public function __construct(ValidationFactory $validation, UserRepository $users, HasherInterface $hasher)
+public function __construct(ValidationFactory $validation, UserRepository $users, Hasher $hasher)
 {
 	$this->validator = $validator;
 	$this->users = $users;
@@ -144,7 +144,7 @@ And finally import the namespaces:
 ```php
 use App\Contracts\UserRepository;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
-use Illuminate\Hashing\HasherInterface;
+use Illuminate\Contracts\Hashing\Hasher;
 ```
 
 We’re not using the `Validator` façade any more, so remove the line that reads:
