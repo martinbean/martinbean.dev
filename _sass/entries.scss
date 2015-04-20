@@ -1,0 +1,24 @@
+.entry {
+  .entry-title {
+    margin-bottom: ($line-height-computed / 2);
+  }
+
+  .entry-meta {
+    color: lighten($text-color, 20%);
+    margin-bottom: ($line-height-computed / 2);
+  }
+
+  .entry-summary > p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.hfeed > .entry {
+  margin-bottom: $line-height-computed;
+  padding-bottom: $line-height-computed;
+  border-bottom: 1px solid #eee;
+
+  .entry-title {
+    font-size: $font-size-h2;
+  }
+}

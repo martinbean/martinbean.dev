@@ -1,10 +1,10 @@
 .site-footer {
   color: lighten($text-color, 30%);
   text-align: center;
+  background-color: darken(#fff, 4%);
   margin-top: $line-height-computed;
-  padding-top: $line-height-computed;
-  padding-bottom: $line-height-computed;
-  border-top: 1px solid #eee;
+  padding-top: ($line-height-computed * 1.5);
+  padding-bottom: ($line-height-computed * 1.5);
 
   a {
     color: lighten($text-color, 45%);

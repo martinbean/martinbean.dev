@@ -19,3 +19,10 @@ defaults:
       path: ""
     values:
       nav_active: "home"
+
+  -
+    scope:
+      path: "blog"
+      type: "posts"
+    values:
+      nav_active: "blog"

@@ -2,15 +2,18 @@ $body-bg: #fff;
 $text-color: #333;
 
 $brand-primary: #6567a5;
+$brand-secondary: #4a723a;
 
 $link-color: $brand-primary;
 $link-hover-color: darken($brand-primary, 20%);
 
 $font-family-sans-serif: "Source Sans Pro", sans-serif;
+$font-family-monospace: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 $font-family-base: $font-family-sans-serif;
 
 $font-size-base: 16px;
 $font-size-large: ceil($font-size-base * 1.25);
+$font-size-small: ceil($font-size-base * 0.85);
 
 $font-size-h1: floor($font-size-base * 2.6);
 $font-size-h2: floor($font-size-base * 2.15);

@@ -8,7 +8,7 @@ h6 {
   font-family: $headings-font-family;
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
-  margin-bottom: $line-height-computed;
+  margin-bottom: ($line-height-computed / 2);
 }
 h1 {
   font-size: $font-size-h1;
@@ -38,7 +38,19 @@ ul {
 
 ol,
 ul {
-  margin-left: ($grid-gutter-width / 2);
+  padding-left: $grid-gutter-width;
+
+  ol,
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+ol > li {
+  list-style: decimal;
+}
+ul > li {
+  list-style: disc;
 }
 
 .list-inline {
