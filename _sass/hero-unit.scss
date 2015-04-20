@@ -1,0 +1,27 @@
+.hero-unit {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,.25);
+  background-color: $brand-primary;
+  margin-bottom: $line-height-computed;
+  padding-top: ($line-height-computed * 2);
+  padding-bottom: ($line-height-computed * 2);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+
+  p {
+    font-size: $font-size-large;
+  }
+
+  // TODO Re-factor
+  .btn {
+    color: #fff;
+  }
+}

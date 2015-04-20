@@ -10,6 +10,14 @@ $font-family-sans-serif: "Source Sans Pro", sans-serif;
 $font-family-base: $font-family-sans-serif;
 
 $font-size-base: 16px;
+$font-size-large: ceil($font-size-base * 1.25);
+
+$font-size-h1: floor($font-size-base * 2.6);
+$font-size-h2: floor($font-size-base * 2.15);
+$font-size-h3: floor($font-size-base * 1.7);
+$font-size-h4: floor($font-size-base * 1.25);
+$font-size-h5: $font-size-base;
+$font-size-h6: floor($font-size-base * 0.85);
 
 $line-height-base: 1.5;
 $line-height-computed: floor($font-size-base * $line-height-base);
@@ -17,5 +25,6 @@ $line-height-computed: floor($font-size-base * $line-height-base);
 $headings-color: $brand-primary;
 $headings-font-family: $font-family-base;
 $headings-font-weight: 400;
+$headings-line-height: 1.1;
 
 $grid-gutter-width: 30px;
