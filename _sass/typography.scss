@@ -40,3 +40,7 @@ ol,
 ul {
   margin-left: ($grid-gutter-width / 2);
 }
+
+.list-inline {
+  @include list-inline();
+}

@@ -1,0 +1,24 @@
+.site-footer {
+  color: lighten($text-color, 30%);
+  text-align: center;
+  margin-top: $line-height-computed;
+  padding-top: $line-height-computed;
+  padding-bottom: $line-height-computed;
+  border-top: 1px solid #eee;
+
+  a {
+    color: lighten($text-color, 45%);
+    &:hover,
+    &:focus {
+      color: lighten($text-color, 30%);
+    }
+  }
+
+  .list-links {
+    margin: 0 -10px;
+
+    > li {
+      padding: 0 10px;
+    }
+  }
+}

@@ -4,7 +4,7 @@ $text-color: #333;
 $brand-primary: #6567a5;
 
 $link-color: $brand-primary;
-$link-hover-color: darken($brand-primary, 15%);
+$link-hover-color: darken($brand-primary, 20%);
 
 $font-family-sans-serif: "Source Sans Pro", sans-serif;
 $font-family-base: $font-family-sans-serif;
@@ -24,7 +24,7 @@ $line-height-computed: floor($font-size-base * $line-height-base);
 
 $headings-color: $brand-primary;
 $headings-font-family: $font-family-base;
-$headings-font-weight: 400;
+$headings-font-weight: 300;
 $headings-line-height: 1.1;
 
 $grid-gutter-width: 30px;

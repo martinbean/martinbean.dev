@@ -12,3 +12,10 @@ paginate_path: "blog/page/:num"
 
 gems:
   - jekyll-sitemap
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      nav_active: "home"
