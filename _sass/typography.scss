@@ -1,0 +1,23 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $headings-color;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  margin-bottom: $line-height-computed;
+}
+
+dl,
+p,
+ol,
+ul {
+  margin-bottom: ($line-height-computed / 2);
+}
+
+ol,
+ul {
+  margin-left: ($grid-gutter-width / 2);
+}

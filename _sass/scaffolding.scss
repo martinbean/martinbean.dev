@@ -1,0 +1,14 @@
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-style: normal;
+  font-weight: normal;
+  line-height: $line-height-base;
+  background: $body-bg;
+}

@@ -1,0 +1,21 @@
+$body-bg: #fff;
+$text-color: #333;
+
+$brand-primary: #6567a5;
+
+$link-color: $brand-primary;
+$link-hover-color: darken($brand-primary, 15%);
+
+$font-family-sans-serif: "Source Sans Pro", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+$font-size-base: 16px;
+
+$line-height-base: 1.5;
+$line-height-computed: floor($font-size-base * $line-height-base);
+
+$headings-color: $brand-primary;
+$headings-font-family: $font-family-base;
+$headings-font-weight: 400;
+
+$grid-gutter-width: 30px;
