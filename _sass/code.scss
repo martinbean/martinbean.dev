@@ -5,7 +5,6 @@ pre {
 
 code {
   color: $brand-secondary;
-  font-size: ($font-size-base - 1px);
 }
 
 pre {
@@ -15,9 +14,7 @@ pre {
   text-shadow: 0 1px 0 rgba(0,0,0,.75);
   background-color: $text-color;
   display: block;
-  margin-right: ($grid-gutter-width / -2);
-  margin-bottom: $line-height-computed;
-  margin-left: ($grid-gutter-width / -2);
+  margin-bottom: ($line-height-computed / 2);
   padding: ($line-height-computed / 2) ($grid-gutter-width / 2);
   overflow: auto;
 

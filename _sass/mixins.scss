@@ -10,6 +10,15 @@
   padding-left: ($grid-gutter-width / 2);
 }
 
+@mixin hide-text() {
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-shadow: none;
+  background-color: transparent;
+  border: none;
+}
+
 @mixin list-inline {
   margin: 0 -5px;
 

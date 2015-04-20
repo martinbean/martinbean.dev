@@ -14,7 +14,7 @@ nav_active: "blog"
             <h1 class="entry-title" itemprop="name">{{ page.title }}</h1>
           </header>
           <footer class="entry-meta">
-            <time class="published text-muted" datetime="{{ page.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ page.date|date_to_string }}</time>
+            Poster <time class="published text-muted" datetime="{{ page.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ page.date|date_to_string }}</time>
           </footer>
           <div class="entry-content" itemprop="articleBody">
 {{ content }}

@@ -22,7 +22,11 @@
 
   .site-navigation {
     font-weight: 600;
-    margin: 0;
+
+    > ul {
+      margin: 0;
+      padding: 0;
+    }
 
     .active > a {
       color: $link-hover-color;

@@ -11,6 +11,11 @@
   .entry-summary > p:last-child {
     margin-bottom: 0;
   }
+
+  pre {
+    margin-left: ($grid-gutter-width / -2);
+    margin-right: ($grid-gutter-width / -2);
+  }
 }
 
 .hfeed > .entry {
