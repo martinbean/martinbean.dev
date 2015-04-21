@@ -12,6 +12,10 @@
     margin-bottom: 0;
   }
 
+  .twitter-tweet {
+    margin: $line-height-computed auto !important;
+  }
+
   pre {
     margin-left: ($grid-gutter-width / -2);
     margin-right: ($grid-gutter-width / -2);

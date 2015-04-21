@@ -58,6 +58,32 @@ ul {
   list-style: disc;
 }
 
+blockquote {
+  margin-bottom: $line-height-computed;
+  padding-left: ($grid-gutter-width * .6);
+  border-left: ($grid-gutter-width * .4) solid lighten($brand-primary, 40%);
+
+  p {
+    &:first-of-type:before {
+      content: '\201c';
+      display: inline;
+      margin-left: -0.37em;
+    }
+    &:last-of-type:after {
+      content: '\201d';
+      display: inline;
+    }
+  }
+
+  small {
+    color: lighten($text-color, 25%);
+    font-size: $font-size-small;
+    &:before {
+      content: '\2014 \00a0';
+    }
+  }
+}
+
 .list-inline {
   @include list-inline();
 }
@@ -65,4 +91,8 @@ ul {
 .lead {
   font-size: $font-size-large;
   margin-bottom: $line-height-computed;
+}
+
+.fa-li.fa-li {
+  top: 5px;
 }
