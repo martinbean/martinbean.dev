@@ -51,13 +51,18 @@ ul {
   }
 }
 
-ol > li {
+ol {
   list-style: decimal;
 }
-ul > li {
+ul {
   list-style: disc;
 }
 
 .list-inline {
   @include list-inline();
+}
+
+.lead {
+  font-size: $font-size-large;
+  margin-bottom: $line-height-computed;
 }

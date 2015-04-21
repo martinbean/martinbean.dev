@@ -1,4 +1,4 @@
 .container {
-  max-width: 940px;
   @include container-fixed();
+  max-width: (1140px + $grid-gutter-width);
 }

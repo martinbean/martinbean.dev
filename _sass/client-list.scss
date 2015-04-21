@@ -1,5 +1,6 @@
 .client-list {
   margin-bottom: $line-height-computed;
+  padding-left: 0;
 
   > .client-item {
     @include hide-text();
@@ -10,8 +11,13 @@
     padding: 0;
 
     &.bamma {
-      background-position: -259px 0;
+      background-position: -258px 0;
       width: 135px;
+    }
+
+    &.hedgehog-lab {
+      background-position: -393px 0;
+      width: 95px;
     }
 
     &.scs-sofas {
