@@ -25,8 +25,9 @@
   .availability-date {
     display: inline-block;
     margin-bottom: 0;
-    padding: ($line-height-computed / 2) ($grid-gutter-width / 2);
+    padding: 13px 29px 15px;
     border: 1px solid #fff;
     border-radius: 4px;
+    vertical-align: middle;
   }
 }

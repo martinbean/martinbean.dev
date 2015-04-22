@@ -84,6 +84,16 @@ blockquote {
   }
 }
 
+b,
+strong {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
 .list-inline {
   @include list-inline();
 }

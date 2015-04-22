@@ -2,6 +2,18 @@
   border-radius: $radius;
 }
 
+@mixin clearfix() {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 @mixin container-fixed() {
   position: relative;
   margin-right: auto;
@@ -31,4 +43,9 @@
 @mixin square($size) {
   width: $size;
   height: $size;
+}
+
+@mixin vertical-gradient($start-color, $end-color) {
+  background-color: $start-color;
+  background-image: -webkit-linear-gradient($start-color, $end-color);
 }

@@ -1,0 +1,133 @@
+$book-plug-bg: darken(#221e1f, 15%);
+$book-plug-text: #fff;
+$book-plug-primary: #f79320;
+$book-plug-link-color: $book-plug-primary;
+$book-plug-headings-color: $book-plug-primary;
+
+.book-plug-wrapper {
+  padding-top: ($line-height-computed * 1.5);
+}
+
+.book-plug {
+  color: $book-plug-text;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,.75);
+  background-color: $book-plug-bg;
+  padding-top: ($line-height-computed * 1.5);
+  padding-bottom: ($line-height-computed * 1.5);
+
+  a {
+    color: $book-plug-link-color;
+    &:hover,
+    &:focus {
+      color: darken($book-plug-link-color, 15%);
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+  }
+
+  .book-cover,
+  .book-details {
+    position: relative;
+    min-height: 1px;
+    padding-right: ($grid-gutter-width / 2);
+    padding-left: ($grid-gutter-width / 2);
+  }
+
+  .book-cover {
+    display: block;
+    width: 75%;
+    max-width: 274px;
+    margin: 0 auto;
+    margin-top: ($line-height-computed * -3);
+    margin-bottom: $line-height-computed;
+
+    a {
+      background-color: $book-plug-bg;
+      display: block;
+      &:hover,
+      &:focus {
+        > img {
+          opacity: .85;
+        }
+      }
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      box-shadow: .1em .1em 0 #fff,
+                  .1em .1em .1em rgba(0, 0, 0, 0.5),
+                  .2em .2em 0 #fff,
+                  .2em .2em .1em rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .book-description {
+    margin-bottom: $line-height-computed;
+  }
+
+  .btn {
+    color: #fff;
+    font-weight: 600;
+    line-height: $line-height-base;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0,0,0,.25);
+    @include vertical-gradient($book-plug-link-color, darken($book-plug-link-color, 15%));
+    display: inline-block;
+    margin: 0;
+    padding: 11px 24px 13px;
+    border-color: darken($book-plug-link-color, 15%);
+    border-radius: 3px;
+    vertical-align: middle;
+    &:hover,
+    &:active,
+    &:focus {
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+      background-color: darken($book-plug-link-color, 15%);
+      background-image: none;
+    }
+    &:active {
+      color: rgba(255,255,255,.85);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .btn {
+      display: block;
+      width: 100%;
+    }
+    .btn + .btn {
+      margin-top: ($line-height-computed / 4);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .book-cover {
+      width: 33.33%;
+      max-width: none;
+      margin-bottom: 0;
+      float: left;
+
+      a {
+        display: block;
+        width: 75%;
+        margin: 0 auto;
+      }
+    }
+
+    .book-details {
+      text-align: left;
+      width: 66.67%;
+      float: right;
+    }
+  }
+}
