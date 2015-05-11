@@ -94,6 +94,14 @@ i {
   font-style: italic;
 }
 
+abbr[title] {
+  text-transform: uppercase;
+
+  &.initialism {
+    font-size: 90%;
+  }
+}
+
 .list-inline {
   @include list-inline();
 }

@@ -22,12 +22,20 @@
     margin-bottom: $line-height-computed;
   }
 
-  .availability-date {
-    display: inline-block;
+  em {
+    font-style: normal;
+    font-weight: inherit;
+  }
+
+  .btn.availability-date {
+    font-weight: 400;
     margin-bottom: 0;
-    padding: 13px 29px 15px;
+    padding: 14px 30px 16px;
     border: 1px solid #fff;
     border-radius: 4px;
-    vertical-align: middle;
+
+    > strong {
+      font-weight: 600;
+    }
   }
 }

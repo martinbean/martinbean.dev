@@ -13,8 +13,12 @@
     }
   }
 
+  .copyright {
+    margin-bottom: ($line-height-computed / 4);
+  }
+
   .list-links {
-    margin: 0 -10px;
+    margin: $line-height-computed -10px 0;
     padding: 0;
 
     > li {

@@ -57,6 +57,15 @@
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <p class="copyright">&copy; {{ site.time|date:'%Y' }} Martin Bean. All rights reserved.</p>
+        <p>I am a freelance web developer based in Newcastle upon Tyne, <abbr class="initialism" title="United Kingdom">UK</abbr>.
+          My timezone is
+          {% if site.time|date:'%Z' is 'BST' %}
+            <abbr class="initialism" title="British Summer Time">BST</abbr>
+          {% elsif site.time|date:'%Z' is 'GMT' %}
+            <abbr class="initialism" title="Greenwich Mean Time">GMT</abbr>
+          {% else %}
+            {{ site.time|date:'%Z' }}
+          {% endif %}</p>
         <ul class="list-inline list-links">
           <li>
             <a href="https://twitter.com/martinbean" rel="external" title="Martin Bean on Twitter">

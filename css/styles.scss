@@ -9,6 +9,7 @@
 @import 'code';
 @import 'images';
 @import 'grid';
+@import 'buttons';
 @import 'hero-unit';
 @import 'entries';
 @import 'pager';
@@ -18,3 +19,13 @@
 @import 'site-footer';
 @import 'page-header';
 @import 'book-plug';
+@import 'projects';
+
+// TODO Re-factor into a component
+#services {
+  padding-bottom: $line-height-computed;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

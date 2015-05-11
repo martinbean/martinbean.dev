@@ -11,7 +11,6 @@ $book-plug-headings-color: $book-plug-primary;
 .book-plug {
   color: $book-plug-text;
   text-align: center;
-  text-shadow: 0 1px 1px rgba(0,0,0,.75);
   background-color: $book-plug-bg;
   padding-top: ($line-height-computed * 1.5);
   padding-bottom: ($line-height-computed * 1.5);
@@ -76,24 +75,15 @@ $book-plug-headings-color: $book-plug-primary;
 
   .btn {
     color: #fff;
-    font-weight: 600;
-    line-height: $line-height-base;
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(0,0,0,.25);
-    @include vertical-gradient($book-plug-link-color, darken($book-plug-link-color, 15%));
-    display: inline-block;
-    margin: 0;
-    padding: 11px 24px 13px;
-    border-color: darken($book-plug-link-color, 15%);
-    border-radius: 3px;
-    vertical-align: middle;
+    background-color: $book-plug-link-color;
+    border-color: $book-plug-link-color;
     &:hover,
     &:active,
     &:focus {
       color: #fff;
-      text-shadow: 0 -1px 0 rgba(0,0,0,.25);
       background-color: darken($book-plug-link-color, 15%);
       background-image: none;
+      border-color: darken($book-plug-link-color, 15%);
     }
     &:active {
       color: rgba(255,255,255,.85);
