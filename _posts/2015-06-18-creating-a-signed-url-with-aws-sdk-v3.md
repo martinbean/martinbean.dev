@@ -1,5 +1,5 @@
 ---
-description: How to create signed S3 object URLs using version 3 of the AWS PHP SDK.
+excerpt: How to create signed S3 object URLs using version 3 of the AWS PHP SDK.
 layout: post
 title: Creating a signed URL with AWS SDK v3
 ---
