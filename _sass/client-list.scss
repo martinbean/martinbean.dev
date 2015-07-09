@@ -10,7 +10,7 @@
 
   > .client-item {
     @include hide-text();
-    background: url(../assets/img/clients-sprite.png) no-repeat;
+    background: url(../img/clients-sprite.png) no-repeat;
     background-size: auto 72px;
     height: ($line-height-computed * 3);
     margin: 0 10px;
@@ -34,6 +34,11 @@
     &.ubisoft {
       background-position: 0 0;
       width: 97px;
+    }
+
+    &.akqa {
+      background-position: -488px 0;
+      width: 104px;
     }
   }
 }
