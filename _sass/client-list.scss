@@ -11,34 +11,39 @@
   > .client-item {
     @include hide-text();
     background: url(../img/clients-sprite.png) no-repeat;
-    background-size: auto 72px;
-    height: ($line-height-computed * 3);
+    background-size: auto 80px;
+    height: 80px;
     margin: 0 10px;
     padding: 0;
 
+    &.akqa {
+      background-position: -220px 0;
+      width: 150px;
+    }
+
     &.bamma {
-      background-position: -258px 0;
-      width: 135px;
+      background-position: -477px 0;
+      width: 149px;
     }
 
     &.hedgehog-lab {
-      background-position: -393px 0;
-      width: 95px;
+      background-position: -627px 0;
+      width: 106px;
     }
 
-    &.scs-sofas {
-      background-position: -97px 0;
-      width: 161px;
+    &.reflections {
+      background-position: -0px 0;
+      width: 71px;
     }
 
-    &.ubisoft {
-      background-position: 0 0;
-      width: 97px;
+    &.scs {
+      background-position: -71px 0;
+      width: 149px;
     }
 
-    &.akqa {
-      background-position: -488px 0;
-      width: 104px;
+    &.tighten {
+      background-position: -370px 0;
+      width: 107px;
     }
   }
 }
