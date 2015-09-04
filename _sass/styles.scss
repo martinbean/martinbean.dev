@@ -1,11 +1,40 @@
 $brand-primary: #6567a5;
 $headings-font-weight: 400;
 $abbr-border-color: transparent;
+$navbar-primary-color: rgba($brand-primary, .5);
+$navbar-primary-hover-color: rgba($brand-primary, .75);
+$navbar-primary-active-color: $brand-primary;
 
 @import '../bower_components/bootstrap/scss/bootstrap.scss';
 
 ins {
   text-decoration: none;
+}
+
+.navbar-primary {
+  .navbar-brand {
+    color: $navbar-primary-active-color;
+
+    @include hover-focus {
+      color: $navbar-primary-active-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-primary-color;
+
+      @include hover-focus {
+        color: $navbar-primary-hover-color;
+      }
+    }
+
+    .active > .nav-link {
+      @include plain-hover-focus {
+        color: $navbar-primary-active-color;
+      }
+    }
+  }
 }
 
 .site-footer {
