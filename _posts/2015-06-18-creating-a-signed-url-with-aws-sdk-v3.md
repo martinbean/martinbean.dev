@@ -3,7 +3,7 @@ excerpt: How to create signed S3 object URLs using version 3 of the AWS PHP SDK.
 layout: post
 title: Creating a signed URL with AWS SDK v3
 ---
-I used version 3 of the Amazon Web Services <abbr class="initialism" title="PHP: Hypertext Preprocessor">PHP</abbr> <abbr class="initialism" title="Software Development Kit">SDK</abbr> after being a long-time user of version 2.
+<p class="lead">I used version 3 of the Amazon Web Services <abbr class="initialism" title="PHP: Hypertext Preprocessor">PHP</abbr> <abbr class="initialism" title="Software Development Kit">SDK</abbr> after being a long-time user of version 2.</p>
 
 Previously, you used to be able create a signed <abbr class="initialism" title="Uniform Resource Locator">URL</abbr> for an <abbr class="initialism" title="Simple Storage Service">S3</abbr> object by specifying an expiry time as the third parameter for the <code>getObjectUrl()</code> method.
 However, this has changed in version 3 of the SDK.

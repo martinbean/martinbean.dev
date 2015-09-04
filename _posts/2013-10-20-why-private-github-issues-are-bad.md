@@ -3,8 +3,8 @@ layout: post
 meta_description: The community is urging GitHub to add private issues. I explain why I think they’re a bad idea.
 title: Why Private GitHub Issues Are Bad
 ---
-There’s been a discussion recently about whether or not [GitHub](https://github.com/) should introduce private issues.
-Personally, I’m against this for various reasons.
+<p class="lead">There’s been a discussion recently about whether or not <a href="https://github.com/" rel="external">GitHub</a> should introduce private issues.
+  Personally, I’m against this for various reasons.</p>
 
 The main argument for private issues is to disclose security issues and vulnerabilities on repositories.
 While I can see the merit in that, it creates more problems than it solves.

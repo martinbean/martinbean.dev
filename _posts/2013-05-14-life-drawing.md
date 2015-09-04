@@ -3,10 +3,10 @@ layout: post
 meta_description: The results of a life drawing class I took in spring 2013.
 title: Life Drawing
 ---
-I’ve recently been taking a life drawing class.
-When I was growing up, I was a fan of comic books.
-I would re-draw my favourite panels, which in turn helped me become quite nifty with a pencil.
-As a result, I was the token “good drawrer” at school.
+<p class="lead">I’ve recently been taking a life drawing class.
+  When I was growing up, I was a fan of comic books.
+  I would re-draw my favourite panels, which in turn helped me become quite nifty with a pencil.
+  As a result, I was the token good-at-drawing kid at school.</p>
 
 Despite being quite good at drawing, I never really studied it or took it further than GCSE level.
 I’d also became pretty computer literate, discovered the Internet, and had decided on a career doing something in the web design field.

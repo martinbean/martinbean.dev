@@ -3,7 +3,12 @@ layout: post
 meta_description: "CakePHP offers the ability to specify custom classes for handling routes in your applications."
 title: Custom route classes in CakePHP
 ---
-Some times in CakePHP applications, you want custom routes.
+<p class="alert alert-info">
+  <span class="fa fa-info-circle"></span>
+  This article was written about CakePHP 2.x and has been untested with CakePHP 3.x
+</p>
+
+Sometimes in CakePHP applications, you want custom routes.
 If you’re using the framework’s default routes, then out of the box they take the format of:
 
 **http://example.com/:controller/:action/:param1/:param2**

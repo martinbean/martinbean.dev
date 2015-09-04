@@ -3,9 +3,9 @@ layout: post
 meta_description: An overview of my last two years as freelance web developer, and tips on freelancing in general.
 title: Freelancing&#58; Two Years On
 ---
-I was talking to a friend who is also a web developer, who earlier this year jumped into freelancing.
-He mentioned he was going to write a blog post and asked if I had written about my experiences freelancing.
-I said I hadn’t and he suggested I should as he’d like to read it, so without further ado here it is for any one else who is interested too.
+<p class="lead">I was talking to a friend who is also a web developer, who earlier this year jumped into freelancing.
+  He mentioned he was going to write a blog post and asked if I had written about my experiences freelancing.
+  I said I hadn’t and he suggested I should as he’d like to read it, so without further ado here it is for any one else who is interested too.</p>
 
 ## Leaving full-time employment
 I had worked as a web developer for various agencies in the region for a few years.

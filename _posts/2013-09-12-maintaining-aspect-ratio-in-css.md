@@ -3,10 +3,8 @@ title: Maintaining Aspect Ratio in CSS
 meta_description: A little CSS trick on how to maintain aspect ratio of block-level elements in fluid designs.
 layout: post
 ---
-# Maintaining Aspect Ratio in CSS
-
-One common problem I face is, maintaining the aspect ratio of a block-level element.
-Say you have something like a photo gallery, and you want all the items to retain the same aspect ratio within fluid-width columns; a common responsive web design layout problem.
+<p class="lead">One common problem I face is, maintaining the aspect ratio of a block-level element.
+  Say you have something like a photo gallery, and you want all the items to retain the same aspect ratio within fluid-width columns; a common responsive web design layout problem.</p>
 
 The answer is mind-numbingly simple and I’m blogging it this evening for posterity and in an attemp to help any one else who may have this issue.
 

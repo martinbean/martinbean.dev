@@ -3,8 +3,9 @@ layout: post
 meta_description: A review of this year’s PHP North West conference, held in Manchester, UK.
 title: PHP North West 2013 Conference
 ---
-October marks the calendar for one of the biggest PHP conferences in the UK: [PHP North West](http://conference.phpnw.org.uk/) in Manchester. 2013 was no exception.
-This year, PHPNW was held at the [Manchester Conference Centre](http://www.manchesterconferencecentre.co.uk/), about five minutes from Manchester city centre.
+<p class="lead">October marks the calendar for one of the biggest PHP conferences in the UK: <a href="http://conference.phpnw.org.uk/" rel="external">PHP North West in Manchester.
+  2013 was no exception.
+  This year, PHPNW was held at the <a href="http://www.manchesterconferencecentre.co.uk/" rel="external">Manchester Conference Centre</a>, about five minutes from Manchester city centre.</p>
 
 Unfortunately I had to miss out on the tutorial day on the Friday, as I didn’t get to Manchester until the late evening.
 I traveled with a lot of the regular attendees of the [PHP North East](http://phpne.org.uk/) user group, who made up a few percent of the PHPNW delegates this year!

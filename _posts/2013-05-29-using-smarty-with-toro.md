@@ -3,8 +3,8 @@ layout: post
 meta_description: A tutorial on implementing the Smarty template engine into a ToroPHP app.
 title: Using Smarty with Toro
 ---
-[ToroPHP](https://github.com/anandkunal/ToroPHP/) is a small open source project I contribute to.
-One of the issues opened recently asked how to use the [Smarty](http://www.smarty.net/) template engine with Toro.
+<p class="lead"><a href="http://toroweb.org/" rel="external">ToroPHP</a> is a small open source project I contribute to.
+  One of the issues opened recently asked how to use the <a href="http://www.smarty.net/" rel="external">Smarty</a> template engine with Toro.</p>
 
 ## Download Smarty and Toro
 

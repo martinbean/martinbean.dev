@@ -2,8 +2,13 @@
 layout: post
 title: Improving Laravel 5’s registrar service
 ---
-Comparing Laravel 5 to Laravel 4, there seems to have been a move from façades in the former, to programming to contracts in the latter.
-The majority of the code in the new Laravel application skeleton follows this approach, but there are places where it doesn’t and still uses façades.
+<p class="alert alert-info">
+  <span class="fa fa-info-circle"></span>
+  This article is relevant to Laravel 5.0.x only.
+</p>
+
+<p class="lead">Comparing Laravel 5 to Laravel 4, there seems to have been a move from façades in the former, to programming to contracts in the latter.
+The majority of the code in the new Laravel application skeleton follows this approach, but there are places where it doesn’t and still uses façades.</p>
 
 When you create a new Laravel 5 application, you get everything you need to authenticate users out of the box.
 It’s no longer opt-in; everything is provided: a controller to register users and then log them in, reset passwords, a model, and migrations.

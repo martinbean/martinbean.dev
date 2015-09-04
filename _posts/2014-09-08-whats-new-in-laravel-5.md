@@ -3,7 +3,12 @@ layout: post
 meta_description: "Laravel 5 is coming in November, and some fundamental changes are coming for a minor version release. So what are they?"
 title: What’s new in Laravel 5
 ---
-Laravel 5 is coming in November, and some fundamental changes. So, what are they?
+<p class="alert alert-info">
+  <span class="fa fa-info-circle"></span>
+  This article is relevant to Laravel 5.0.x only.
+</p>
+
+<p class="lead">Laravel 5 is coming in November, and some fundamental changes. So, what are they?</p>
 
 ## New directory structure
 

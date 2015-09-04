@@ -3,7 +3,12 @@ title: Getting to grips with CakePHP’s events system
 meta_description: Demystifying the events system in CakePHP 2.
 layout: post
 ---
-[CakePHP](http://cakephp.org/) seems to get a slightly unfavourable reputation when compared to the likes of [Symfony](http://symfony.com/) or [Zend Framework](http://framework.zend.com/) due to its lack of namespaces and not playing nicely with [Composer](http://getcomposer.org/) out of the box.
+<p class="alert alert-info">
+  <span class="fa fa-info-circle"></span>
+  This article was written about CakePHP 2.x and has been untested with CakePHP 3.x
+</p>
+
+<p class="lead"><a href="http://cakephp.org/" rel="external">CakePHP</a> seems to get a slightly unfavourable reputation when compared to the likes of <a href="http://symfony.com/" rel="external">Symfony</a> or <a href="http://framework.zend.com/" rel="external">Zend Framework</a> due to its lack of namespaces and not playing nicely with <a href="http://getcomposer.org/" rel="external">Composer</a> out of the box.
 However, that will change in the forthcoming version 3; and CakePHP 2 still remains a pretty easy PHP framework to work with and quickly build web applications with.
 
 A design pattern that is pretty common in <abbr class="initialism" title="Model-View-Controller">MVC</abbr> applications is the [Observer pattern](http://en.wikipedia.org/wiki/Observer_pattern), colloquially known as event handlers.

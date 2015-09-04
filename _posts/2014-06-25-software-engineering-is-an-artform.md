@@ -1,12 +1,14 @@
 ---
 layout: post
-meta_description: Software engineering is an artform.
-title: Software engineering is an artform
+meta_description: Software engineering is an art-form.
+title: Software engineering is an art-form
 ---
-I’m a fan of analogies. I love them. One I’ve come to hold dearly is that, software engineering is an artform.
+<p class="lead">I’m a fan of analogies.
+  I love them.
+  One I’ve come to hold dearly is that, software engineering is an art-form.</p>
 
 This statement can be misinterpreted, however.
-Where software engineering is an artform, software engineers are indeed the artists.
+Where software engineering is an art-form, software engineers are indeed the artists.
 But rather than being artists spending years working on masterpieces, we’re actually artists for hire, or “commission”.
 I therefore see software engineers as more akin to say, a comic book artist.
 
