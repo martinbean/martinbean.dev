@@ -1,12 +1,32 @@
         <ul class="pager">
 {% if paginator.next_page %}
-          <li class="previous"><a href="{{ paginator.next_page_path }}">Older</a></li>
+          <li class="pager-prev">
+            <a href="{{ paginator.next_page_path }}">
+              <span aria-hidden="true">&larr;</span>
+              Older posts
+            </a>
+          </li>
 {% else %}
-          <li class="previous disabled"><span>Older</span></li>
+          <li class="pager-prev disabled">
+            <span>
+              <span aria-hidden="true">&larr;</span>
+              Older posts
+            </span>
+          </li>
 {% endif %}
 {% if paginator.previous_page %}
-          <li class="next"><a href="{{ paginator.previous_page_path }}">Newer</a></li>
+          <li class="pager-next">
+            <a href="{{ paginator.previous_page_path }}">
+              Newer posts
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
 {% else %}
-          <li class="next disabled"><span>Newer</span></li>
+          <li class="pager-next disabled">
+            <span>
+              Newer posts
+              <span aria-hidden="true">&rarr;</span>
+            </span>
+          </li>
 {% endif %}
         </ul>

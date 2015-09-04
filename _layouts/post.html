@@ -4,17 +4,17 @@ nav_active: "blog"
 ---
     <header class="page-header">
       <div class="container">
-        <h1 class="page-title">Blog</h1>
+        <h1 class="display-1">Blog</h1>
       </div>
     </header>
-    <div class="container">
+    <div class="container container-blog">
       <section role="main">
         <article class="entry hentry" itemscope itemtype="http://schema.org/BlogPosting">
           <header class="entry-header">
             <h1 class="entry-title" itemprop="name">{{ page.title }}</h1>
           </header>
           <footer class="entry-meta">
-            Poster <time class="published text-muted" datetime="{{ page.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ page.date|date_to_string }}</time>
+            <time class="published text-muted" datetime="{{ page.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ page.date|date_to_string }}</time>
           </footer>
           <div class="entry-content" itemprop="articleBody">
 {{ content }}

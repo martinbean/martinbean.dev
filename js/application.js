@@ -13,4 +13,8 @@
       _gaq.push(['_trackEvent', category, 'Click', label]);
     }
   });
+
+  // Pretty-print code
+  $('pre').addClass('prettyprint');
+  $.getScript('http://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js');
 })(jQuery);

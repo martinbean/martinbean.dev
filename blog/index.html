@@ -5,10 +5,10 @@ nav_active: blog
 ---
       <header class="page-header">
         <div class="container">
-          <h1 class="page-title">Blog</h1>
+          <h1 class="display-1">Blog</h1>
         </div>
       </header>
-      <div class="container">
+      <div class="container container-blog">
         <div class="hfeed" itemscope itemtype="http://schema.org/Blog">
 {% for post in paginator.posts %}
           <article class="hentry entry" itemscope itemtype="http://schema.org/BlogPosting">
@@ -18,10 +18,10 @@ nav_active: blog
               </h1>
             </header>
             <footer class="entry-meta">
-              Posted <time class="published text-muted" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time>
+              <time class="published text-muted" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time>
             </footer>
             <div class="entry-summary" itemprop="description">
-              <p>{{ post.excerpt|strip_html }}</p>
+              <p class="m-b-0">{{ post.excerpt|strip_html }}</p>
             </div>
           </article>
 {% endfor %}

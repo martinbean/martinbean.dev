@@ -1,0 +1,247 @@
+$brand-primary: #6567a5;
+$headings-font-weight: 400;
+$abbr-border-color: transparent;
+
+@import '../bower_components/bootstrap/scss/bootstrap.scss';
+
+ins {
+  text-decoration: none;
+}
+
+.site-footer {
+  @extend .text-muted;
+  background-color: $gray-lightest;
+  font-size: 85%;
+  padding: 3rem 0;
+
+  a {
+    color: $gray;
+    font-weight: 500;
+
+    &:hover,
+    &:focus {
+      color: $link-color;
+    }
+  }
+
+  .copyright {
+    @extend .m-b-0;
+  }
+}
+
+.jumbotron-home {
+  > .container > :last-child {
+    @extend .m-b-0;
+  }
+
+  .avatar {
+    @include size(6rem, 6rem);
+    @extend .m-b-md;
+  }
+
+  .lead {
+    @extend .m-b-md;
+    @include center-block();
+    width: 80%;
+  }
+
+  .btn {
+    @extend .m-b-md;
+    font-weight: 300;
+
+    > strong {
+      font-weight: 400;
+    }
+  }
+
+  .btn-secondary-outline {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      background-color: transparent;
+      border-color: mix(#fff, $brand-primary);
+      cursor: default;
+    }
+  }
+}
+
+.half-rule {
+  @include center-block();
+  @extend .m-y-md;
+  width: 8rem;
+}
+
+.btn-cta {
+  position: relative;
+  top: -2px;
+  margin-left: ($spacer-x / 2);
+}
+
+.clients {
+  @extend .m-y-lg;
+  @extend .p-y-md;
+  background-color: $gray-lightest;
+}
+
+.list-clients {
+  @extend .m-b-0;
+
+  > li {
+    @extend .p-a;
+    vertical-align: top;
+
+    > span {
+      @include text-hide();
+      background: url(../img/clients-sprite.png) no-repeat 0 0;
+      background-size: auto 80px;
+      display: block;
+      height: 80px;
+    }
+  }
+
+  .akqa {
+    background-position: -220px 0;
+    width: 150px;
+  }
+  .bamma {
+    background-position: -477px 0;
+    width: 149px;
+  }
+  .hedgehog-lab {
+    background-position: -627px 0;
+    width: 106px;
+  }
+  .reflections {
+    background-position: -0px 0;
+    width: 71px;
+  }
+  .scs {
+    background-position: -71px 0;
+    width: 149px;
+  }
+  .tighten {
+    background-position: -370px 0;
+    width: 107px;
+  }
+}
+
+.page-header {
+  @extend .bg-primary;
+  @extend .m-b-md;
+  @extend .p-y-md;
+
+  .display-1 {
+    @extend .m-b-0;
+  }
+}
+
+.container-blog {
+  @include center-block();
+  max-width: 60rem;
+}
+
+.entry-meta {
+  margin-bottom: 1rem;
+}
+
+.hfeed {
+  .hentry {
+    @extend .m-b-md;
+    @extend .p-b-md;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      display: block;
+      width: 8rem;
+      height: 0;
+      margin-left: -4rem;
+      border-bottom: $hr-border-width solid $hr-border-color;
+    }
+  }
+
+  .entry-title a {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+// Double up the selector for specificity
+.prettyprint.prettyprint {
+  @extend .p-a;
+  background-color: $gray-lightest;
+  margin-right: ($grid-gutter-width / -2);
+  margin-left: ($grid-gutter-width / -2);
+  border: none;
+}
+
+.twitter-tweet {
+  @extend .m-y-md;
+}
+
+.book-plug-wrapper {
+  @extend .m-t-md;
+}
+
+.book-plug {
+  $book-plug-color: orange;
+
+  @extend .bg-primary;
+  @extend .p-y-md;
+  background-color: #2d292a;
+  position: relative;
+
+  a {
+    color: $book-plug-color;
+    &:hover,
+    &:focus {
+      color: darken($book-plug-color, 15%);
+    }
+  }
+
+  .book-cover {
+    position: relative;
+    margin-top: -2.5rem;
+
+    img {
+      box-shadow: 0.1rem 0.1rem 0 #fff,
+                  0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5),
+                  0.2rem 0.2rem 0 #fff,
+                  0.2rem 0.2rem 0.1rem rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .btn-primary {
+    @include button-variant(#fff, $book-plug-color, $book-plug-color);
+  }
+
+  @include media-breakpoint-down(xs) {
+    .btn {
+      display: block;
+      width: 100%;
+
+      + .btn {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+
+    .book-cover {
+      width: 15rem;
+      max-width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
