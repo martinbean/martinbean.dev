@@ -1,0 +1,51 @@
+.list-clients {
+  @extend .m-b-0;
+
+  > li {
+    @extend .p-a;
+    vertical-align: top;
+  }
+}
+
+.client-logo {
+  @include text-hide();
+  background: url(../img/clients-sprite.png) no-repeat 0 0;
+  background-size: auto 80px;
+  display: block;
+  height: 80px;
+  opacity: .6;
+
+  @include hover-focus {
+    @include text-hide();
+    opacity: 1;
+  }
+
+  &.akqa {
+    background-position: -220px 0;
+    width: 150px;
+  }
+  &.bamma {
+    background-position: -477px 0;
+    width: 149px;
+  }
+  &.hedgehog-lab {
+    background-position: -627px 0;
+    width: 106px;
+  }
+  &.reflections {
+    background-position: -0px 0;
+    width: 71px;
+  }
+  &.ryan-foster-design {
+    background-position: -733px 0;
+    width: 80px;
+  }
+  &.scs {
+    background-position: -71px 0;
+    width: 149px;
+  }
+  &.tighten {
+    background-position: -370px 0;
+    width: 107px;
+  }
+}
