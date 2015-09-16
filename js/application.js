@@ -1,6 +1,6 @@
 (function ($) {
   // Enable tooltips
-  // $('[data-toggle="tooltip"]').tooltip();
+  $('abbr').tooltip();
   $('.list-clients').find('li').tooltip();
 
   // Open external links in a new window
