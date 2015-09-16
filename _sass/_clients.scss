@@ -14,6 +14,7 @@
   display: block;
   height: 80px;
   opacity: .6;
+  transition: opacity .1s ease;
 
   @include hover-focus {
     @include text-hide();
