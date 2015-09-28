@@ -1,5 +1,11 @@
+name: "Martin Bean"
 permalink: /blog/:year/:month/:day/:title/
 timezone: Europe/London
+
+author:
+  name: "Martin Bean"
+  email: "martin@martinbean.co.uk"
+  uri: "http://martinbean.co.uk"
 
 google_analytics_id: UA-4799998-6
 
