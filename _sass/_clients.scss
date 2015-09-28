@@ -1,3 +1,13 @@
+@mixin client-logo($width, $offset: 0) {
+  background-position: $offset 0;
+  width: $width;
+
+  @include media-breakpoint-down(md) {
+    background-position: ($offset / 2) 0;
+    width: ($width / 2);
+  }
+}
+
 .list-clients {
   @extend .m-b-0;
 
@@ -16,37 +26,38 @@
   opacity: .6;
   transition: opacity .1s ease;
 
+  @include media-breakpoint-down(md) {
+    background-size: auto 40px;
+    height: 40px;
+  }
+
   @include hover-focus {
     @include text-hide();
     opacity: 1;
   }
 
   &.akqa {
-    background-position: -220px 0;
-    width: 150px;
+    @include client-logo(150px, -220px);
   }
   &.bamma {
-    background-position: -477px 0;
-    width: 149px;
+    @include client-logo(149px, -477px);
+  }
+  &.better-brand-agency {
+    @include client-logo(148px, -813px);
   }
   &.hedgehog-lab {
-    background-position: -627px 0;
-    width: 106px;
+    @include client-logo(106px, -627px);
   }
   &.reflections {
-    background-position: -0px 0;
-    width: 71px;
+    @include client-logo(71px);
   }
   &.ryan-foster-design {
-    background-position: -733px 0;
-    width: 80px;
+    @include client-logo(80px, -733px);
   }
   &.scs {
-    background-position: -71px 0;
-    width: 149px;
+    @include client-logo(149px, -71px);
   }
   &.tighten {
-    background-position: -370px 0;
-    width: 107px;
+    @include client-logo(107px, -370px);
   }
 }
