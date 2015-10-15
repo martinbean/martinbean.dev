@@ -3,9 +3,9 @@ permalink: /blog/:year/:month/:day/:title/
 timezone: Europe/London
 
 author:
-  name: "Martin Bean"
-  email: "martin@martinbean.co.uk"
-  uri: "http://martinbean.co.uk"
+  name: Martin Bean
+  email: martin@martinbean.co.uk
+  uri: http://martinbean.co.uk
 
 google_analytics_id: UA-4799998-6
 
@@ -34,8 +34,6 @@ defaults:
     values:
       nav_active: "blog"
 
-exclude: [
-  bower_components,
-  node_modules,
-  _sass
-]
+exclude:
+  - bower_components
+  - node_modules

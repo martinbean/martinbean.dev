@@ -1,0 +1,14 @@
+.event-item {
+  @extend .m-b-md;
+  @extend .p-b-md;
+  border-bottom: .1em solid $hr-border-color;
+
+  .event-name {
+    font-size: $font-size-h3;
+  }
+
+  .event-organiser,
+  .event-date {
+    @extend .m-b-0;
+  }
+}
