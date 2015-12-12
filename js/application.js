@@ -18,6 +18,6 @@
   });
 
   // Pretty-print code
-  $('pre').addClass('prettyprint');
+  $('pre').not('.no-prettyprint').addClass('prettyprint');
   $.getScript('http://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js');
 })(jQuery);
