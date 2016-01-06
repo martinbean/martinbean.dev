@@ -1,6 +1,6 @@
 ---
 layout: post
-meta_description: I’ve re-build my website using Jekyll and share with you how.
+excerpt: I’ve re-build my website using Jekyll and share with you how.
 title: Building a blog with Jekyll
 ---
 <p class="lead">Although I initially started writing this site in <a href="http://php.net/" rel="external">PHP</a>, I grew bored and realised that what may seem simple and elegant in your head never ends that way when you started coding.

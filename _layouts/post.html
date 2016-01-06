@@ -1,25 +1,26 @@
 ---
-layout: master
+heading: Blog
+layout: interior
 nav_active: "blog"
 ---
-    <header class="page-header">
-      <div class="container">
-        <h1 class="display-1">Blog</h1>
-      </div>
-    </header>
-    <div class="container container-blog">
-      <section role="main">
-        <article class="entry hentry" itemscope itemtype="http://schema.org/BlogPosting">
-          <header class="entry-header">
-            <h1 class="entry-title" itemprop="name">{{ page.title }}</h1>
-          </header>
-          <footer class="entry-meta">
-            <time class="published text-muted" datetime="{{ page.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ page.date|date_to_string }}</time>
-          </footer>
-          <div class="entry-content" itemprop="articleBody">
-{{ content }}
-          </div>
-        </article>
-{% include disqus.html %}
-      </section>
-    </div>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <footer class="entry-meta">
+    <time class="entry-published" datetime="{{ page.date|date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ page.date|date_to_string }}</time>
+  </footer>
+  <header class="entry-heading">
+    <h1 class="entry-title">{{ page.title }}</h1>
+  </header>
+  <div itemprop="body">
+    {{ content }}
+  </div>
+  <nav>
+    <ul class="pager">
+      <li class="pager-prev">
+        <a href="/blog">
+          <span aria-hidden="true">&larr;</span>
+          <span>Back to blog</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</article>

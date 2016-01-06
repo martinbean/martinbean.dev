@@ -1,7 +1,7 @@
 ---
 excerpt: Opening that can of worms—a male’s take on women in the web industry.
 layout: post
-meta_description: Opening that can of worms—a male’s take on women in the web industry.
+excerpt: Opening that can of worms—a male’s take on women in the web industry.
 title: Women in the Web Industry
 ---
 <figure class="post-image pull-right">

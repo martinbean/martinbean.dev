@@ -1,29 +1,17 @@
 ---
-layout: page
-title: Web Development Blog &middot; Martin Bean
+heading: Blog
+layout: interior
 nav_active: blog
+title: "Martin Bean’s Blog"
 ---
-      <header class="page-header">
-        <div class="container">
-          <h1 class="display-1">Blog</h1>
-        </div>
-      </header>
-      <div class="container container-blog">
-        <div class="hfeed" itemscope itemtype="http://schema.org/Blog">
-{% for post in paginator.posts %}
-          <article class="hentry entry" itemscope itemtype="http://schema.org/BlogPosting">
-            <header class="entry-header">
-              <h1 class="entry-title" itemprop="name">
-                <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
-              </h1>
-            </header>
-            <footer class="entry-meta">
-              <time class="published text-muted" datetime="{{ post.date|date_to_xmlschema }}" pubdate="pubdate" itemprop="dateCreated">{{ post.date|date_to_string }}</time>
-            </footer>
-            <div class="entry-summary" itemprop="description">
-              <p class="m-b-0">{{ post.excerpt|strip_html }}</p>
-            </div>
-          </article>
-{% endfor %}
-        </div>
+<div itemscope itemtype="http://schema.org/Blog">
+  {% for post in paginator.posts %}
+    <article class="entry" itemscope itemtype="http://schema.org/BlogPosting">
+      <time class="entry-published" datetime="{{ post.date|date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ post.date|date_to_string }}</time>
+      <h1 class="entry-title" itemprop="name">
+        <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+      </h1>
+    </article>
+  {% endfor %}
+</div>
 {% include pagination.html %}

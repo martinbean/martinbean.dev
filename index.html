@@ -1,119 +1,31 @@
 ---
-layout: home
-title: Martin Bean&#58; freelance web developer, consultant &amp; author
-meta_description: I&rsquo;m Martin Bean, a freelance web developer, consultant &amp; author specialising in PHP development.
+layout: master
+title: "Martin Bean: Newcastle-based web developer"
 ---
-    <div class="container">
-      <header class="intro intro-page text-center">
-        <h1>How can I help?</h1>
-        <p class="lead">I offer a large range of services around PHP development backed by a wealth of experience.
-          Get in touch to discuss your requirements, and hopefully we can work together.</p>
-      </header>
-      <hr class="half-rule" />
-      <section id="services">
-        <div class="row">
-          <article class="col-md-4">
-            <div class="service-item">
-              <h2 class="service-name text-primary">Development</h2>
-              <div class="service-description">
-                <p>I’m well versed in full stack development, and comfortable writing custom PHP and working with existing platforms and frameworks.
-                  I can work as part of a larger team, or as the sole contractor on a project, no matter the size or scope.</p>
-              </div>
-            </div>
+<div class="jumbotron jumbotron-fluid jumbotron-home bg-primary">
+  <div class="container text-xs-center">
+    <img src="//gravatar.com/avatar/6b17165d23ead15e66854ff882c59e0c?s=192" alt="Martin Bean" class="img-circle" />
+    <p class="lead">I’m Martin Bean, a web developer based in Newcastle upon Tyne, <abbr class="initialism" title="United Kingdom">UK</abbr>.<br />
+      I enjoy creating elegant solutions to complex problems.</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 site-primary" role="main">
+      <div itemscope itemtype="http://schema.org/Blog">
+        <h2>Latest blog posts</h2>
+        {% for post in site.posts limit:5 %}
+          <article class="entry" itemscope itemtype="http://schema.org/BlogPosting">
+            <time class="entry-published" datetime="{{ post.date|date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ post.date|date_to_string }}</time>
+            <h1 class="entry-title" itemprop="name">
+              <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+            </h1>
           </article>
-          <article class="col-md-4">
-            <div class="service-item">
-              <h2 class="service-name text-primary">Consultancy</h2>
-              <div class="service-description">
-                <p>Planning an ambitious project?
-                  Inherited a legacy codebase you need to re-factor?
-                  If you need advice on how to tackle a PHP-based project, I can come in to your team and point you in the right direction, and then leave you to be self-sufficient.</p>
-              </div>
-            </div>
-          </article>
-          <article class="col-md-4">
-            <div class="service-item">
-              <h2 class="service-name text-primary">Workshops</h2>
-              <div class="service-description">
-                <p>I can run workshops and training sessions for existing teams covering specific topics relevant to your upcoming projects.
-                  In the past, I’d delivered workshops on Laravel based on my recently-published book on the framework.
-                  I’ll even bring Krispy Kreme&reg; donuts!</p>
-              </div>
-            </div>
-          </article>
-        </div>
-        <p class="m-b-0 text-center">Interested in working with me?
-          <a class="btn btn-primary-outline btn-cta" href="/contact/">Get in touch</a></p>
-      </section>
+        {% endfor %}
+      </div>
     </div>
-    <section class="clients">
-      <div class="container text-center">
-        <div class="clients-inner">
-          <p>Some clients I&rsquo;ve been fortunate to work with:</p>
-          <ul class="list-inline list-clients">
-            <li data-toggle="tooltip" title="Reflections, a Ubisoft studio">
-              <a class="client-logo reflections" href="http://reflections.ubisoft.com/" rel="external">Reflections, a Ubisoft studio</a>
-            </li>
-            <li title="ScS Sofas">
-              <a class="client-logo scs" href="http://www.scs.co.uk/" rel="external">ScS Sofas</a>
-            </li>
-            <li title="AKQA">
-              <a class="client-logo akqa" href="http://www.akqa.com/" rel="external">AKQA</a>
-            </li>
-            <li title="Tighten Co">
-              <a class="client-logo tighten" href="http://tighten.co/" rel="external">Tighten Co</a>
-            </li>
-            <li title="BAMMA">
-              <a class="client-logo bamma" href="http://www.bamma.com/" rel="external">BAMMA</a>
-            </li>
-            <li title="Hedgehog Lab">
-              <a class="client-logo hedgehog-lab" href="http://hedgehoglab.com/" rel="external">Hedgehog Lab</a>
-            </li>
-            <li title="Ryan Foster Design">
-              <a class="client-logo ryan-foster-design" href="http://www.ryanfosterdesign.com/" rel="external">Ryan Foster Design</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="testimonials">
-      <div class="container">
-        <header class="intro">
-          <h1>Testimonials</h1>
-          <p>Being freelance means I&rsquo;ve been lucky to work with many awesome people and companies.
-            Below are some things that people I&rsquo;ve worked with have said.</p>
-        </header>
-        <article class="testimonial">
-          <blockquote class="blockquote">
-            <p>We hired Martin to deliver some Laravel consultancy/training for our team. Martin was excellent, and has extensive knowledge/experience of this framework. Highly recommended.</p>
-            <footer class="testimonial-author" itemscope itemtype="http://schema.org/Person">
-              <span itemprop="name">Ryan Foster</span>,
-              <span itemprop="jobTitle">Director</span>,
-              <span itemprop="worksFor">Ryan Foster Design</span>
-            </footer>
-          </blockquote>
-        </article>
-        <article class="testimonial">
-          <blockquote class="blockquote">
-            <p>I have worked with Martin on a number of projects for the ScS website and associated online collateral. At each step of the way, I have found him to be extremely knowledgeable in his field and precise at delivering to our brief. I would certainly work with him again and I would recommend him to any others looking for an expert in web development.</p>
-            <footer class="testimonial-author" itemscope itemtype="http://schema.org/Person">
-              <span itemprop="name">Steve Gilroy</span>,
-              <span itemprop="jobTitle">Interim E-commerce Manager</span>,
-              <span itemprop="worksFor">ScS</span>
-            </footer>
-          </blockquote>
-        </article>
-        <article class="testimonial">
-          <blockquote class="blockquote">
-            <p>I worked with Martin for six months on a project initially involving the refactoring of a large legacy codebase and subsequently the development of new features.</p>
-            <p>Martin quickly integrated with the team, and adapted to our development setup. He was able to quickly adapt to new tools, technologies and frameworks and worked at a rapid pace in refactoring the code, and developing new features. On particular strength is Martin&rsquo;s ability to track down and fix issues in code&mdash;reporting issues on GitHub, discussing things with open source project maintainers and trying a range of approaches to find solutions to problems in third party code.</p>
-            <p>I enjoyed working with Martin and hope to get the chance to work with him on another project in the future.</p>
-            <footer class="testimonial-author" itemscope itemtype="http://schema.org/Person">
-              <span itemprop="name">Michael Peacock</span>,
-              <abbr itemprop="jobTitle" class="initialism" title="Chief Technical Officer">CTO</abbr>,
-              <span itemprop="worksFor">Bdaily</span>
-            </footer>
-          </blockquote>
-        </article>
-      </div>
-    </section>
+    <div class="col-md-4 site-secondary" role="complementary">
+      {% include sidebar.html %}
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 ---
 layout: post
-meta_description: The results of a life drawing class I took in spring 2013.
+excerpt: The results of a life drawing class I took in spring 2013.
 title: Life Drawing
 ---
 <p class="lead">I’ve recently been taking a life drawing class.

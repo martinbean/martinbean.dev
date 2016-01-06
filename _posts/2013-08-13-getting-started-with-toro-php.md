@@ -1,6 +1,6 @@
 ---
 layout: post
-meta_description: Web & PHP Magazine ask me to write an article on getting started with ToroPHP.
+excerpt: Web & PHP Magazine ask me to write an article on getting started with ToroPHP.
 title: Getting Started with Toro PHP
 ---
 <p class="lead">For a while now I’ve been a contributor to <a href="http://toroweb.org/" rel="external">ToroPHP</a>, a small PHP router suited for developing <abbr title="Representational state transfer">REST</abbr>ful web applications and <abbr title="Application Programming Interface">API</abbr>s.</p>

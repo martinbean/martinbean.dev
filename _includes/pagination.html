@@ -1,32 +1,18 @@
-        <ul class="pager">
-{% if paginator.next_page %}
-          <li class="pager-prev">
-            <a href="{{ paginator.next_page_path }}">
-              <span aria-hidden="true">&larr;</span>
-              Older posts
-            </a>
-          </li>
-{% else %}
-          <li class="pager-prev disabled">
-            <span>
-              <span aria-hidden="true">&larr;</span>
-              Older posts
-            </span>
-          </li>
-{% endif %}
-{% if paginator.previous_page %}
-          <li class="pager-next">
-            <a href="{{ paginator.previous_page_path }}">
-              Newer posts
-              <span aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-{% else %}
-          <li class="pager-next disabled">
-            <span>
-              Newer posts
-              <span aria-hidden="true">&rarr;</span>
-            </span>
-          </li>
-{% endif %}
-        </ul>
+<ul class="pager">
+  {% if paginator.next_page %}
+    <li class="pager-prev">
+      <a href="{{ paginator.next_page_path }}">
+        <span aria-hidden="true">&larr;</span>
+        Older posts
+      </a>
+    </li>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <li class="pager-next">
+      <a href="{{ paginator.previous_page_path }}">
+        Newer posts
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </li>
+  {% endif %}
+</ul>

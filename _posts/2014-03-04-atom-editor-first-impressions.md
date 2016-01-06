@@ -1,6 +1,6 @@
 ---
 layout: post
-meta_description: My first impressions of Atom, the text editor from GitHub.
+excerpt: My first impressions of Atom, the text editor from GitHub.
 title: Atom editor first impressions
 ---
 <p class="lead">In February 2014, I managed to get my hands on an invite (thanks, <a href="https://twitter.com/isamlambert" rel="external nofollow">Sam Lambert</a>!) to try the beta of <a href="https://atom.io/" rel="external">Atom</a>, the new <abbr class="initialism" title="Integrated Development Environment">IDE</abbr> from <a href="https://github.com/" rel="external">GitHub</a>.</p>

@@ -1,6 +1,6 @@
 ---
 layout: post
-meta_description: Grunt is a JavaScript task runner. This post shows you how to get started automating your front-end tasks.
+excerpt: Grunt is a JavaScript task runner. This post shows you how to get started automating your front-end tasks.
 title: A primer to using Grunt
 ---
 <p class="lead">Grunt is a JavaScript task runner that lives within your web projects.

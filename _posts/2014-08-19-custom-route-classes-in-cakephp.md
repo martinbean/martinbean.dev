@@ -1,6 +1,6 @@
 ---
 layout: post
-meta_description: "CakePHP offers the ability to specify custom classes for handling routes in your applications."
+excerpt: "CakePHP offers the ability to specify custom classes for handling routes in your applications."
 title: Custom route classes in CakePHP
 ---
 <p class="alert alert-info">
@@ -13,7 +13,7 @@ If you’re using the framework’s default routes, then out of the box they tak
 
 **http://example.com/:controller/:action/:param1/:param2**
 
-This allows you to dispatch a route like **http://example.com/articles/view/1** to a controller action like:
+This allows you to dispatch a route such as **http://example.com/articles/view/1** to a controller action like:
 
 ```php
 <?php
@@ -28,7 +28,7 @@ class ArticlesController extends AppController {
 	}
 }
 ```
-But this format doesn’t cut it for most situations.
+But this format doesn’t cut it for a lot of situations.
 For example, most website owners like to use slugs (or “friendly” URLs).
 So the above URL would instead become something like **http://example.com/articles/view/lorem-ipsum-dolor-set-amit**.
 

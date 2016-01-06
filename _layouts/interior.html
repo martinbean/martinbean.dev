@@ -1,0 +1,24 @@
+---
+layout: master
+---
+<header class="page-header bg-primary">
+  <div class="container">
+    <h1 class="page-title">
+      {% if page.heading %}
+        {{ page.heading }}
+      {% else %}
+        {{ page.title }}
+      {% endif %}
+    </h1>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 site-primary" role="main">
+      {{ content }}
+    </div>
+    <div class="col-md-4 site-secondary" role="complementary">
+      {% include sidebar.html %}
+    </div>
+  </div>
+</div>

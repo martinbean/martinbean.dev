@@ -1,6 +1,6 @@
 ---
 layout: post
-meta_description: Software engineering is an art-form.
+excerpt: Software engineering is an art-form.
 title: Software engineering is an art-form
 ---
 <p class="lead">I’m a fan of analogies.

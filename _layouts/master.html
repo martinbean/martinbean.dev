@@ -4,118 +4,80 @@
     <meta charset="utf-8" />
     <title>{{ page.title }}</title>
     <meta name="author" content="Martin Bean" />
+    {% if page.excerpt %}
+    <meta name="description" content="{{ page.excerpt }}" />
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-{% if page.meta_description %}
-    <meta name="description" content="{{ page.meta_description }}" />
-{% endif %}
-{% if page.twitter_card %}
+    {% feed_meta %}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@martinbean" />
     <meta name="twitter:creator" content="@martinbean" />
     <meta name="twitter:title" content="{{ page.title }}" />
-{% if page.meta_description %}
-    <meta name="twitter:description" content="{{ page.meta_description }}" />
-{% endif %}
-{% endif %}
-{% feed_meta %}
-    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-    <link href="//plus.google.com/+MartinBean" rel="author" />
-    <link href="//ajax.googleapis.com" rel="dns-prefetch" />
-    <link href="//fonts.googleapis.com" rel="dns-prefetch" />
+    {% if page.excerpt %}
+    <meta name="twitter:description" content="{{ page.excerpt }}" />
+    {% endif %}
     <link href="//gravatar.com" rel="dns-prefetch" />
-    <link href="//netdna.bootstrapcdn.com" rel="dns-prefetch" />
+    <link href="//maxcdn.bootstrapcdn.com" rel="dns-prefetch" />
     <link href="//platform.twitter.com" rel="dns-prefetch" />
-    <link href="//plus.google.com/+MartinBean" rel="publisher" />
-    <link href="/favicon.ico" rel="shortcut icon" />
     <link href="/css/styles.css" rel="stylesheet" />
-    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="/js/vendor/html5shiv.min.js"></script>
     <![endif]-->
   </head>
   <body>
-{% include google_analytics.html %}
-    <header class="navbar navbar-light navbar-primary">
+    {% include analytics.html %}
+    <nav class="navbar navbar-full navbar-light">
       <a class="navbar-brand" href="/">Martin Bean</a>
-      <ul class="nav navbar-nav pull-right" role="navigation">
-        <li class="nav-item hidden-xs-down{% if page.nav_active == 'home' %} active{% endif %}">
-          <a class="nav-link" href="/">Home</a>
-        </li>
+      <ul class="nav navbar-nav pull-xs-right">
         <li class="nav-item{% if page.nav_active == 'blog' %} active{% endif %}">
           <a class="nav-link" href="/blog/">Blog</a>
         </li>
+        <li class="nav-item{% if page.nav_active == 'work' %} active{% endif %}">
+          <a class="nav-link" href="/work/">Work</a>
+        </li>
+        <li class="nav-item{% if page.nav_active == 'talks' %} active{% endif %}">
+          <a class="nav-link" href="/talks/">Talks</a>
+        </li>
         <!--
-        <li class="nav-item">
-          <a class="nav-link" href="/projects/">Work</a>
+        <li class="nav-item{% if page.nav_active == 'contact' %} active{% endif %}">
+          <a class="nav-link" href="/contact">Contact</a>
         </li>
         -->
-        <li class="nav-item{% if page.nav_active == 'contact' %} active{% endif %}">
-          <a class="nav-link" href="/contact/">Contact</a>
-        </li>
       </ul>
-    </header>
-{{ content }}
-{% include book-plug.html %}
-    <footer class="site-footer" role="contentinfo">
+    </nav>
+    {{ content }}
+    {% include book.html %}
+    <footer class="site-footer">
       <div class="container">
-        <p class="copyright">&copy; {{ site.time|date:'%Y' }} Martin Bean. All rights reserved.</p>
-        <p>I am a <strong>freelance web developer</strong> based in <strong>Newcastle upon Tyne, <abbr class="initialism" title="United Kingdom">UK</abbr></strong>.
-          My timezone is
-          <strong>
-            {% if site.time|date:'%Z' is 'BST' %}
-              <abbr class="initialism" title="British Summer Time">BST</abbr>
-            {% elsif site.time|date:'%Z' is 'GMT' %}
-              <abbr class="initialism" title="Greenwich Mean Time">GMT</abbr>
-            {% else %}
-              {{ site.time|date:'%Z' }}
-            {% endif %}
-          </strong>
-        </p>
-        <ul class="list-inline list-links">
-          <li>
+        <p class="copyright">&copy; 2016 Martin Bean. All rights reserved.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
             <a href="https://twitter.com/martinbean" rel="external" title="Martin Bean on Twitter">
-              <span class="fa fa-lg fa-twitter"></span>
+              <span class="fa fa-fw fa-twitter"></span>
               <span class="sr-only">Martin Bean on Twitter</span>
             </a>
           </li>
-          <li>
+          <li class="list-inline-item">
             <a href="https://www.linkedin.com/in/martinbean" rel="external" title="Martin Bean on LinkedIn">
-              <span class="fa fa-lg fa-linkedin"></span>
+              <span class="fa fa-fw fa-linkedin"></span>
               <span class="sr-only">Martin Bean on LinkedIn</span>
             </a>
           </li>
-          <li>
-            <a href="https://plus.google.com/+martinbean" rel="external" title="Martin Bean on Google+">
-              <span class="fa fa-lg fa-google-plus"></span>
-              <span class="sr-only">Martin Bean on Google+</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/+martinbean" rel="external" title="Martin Bean on GitHub">
-              <span class="fa fa-lg fa-github"></span>
+          <li class="list-inline-item">
+            <a href="https://www.github.com/martinbean" rel="external" title="Martin Bean on GitHub">
+              <span class="fa fa-fw fa-github"></span>
               <span class="sr-only">Martin Bean on GitHub</span>
             </a>
           </li>
-          <li>
-            <a href="http://stackoverflow.com/users/102205/martin-bean" rel="external" title="Martin Bean on Stack Overflow">
-              <span class="fa fa-lg fa-stack-overflow"></span>
+          <li class="list-inline-item">
+            <a href="https://stackoverflow.com/users/102205/martin-bean" rel="external" title="Martin Bean on Stack Overflow">
+              <span class="fa fa-fw fa-stack-overflow"></span>
               <span class="sr-only">Martin Bean on Stack Overflow</span>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:&#109;&#97;&#114;&#116;&#105;&#110;&#64;&#109;&#97;&#114;&#116;&#105;&#110;&#98;&#101;&#97;&#110;&#46;&#99;&#111;&#46;&#117;&#107;" title="Email Martin Bean">
-              <span class="fa fa-lg fa-envelope"></span>
-              <span class="sr-only">Email Martin Bean</span>
             </a>
           </li>
         </ul>
       </div>
     </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="/js/vendor/tether.min.js"></script>
-    <script src="/js/vendor/bootstrap.min.js"></script>
-    <script src="/js/application.js"></script>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
 </html>

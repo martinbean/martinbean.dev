@@ -35,5 +35,4 @@ defaults:
       nav_active: "blog"
 
 exclude:
-  - bower_components
   - node_modules

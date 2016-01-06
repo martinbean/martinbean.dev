@@ -1,6 +1,6 @@
 ---
 layout: post
-meta_description: Re-using controllers for admin and non-admin routes in Laravel
+excerpt: Re-using controllers for admin and non-admin routes in Laravel
 title: Re-using controllers for admin and non-admin routes in Laravel
 ---
 <p class="lead">I’ve been using Laravel a lot recently, and grown to like it quite a bit.

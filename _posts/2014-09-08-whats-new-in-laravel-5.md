@@ -1,6 +1,6 @@
 ---
 layout: post
-meta_description: "Laravel 5 is coming in November, and some fundamental changes are coming for a minor version release. So what are they?"
+excerpt: "Laravel 5 is coming in November, and some fundamental changes are coming for a minor version release. So what are they?"
 title: What’s new in Laravel 5
 ---
 <p class="alert alert-info">
