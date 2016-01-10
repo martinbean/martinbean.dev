@@ -1,6 +1,7 @@
 ---
+excerpt: "Improving Laravel 5’s registrar service by re-factoring from façades."
 layout: post
-title: Improving Laravel 5’s registrar service
+title: "Improving Laravel 5’s registrar service"
 ---
 <p class="alert alert-info">
   <span class="fa fa-info-circle"></span>
