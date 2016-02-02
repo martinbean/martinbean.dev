@@ -9,10 +9,6 @@ author:
 
 google_analytics_id: UA-4799998-6
 
-available_date: January 2016
-
-markdown: rdiscount
-
 paginate: 10
 paginate_path: "blog/page/:num"
 
