@@ -75,7 +75,7 @@ An implementation may look like this:
 
 namespace App\Blog\Actions;
 
-use App\Blog\Repositories\PostRepository;
+use App\Blog\Domain\Repositories\PostRepository;
 use App\Blog\Responders\ListPostsResponder;
 
 class ListPostsAction
