@@ -1,27 +1,29 @@
 ---
-heading: Blog
-layout: interior
-nav_active: "blog"
+layout: master
+nav_active: blog
 ---
-<article itemscope itemtype="http://schema.org/BlogPosting">
-  <footer class="entry-meta">
-    <time class="entry-published" datetime="{{ page.date|date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ page.date|date_to_string }}</time>
-  </footer>
-  <header class="entry-heading">
-    <h1 class="entry-title">{{ page.title }}</h1>
-  </header>
-  <div itemprop="body">
-    {{ content }}
-  </div>
-  <nav>
-    <ul class="pager">
-      <li class="pager-prev">
-        <a href="/blog">
-          <span aria-hidden="true">&larr;</span>
-          <span>Back to blog</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  {% include disqus.html %}
-</article>
+<main>
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="bg-primary page-header m-b-2 p-y-2">
+      <div class="container">
+        <h1 class="page-title" itemprop="headline">{{ page.title }}</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8" role="main">
+          <p class="article-meta">
+            <time datetime="{{ page.date|date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ page.date | date_to_string }}</time>
+          </p>
+          <div itemprop="body">
+            {{ content }}
+          </div>
+          {% include disqus.html %}
+        </div>
+        <div class="col-lg-3 offset-lg-1" role="complementary">
+          {% include sidebar.html %}
+        </div>
+      </div>
+    </div>
+  </article>
+</main>

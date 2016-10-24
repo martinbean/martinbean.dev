@@ -1,6 +1,6 @@
 ---
-layout: post
 excerpt: Grunt is a JavaScript task runner. This post shows you how to get started automating your front-end tasks.
+layout: post
 title: A primer to using Grunt
 ---
 <p class="lead">Grunt is a JavaScript task runner that lives within your web projects.
@@ -179,7 +179,7 @@ So to make life easier, we can install another Grunt plugin that will **watch** 
 To do this, we need to install the `grunt-contrib-watch` plugin:
 
     $ npm install grunt-contrib-watch --save-dev
-  
+
 Then load the plugin in your Gruntfile:
 
 ```js

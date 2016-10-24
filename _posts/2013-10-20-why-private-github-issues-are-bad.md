@@ -1,6 +1,6 @@
 ---
-layout: post
 excerpt: The community is urging GitHub to add private issues. I explain why I think they’re a bad idea.
+layout: post
 title: Why Private GitHub Issues Are Bad
 ---
 <p class="lead">There’s been a discussion recently about whether or not <a href="https://github.com/" rel="external">GitHub</a> should introduce private issues.

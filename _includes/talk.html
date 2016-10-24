@@ -1,0 +1,17 @@
+<article class="talk" itemscope itemtype="http://schema.org/EducationEvent">
+  <h1 class="talk-name" itemprop="name">{{ talk.title }}</h1>
+  <p class="talk-meta">
+    <time datetime="{{ talk.date | date: '%F' }}" itemprop="startDate">{{ talk.date | date_to_long_string }}</time>
+  </p>
+  <p class="talk-organizer">
+    {% if talk.organizer_url %}
+      <span itemprop="organizer" itemscope itemtype="http://schema.org/Organization">
+        <a href="{{ talk.organizer_url }}" itemprop="url" rel="external">
+          <span itemprop="name">{{ talk.organizer }}</span>
+        </a>
+      </span>
+    {% else %}
+      <span itemprop="organizer">{{ talk.organizer }}</span>
+    {% endif %}
+  </p>
+</article>

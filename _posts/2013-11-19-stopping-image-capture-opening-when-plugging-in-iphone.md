@@ -1,7 +1,7 @@
 ---
-title: Stopping Image Capture opening when plugging in iPhone
 excerpt: How to stop the Image Capture application opening when you plug your iPhone into your Mac.
 layout: post
+title: Stopping Image Capture opening when plugging in iPhone
 ---
 <p class="lead">This is not a particularly web development-related post, but if you’re like me and primary work on a Mac and also own an iPhone then this post may be of help.</p>
 

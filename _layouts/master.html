@@ -1,83 +1,22 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{{ page.title }}</title>
-    <meta name="author" content="Martin Bean" />
-    {% if page.excerpt %}
-    <meta name="description" content="{{ page.excerpt|strip_html }}" />
-    {% endif %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% feed_meta %}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@martinbean" />
-    <meta name="twitter:creator" content="@martinbean" />
-    <meta name="twitter:title" content="{{ page.title }}" />
-    {% if page.excerpt %}
-    <meta name="twitter:description" content="{{ page.excerpt|strip_html }}" />
-    {% endif %}
+    <title>{{ page.title }}{% if page.title_suffix == false %}{% else %} &middot; Martin Bean{% endif %}</title>
+    {% if page.excerpt %}<meta name="description" content="{{ page.excerpt }}" />{% endif %}
+    <link href="//www.google-analytics.com" rel="dns-prefetch" />
     <link href="//gravatar.com" rel="dns-prefetch" />
-    <link href="//maxcdn.bootstrapcdn.com" rel="dns-prefetch" />
+    <link href="//cdnjs.cloudflare.com" rel="dns-prefetch" />
     <link href="//platform.twitter.com" rel="dns-prefetch" />
     <link href="/css/styles.css" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
-    <!--[if lt IE 9]>
-    <script src="/js/vendor/html5shiv.min.js"></script>
-    <![endif]-->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-AIodEDkC8V/bHBkfyxzolUMw57jeQ9CauwhVW6YJ9CA=" crossorigin="anonymous" />
   </head>
   <body>
     {% include analytics.html %}
-    <nav class="navbar navbar-full navbar-light">
-      <a class="navbar-brand" href="/">Martin Bean</a>
-      <ul class="nav navbar-nav pull-xs-right">
-        <li class="nav-item{% if page.nav_active == 'blog' %} active{% endif %}">
-          <a class="nav-link" href="/blog/">Blog</a>
-        </li>
-        <li class="nav-item{% if page.nav_active == 'work' %} active{% endif %}">
-          <a class="nav-link" href="/work/">Work</a>
-        </li>
-        <li class="nav-item{% if page.nav_active == 'talks' %} active{% endif %}">
-          <a class="nav-link" href="/talks/">Talks</a>
-        </li>
-        <!--
-        <li class="nav-item{% if page.nav_active == 'contact' %} active{% endif %}">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
-        -->
-      </ul>
-    </nav>
+    {% include navbar.html %}
     {{ content }}
-    {% include book.html %}
-    <footer class="site-footer">
-      <div class="container">
-        <p class="copyright">&copy; 2016 Martin Bean. All rights reserved.</p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="https://twitter.com/martinbean" rel="external" title="Martin Bean on Twitter">
-              <span class="fa fa-fw fa-twitter"></span>
-              <span class="sr-only">Martin Bean on Twitter</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.linkedin.com/in/martinbean" rel="external" title="Martin Bean on LinkedIn">
-              <span class="fa fa-fw fa-linkedin"></span>
-              <span class="sr-only">Martin Bean on LinkedIn</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://www.github.com/martinbean" rel="external" title="Martin Bean on GitHub">
-              <span class="fa fa-fw fa-github"></span>
-              <span class="sr-only">Martin Bean on GitHub</span>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="https://stackoverflow.com/users/102205/martin-bean" rel="external" title="Martin Bean on Stack Overflow">
-              <span class="fa fa-fw fa-stack-overflow"></span>
-              <span class="sr-only">Martin Bean on Stack Overflow</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+    {% include footer.html %}
   </body>
 </html>

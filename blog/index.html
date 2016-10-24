@@ -1,17 +1,11 @@
 ---
-heading: Blog
-layout: interior
+layout: page
 nav_active: blog
-title: "Martin Bean’s Blog"
+title: Blog
 ---
 <div itemscope itemtype="http://schema.org/Blog">
   {% for post in paginator.posts %}
-    <article class="entry" itemscope itemtype="http://schema.org/BlogPosting">
-      <time class="entry-published" datetime="{{ post.date|date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ post.date|date_to_string }}</time>
-      <h1 class="entry-title" itemprop="name">
-        <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
-      </h1>
-    </article>
+    {% include article.html %}
   {% endfor %}
 </div>
 {% include pagination.html %}

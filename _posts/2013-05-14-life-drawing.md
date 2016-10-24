@@ -1,6 +1,6 @@
 ---
-layout: post
 excerpt: The results of a life drawing class I took in spring 2013.
+layout: post
 title: Life Drawing
 ---
 <p class="lead">I’ve recently been taking a life drawing class.

@@ -1,6 +1,6 @@
 ---
-layout: post
 excerpt: An overview of my last two years as freelance web developer, and tips on freelancing in general.
+layout: post
 title: Freelancing&#58; Two Years On
 ---
 <p class="lead">I was talking to a friend who is also a web developer, who earlier this year jumped into freelancing.

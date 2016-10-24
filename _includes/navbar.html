@@ -1,0 +1,19 @@
+<nav class="navbar navbar-full navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">Martin Bean</a>
+    <ul class="nav navbar-nav pull-xs-right" role="navigation">
+      <li class="nav-item nav-item-home{% if page.nav_active == 'home' %} active{% endif %}">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item{% if page.nav_active == 'blog' %} active{% endif %}">
+        <a class="nav-link" href="/blog/">Blog</a>
+      </li>
+      <li class="nav-item{% if page.nav_active == 'work' %} active{% endif %}">
+        <a class="nav-link" href="/work/">Work</a>
+      </li>
+      <li class="nav-item{% if page.nav_active == 'talks' %} active{% endif %}">
+        <a class="nav-link" href="/talks/">Talks</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -9,26 +9,22 @@ author:
 
 google_analytics_id: UA-4799998-6
 
-paginate: 10
-paginate_path: "blog/page/:num"
+paginate: 5
+paginate_path: "/blog/page/:num"
 
 gems:
   - jekyll-feed
+  - jekyll-paginate
   - jekyll-sitemap
-
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      nav_active: "home"
-
-  -
-    scope:
-      path: "blog"
-      type: "posts"
-    values:
-      nav_active: "blog"
 
 exclude:
   - node_modules
+  - CNAME
+  - gulpfile.js
+  - package.json
+  - README.md
+
+highlighter: rogue
+
+collections:
+  - talks

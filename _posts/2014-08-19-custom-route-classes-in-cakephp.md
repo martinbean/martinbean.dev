@@ -1,6 +1,6 @@
 ---
-layout: post
 excerpt: "CakePHP offers the ability to specify custom classes for handling routes in your applications."
+layout: post
 title: Custom route classes in CakePHP
 ---
 <p class="alert alert-info">

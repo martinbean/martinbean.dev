@@ -1,7 +1,7 @@
 ---
-title: Getting to grips with CakePHP’s events system
 excerpt: Demystifying the events system in CakePHP 2.
 layout: post
+title: Getting to grips with CakePHP’s events system
 ---
 <p class="alert alert-info">
   <span class="fa fa-info-circle"></span>
@@ -41,7 +41,7 @@ One approach would be just to put the code that sends the activation email in th
 {% highlight php %}
 <?php
 class User extends AppModel {
-    
+
     public function afterSave($created, $options = array()) {
         if ($created) {
             $email = new CakeEmail();
@@ -77,7 +77,7 @@ First we can remove the email sending code from our `afterSave()` callback metho
 App::uses('CakeEvent', 'Event');
 
 class User extends AppModel {
-    
+
     public function afterSave($created, $options = array()) {
         if ($created) {
             $event = new CakeEvent('Model.User.created', $this, array(
@@ -119,7 +119,7 @@ The skeleton code for the listener class then looks like this:
 App::uses('CakeEventListener', 'Event');
 
 class UserListener implements CakeEventListener {
-    
+
     public function implementedEvents() {
         // TODO
     }
@@ -157,16 +157,16 @@ So now we know what we’re getting, let’s flesh our listener method out some 
 {% highlight php %}
 public function sendActivationEmail(CakeEvent $event) {
     $this->User = ClassRegistry::init('User');
-    
+
     $activationKey = Security::generateAuthKey();
-    
+
     $this->User->id = $event->data['id'];
     $this->User->set(array(
         'active' => false,
         'activation_key' => $activationKey
     ));
     $this->User->save();
-    
+
     $email = new CakeEmail();
     $email->from(array(
         'noreply@example.com' => 'Your Site'

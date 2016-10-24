@@ -1,31 +1,16 @@
 ---
-layout: master
-title: "Martin Bean: Newcastle-based web developer"
+excerpt: "Martin Bean is a freelance web developer, consultant, author &amp; speaker based in Newcastle upon Tyne, UK."
+layout: home
+nav_active: home
+title: "Martin Bean: web developer, consultant, author &amp; speaker"
+title_suffix: false
 ---
-<div class="jumbotron jumbotron-fluid jumbotron-home bg-primary">
-  <div class="container text-xs-center">
-    <img src="//gravatar.com/avatar/6b17165d23ead15e66854ff882c59e0c?s=192" alt="Martin Bean" class="img-circle" />
-    <p class="lead">I’m Martin Bean, a web developer based in Newcastle upon Tyne, <abbr class="initialism" title="United Kingdom">UK</abbr>.<br />
-      I enjoy creating elegant solutions to complex problems.</p>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 site-primary" role="main">
-      <div itemscope itemtype="http://schema.org/Blog">
-        <h2>Latest blog posts</h2>
-        {% for post in site.posts limit:5 %}
-          <article class="entry" itemscope itemtype="http://schema.org/BlogPosting">
-            <time class="entry-published" datetime="{{ post.date|date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ post.date|date_to_string }}</time>
-            <h1 class="entry-title" itemprop="name">
-              <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
-            </h1>
-          </article>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="col-md-4 site-secondary" role="complementary">
-      {% include sidebar.html %}
-    </div>
-  </div>
+{% for post in site.posts limit: 5 %}
+  {% include article.html %}
+{% endfor %}
+<div class="m-b-2 text-xs-right">
+  <a class="btn btn-primary" href="/blog/">
+    More blog posts
+    <span aria-hidden="true" class="fa fa-fw fa-angle-double-right"></span>
+  </a>
 </div>

@@ -1,56 +1,12 @@
 ---
-excerpt: "Details on talks about web development I have given, so far at my local PHP user group."
-heading: Talks
-layout: interior
+excerpt: "Details about talks on web development I have given."
+layout: page
 nav_active: talks
 permalink: /talks/
-title: Web Development Talks by Martin Bean
+title: Talks
 ---
-<p class="lead">I’ve spoken about web development, so far at my local PHP user group.
-  Below are details of those talks.</p>
-<div class="event-list">
-  <article class="event-list-item" itemscope itemtype="http://schema.org/EducationEvent">
-    <h2 class="event-name" itemprop="name">What’s New in Laravel 5.3</h2>
-    <p class="event-organiser" itemprop="organizer" itemscope itemtype="http://schema.org/Organization">
-      <a href="http://phpne.org.uk/" itemprop="url" rel="external">
-        <span itemprop="name">PHP North East</span>
-      </a>
-    </p>
-    <p class="event-date">
-      <time datetime="2016-09-20" itemprop="startDate">20 September 2016</time>
-    </p>
-  </article>
-  <article class="event-list-item" itemscope itemtype="http://schema.org/EducationEvent">
-    <h2 class="event-name" itemprop="name">What’s New in Laravel Since 5.0</h2>
-    <p class="event-organiser" itemprop="organizer" itemscope itemtype="http://schema.org/Organization">
-      <a href="http://phpne.org.uk/" itemprop="url" rel="external">
-        <span itemprop="name">PHP North East</span>
-      </a>
-    </p>
-    <p class="event-date">
-      <time datetime="2016-01-19" itemprop="startDate">19 January 2016</time>
-    </p>
-  </article>
-  <article class="event-list-item" itemscope itemtype="http://schema.org/EducationEvent">
-    <h2 class="event-name" itemprop="name">An Introduction to Viaduct</h2>
-    <p class="event-organiser" itemprop="organizer" itemscope itemtype="http://schema.org/Organization">
-      <a href="http://phpne.org.uk/" itemprop="url" rel="external">
-        <span itemprop="name">PHP North East</span>
-      </a>
-    </p>
-    <p class="event-date">
-      <time datetime="2015-06-16" itemprop="startDate">16 June 2015</time>
-    </p>
-  </article>
-  <article class="event-list-item" itemscope itemtype="http://schema.org/EducationEvent">
-    <h2 class="event-name" itemprop="name">What’s New in Laravel 5</h2>
-    <p class="event-organiser" itemprop="organizer" itemscope itemtype="http://schema.org/Organization">
-      <a href="http://phpne.org.uk/" itemprop="url" rel="external">
-        <span itemprop="name">PHP North East</span>
-      </a>
-    </p>
-    <p class="event-date">
-      <time datetime="2014-09-16" itemprop="startDate">16 September 2014</time>
-    </p>
-  </article>
-</div>
+<p class="lead">Details about talks on web development I have given.</p>
+
+{% for talk in site.talks %}
+{% include talk.html %}
+{% endfor %}
