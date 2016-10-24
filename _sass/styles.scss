@@ -1,7 +1,8 @@
 // I’m aware I need to tidy this file up.
 
 @import "variables";
-@import 'node_modules/bootstrap/scss/bootstrap';
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "pygments";
 
 abbr[title] {
   text-decoration: none;
@@ -130,4 +131,9 @@ pre {
   &-organizer {
     margin-bottom: 0;
   }
+}
+
+pre.highlight {
+  border: 0;
+  border-radius: 0;
 }
