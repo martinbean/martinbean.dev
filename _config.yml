@@ -24,7 +24,7 @@ exclude:
   - package.json
   - README.md
 
-highlighter: rogue
+highlighter: rouge
 
 collections:
   - talks
