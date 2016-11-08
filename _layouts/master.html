@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ page.title }}{% if page.title_suffix == false %}{% else %} &middot; Martin Bean{% endif %}</title>
     {% if page.excerpt %}<meta name="description" content="{{ page.excerpt }}" />{% endif %}
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="{{ page.twitter_card_type | default: 'summary' }}" />
     <meta name="twitter:site" content="@martinbean" />
+    <meta name="twitter:creator" content="@martinbean" />
     <meta name="twitter:title" content="{{ page.title }}" />
+    {% if page.twitter_card_image %}
+    <meta name="twitter:image" content="{{ page.twitter_card_image }}" />
+    {% endif %}
     <meta name="twitter:description" content="{{ page.excerpt }}" />
     <link href="//www.google-analytics.com" rel="dns-prefetch" />
     <link href="//gravatar.com" rel="dns-prefetch" />
