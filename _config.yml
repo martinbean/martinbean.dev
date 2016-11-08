@@ -1,4 +1,4 @@
-name: "Martin Bean"
+name: Martin Bean
 permalink: /blog/:year/:month/:day/:title/
 timezone: Europe/London
 
@@ -10,7 +10,7 @@ author:
 google_analytics_id: UA-4799998-6
 
 paginate: 5
-paginate_path: "/blog/page/:num"
+paginate_path: /blog/page/:num
 
 gems:
   - jekyll-feed

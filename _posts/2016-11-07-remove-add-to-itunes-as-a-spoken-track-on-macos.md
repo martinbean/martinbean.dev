@@ -4,7 +4,7 @@ hide_cta: true
 layout: post
 title: Remove “Add to iTunes as a Spoken Track” in macOS
 twitter_card_type: summary_large_image
-twitter_card_image: /img/posts/keyboard-preferences.png
+twitter_card_image: http://martinbean.co.uk/img/posts/keyboard-preferences.png
 ---
 <p class="lead">If you’re a web developer and use macOS then I’m sure you’ve done it: hit “Add to iTunes as a Spoken Track” from the context menu instead of “Inspect” in Google Chrome.</p>
 
