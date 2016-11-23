@@ -1,30 +1,15 @@
 ---
-layout: master
+layout: page
 nav_active: blog
 ---
-<main>
-  <article itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="bg-primary page-header m-b-2 p-y-2">
-      <div class="container">
-        <h1 class="page-title" itemprop="headline">{{ page.title }}</h1>
-      </div>
-    </header>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8" role="main">
-          <p class="article-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ page.date | date_to_string }}</time>
-          </p>
-          <div itemprop="body">
-            {{ content }}
-          </div>
-          {% include hire-me.html %}
-          {% include disqus.html %}
-        </div>
-        <div class="col-lg-3 offset-lg-1" role="complementary">
-          {% include sidebar.html %}
-        </div>
-      </div>
-    </div>
-  </article>
-</main>
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="page-header">
+    <h1 class="page-title" itemprop="headline">{{ page.title }}</h1>
+  </header>
+  <p class="text-muted">
+    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" pubdate="pubdate">{{ page.date | date_to_string }}</time>
+  </p>
+  <div itemprop="articleBody">
+    {{ content }}
+  </div>
+</article>

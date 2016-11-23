@@ -10,7 +10,7 @@ abbr[title] {
 }
 
 pre {
-  background-color: $gray-lightest;
+  background-color: $pre-bg;
   margin-right: ($spacer-x * -1);
   margin-left: ($spacer-x * -1);
   padding: $spacer-x $spacer-y;
@@ -22,12 +22,19 @@ pre {
   }
 }
 
+.site-header {
+  background-color: #fff;
+  border-top: 5px solid $brand-primary;
+  border-bottom: 1px solid $hr-border-color;
+}
+
 .site-footer {
   color: $text-muted;
   font-size: $font-size-sm;
   text-align: center;
-  background-color: $gray-lightest;
+  background-color: #fff;
   padding: ($spacer-y * 3) 0;
+  border-top: 1px solid $hr-border-color;
 
   a {
     color: $body-color;
@@ -37,6 +44,10 @@ pre {
       color: $link-color;
     }
   }
+}
+
+.page-title {
+  margin-bottom: 1rem;
 }
 
 .twitter-follow-button {
@@ -68,6 +79,7 @@ pre {
   color: #fff;
   text-align: center;
   background-color: $brand-primary;
+  margin-top: -1px;
 
   h1 {
     font-size: 3rem;
@@ -102,10 +114,6 @@ pre {
   }
 }
 
-.page-title {
-  margin: 0;
-}
-
 .pagination {
   // Why the fuck does Bootstrap give paginators top margin?
   margin-top: 0;
@@ -136,4 +144,10 @@ pre {
 pre.highlight {
   border: 0;
   border-radius: 0;
+}
+
+.media-body {
+  > :last-child {
+    margin-bottom: 0;
+  }
 }

@@ -1,4 +1,5 @@
 name: Martin Bean
+email: "&#x6d;&#97;r&#x74;&#x69;n&#x40;m&#97;&#114;&#x74;&#105;&#110;&#x62;&#101;&#97;n&#46;&#99;&#x6f;.&#117;k"
 permalink: /blog/:year/:month/:day/:title/
 timezone: Europe/London
 
@@ -7,6 +8,7 @@ author:
   email: martin@martinbean.co.uk
   uri: http://martinbean.co.uk
 
+disqus_shortname: martinbean
 google_analytics_id: UA-4799998-6
 
 paginate: 5

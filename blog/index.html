@@ -3,6 +3,7 @@ layout: page
 nav_active: blog
 title: Blog
 ---
+{% include page-header.html title="Blog" %}
 <div itemscope itemtype="http://schema.org/Blog">
   {% for post in paginator.posts %}
     {% include article.html %}

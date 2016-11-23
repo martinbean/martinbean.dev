@@ -1,12 +1,14 @@
 ---
-excerpt: "Details about talks on web development I have given."
+excerpt: I speak on web development talks, particularly Laravel. Want me to talk at your event? Get in touch.
 layout: page
 nav_active: talks
-permalink: /talks/
+permalink: /talks
 title: Talks
 ---
+{% include page-header.html title="Talks" %}
+
 <p class="lead">Details about talks on web development I have given.</p>
 
 {% for talk in site.talks %}
-{% include talk.html %}
+  {% include talk.html %}
 {% endfor %}
