@@ -9,6 +9,6 @@ title: Talks
 
 <p class="lead">Details about talks on web development I have given.</p>
 
-{% for talk in site.talks %}
+{% for talk in site.talks reversed %}
   {% include talk.html %}
 {% endfor %}
