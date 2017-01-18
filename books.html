@@ -1,0 +1,14 @@
+---
+excerpt: Details about web development books I have been involved in, as either author or reviewer.
+layout: page
+nav_active: books
+permalink: /books
+title: Web Development Books by Martin Bean
+---
+{% include page-header.html title="Books" %}
+
+<p class="lead">Details about web development books I have been involved in, as either author or reviewer.</p>
+
+{% for book in site.books %}
+  {% include book.html %}
+{% endfor %}

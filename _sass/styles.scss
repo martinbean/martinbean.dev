@@ -151,3 +151,36 @@ pre.highlight {
     margin-bottom: 0;
   }
 }
+
+.book {
+  @include clearfix;
+  margin-bottom: $spacer-y * 1.5;
+  border-bottom: $hr-border-width solid $hr-border-color;
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  &-cover {
+    width: percentage(4 / 10);
+    margin-bottom: $spacer-y * 1.5;
+    margin-left: $grid-gutter-width;
+    float: right;
+
+    @include media-breakpoint-up(md) {
+      width: percentage(3 / 10);
+    }
+  }
+
+  &-name {
+    font-size: $font-size-h3;
+  }
+
+  &-description {
+    margin-bottom: $spacer-y * 1.5;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}

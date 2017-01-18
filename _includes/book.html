@@ -1,0 +1,30 @@
+<article class="book" itemscope itemtype="http://schema.org/Book">
+  <meta itemprop="isbn" content="{{ book.isbn }}" />
+  <figure class="book-cover img-thumbnail">
+    <img src="/img/books/{{ book.title | slugify }}.jpg" alt="{{ book.title }} cover" class="img-fluid" itemprop="image" />
+  </figure>
+  <h1 class="book-name" itemprop="name">{{ book.title }}</h1>
+  <dl class="book-details">
+    <dt>Author{% if book.authors.size > 1 %}s{% endif %}</dt>
+    <dd>
+      {% for author in book.authors %}
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">{{ author }}</span>
+        </span>
+      {% endfor %}
+    </dd>
+    <dt>Publisher</dt>
+    <dd itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <span itemprop="name">{{ book.publisher }}</span>
+    </dd>
+    <dt>
+      <abbr class="initialism" title="International Standard Book Number">ISBN</abbr>
+    </dt>
+    <dd itemprop="isbn">{{ book.isbn }}</dd>
+    <dt>Pages</dt>
+    <dd itemprop="numberOfPages">{{ book.number_of_pages }}</dd>
+  </dl>
+  <div class="book-description" itemprop="description">
+    {{ book.content }}
+  </div>
+</article>
