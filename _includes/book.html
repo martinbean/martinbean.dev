@@ -7,11 +7,13 @@
   <dl class="book-details">
     <dt>Author{% if book.authors.size > 1 %}s{% endif %}</dt>
     <dd>
-      {% for author in book.authors %}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name">{{ author }}</span>
-        </span>
-      {% endfor %}
+      <ul class="book-authors">
+        {% for author in book.authors %}
+          <li itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="book-author-name" itemprop="name">{{ author }}</span>
+          </li>
+        {% endfor %}
+      </ul>
     </dd>
     <dt>Publisher</dt>
     <dd itemprop="publisher" itemscope itemtype="http://schema.org/Organization">

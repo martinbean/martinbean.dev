@@ -172,6 +172,24 @@ pre.highlight {
     }
   }
 
+  &-authors {
+    @include list-unstyled;
+
+    > li {
+      display: inline;
+
+      .book-author-name::after {
+        content: ',';
+      }
+
+      &:last-child {
+        .book-author-name::after {
+          content: '';
+        }
+      }
+    }
+  }
+
   &-name {
     font-size: $font-size-h3;
   }

@@ -9,6 +9,8 @@ title: Web Development Books by Martin Bean
 
 <p class="lead">Details about web development books I have been involved in, as either author or reviewer.</p>
 
-{% for book in site.books %}
+{% assign books = site.books | sort: 'released' %}
+
+{% for book in books %}
   {% include book.html %}
 {% endfor %}
