@@ -12,4 +12,7 @@ nav_active: blog
   <div itemprop="articleBody">
     {{ content }}
   </div>
+  <div id="comments">
+    {% include disqus.html %}
+  </div>
 </article>
