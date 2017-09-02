@@ -1,6 +1,7 @@
 ---
 excerpt: A little CSS trick on how to maintain aspect ratio of block-level elements in fluid designs.
 layout: post
+nav: blog
 title: Maintaining Aspect Ratio in CSS
 ---
 <p class="lead">One common problem I face is, maintaining the aspect ratio of a block-level element.

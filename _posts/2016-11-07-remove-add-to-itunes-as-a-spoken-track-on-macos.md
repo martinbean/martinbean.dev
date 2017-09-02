@@ -1,7 +1,7 @@
 ---
 excerpt: How to remove the annoying “Add to iTunes as a Spoken Track” context menu item in macOS.
-hide_cta: true
 layout: post
+nav: blog
 title: Remove “Add to iTunes as a Spoken Track” in macOS
 twitter_card_type: summary_large_image
 twitter_card_image: http://martinbean.co.uk/img/posts/keyboard-preferences.png

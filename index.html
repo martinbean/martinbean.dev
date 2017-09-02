@@ -1,15 +1,17 @@
 ---
-excerpt: "Martin Bean is a freelance web developer, consultant, author &amp; speaker based in Newcastle upon Tyne, UK. Available from June 2017."
-layout: home
-nav_active: home
-title: "Martin Bean: freelance web developer, consultant, author &amp; speaker"
+excerpt: "Martin Bean is a web developer, author, and speaker specialising in PHP based in Newcastle upon Tyne, UK."
+home: true
+layout: page
+nav: home
+title: "Martin Bean: web developer, author &amp; speaker"
 ---
-{% for post in site.posts limit: 5 %}
-  {% include article.html %}
-{% endfor %}
-<div class="m-b-2 text-xs-right">
-  <a class="btn btn-primary" href="/blog/">
-    More blog posts
-    <span aria-hidden="true">&rsaquo;</span>
+<section id="latest-blog-posts">
+  <h1 class="section-title">Latest blog posts</h1>
+  {% for post in site.posts limit: 5 %}
+    {% include post.html %}
+  {% endfor %}
+  <a class="btn btn-outline-primary" href="/blog">
+    <span class="btn-text">More blog posts</span>
+    <span aria-hidden="true">&raquo;</span>
   </a>
-</div>
+</section>

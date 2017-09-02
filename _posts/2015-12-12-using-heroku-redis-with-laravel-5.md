@@ -1,6 +1,7 @@
 ---
 excerpt: How to set up a Laravel 5 application on Heroku using Heroku’s Redis add-on.
 layout: post
+nav: blog
 title: Using Heroku Redis with Laravel 5
 ---
 <p class="lead">Recently, I moved a Laravel 5 application to <a href="https://heroku.com/" rel="external">Heroku</a>.

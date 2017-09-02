@@ -1,6 +1,7 @@
 ---
 excerpt: Software engineering is an art-form.
 layout: post
+nav: blog
 title: Software engineering is an art-form
 ---
 <p class="lead">I’m a fan of analogies.

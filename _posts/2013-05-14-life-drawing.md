@@ -1,6 +1,7 @@
 ---
 excerpt: The results of a life drawing class I took in spring 2013.
 layout: post
+nav: blog
 title: Life Drawing
 ---
 <p class="lead">I’ve recently been taking a life drawing class.

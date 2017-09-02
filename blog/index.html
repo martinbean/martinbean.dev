@@ -1,12 +1,12 @@
 ---
 layout: page
-nav_active: blog
-title: Web Development Blog by Martin Bean
+nav: blog
+title: "Blog - Martin Bean"
 ---
-{% include page-header.html title="Blog" %}
+<h1 class="section-title">Blog</h1>
 <div itemscope itemtype="http://schema.org/Blog">
   {% for post in paginator.posts %}
-    {% include article.html %}
+    {% include post.html %}
   {% endfor %}
 </div>
 {% include pagination.html %}

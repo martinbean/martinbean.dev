@@ -1,0 +1,106 @@
+@import "custom";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+abbr[title] {
+  text-decoration: none;
+  border-bottom: 0;
+}
+
+ins {
+  text-decoration: none;
+}
+
+.headshot {
+  width: 150px;
+  max-width: 75%;
+}
+
+.site-footer {
+  color: darken($text-muted, $theme-color-interval);
+  background-color: theme-color("light");
+}
+
+figure.highlight > pre,
+pre.highlight {
+  background-color: theme-color("light");
+  margin-left: -15px;
+  padding: 15px;
+}
+
+.post-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100px;
+    border-bottom: $hr-border-width solid $hr-border-color;
+  }
+}
+
+.post-title {
+  font-size: $h3-font-size;
+}
+
+.post-meta {
+  color: $text-muted;
+  font-size: $font-size-sm;
+  margin-bottom: .5rem;
+}
+
+.post-excerpt {
+  margin-bottom: 0;
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100px;
+    border-bottom: 2px solid $hr-border-color;
+  }
+}
+
+.jumbotron-home {
+  margin-top: -1.5rem;
+
+  h1 {
+    font-weight: 300;
+
+    strong {
+      font-weight: 500;
+    }
+  }
+
+  p {
+    color: mix(#fff, $blue, 85%);
+  }
+
+  a {
+    color: mix(#fff, $blue, 92.5%);
+
+    @include hover-focus {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid mix(#fff, $blue, 50%);
+    }
+  }
+
+  .jumbotron-inner {
+    @include media-breakpoint-up(lg) {
+      padding-right: 33.33%;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 ---
 excerpt: How to install and use Homestead on a per-project basis with Laravel applications.
 layout: post
+nav: blog
 title: Using Homestead on a per-project basis
 ---
 A lot of developers use [Homestead](https://laravel.com/docs/master/homestead) when working on [Laravel](https://laravel.com/)-based projects.

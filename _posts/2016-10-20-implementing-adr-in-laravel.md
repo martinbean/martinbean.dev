@@ -1,6 +1,7 @@
 ---
 excerpt: "An example of implementing the Action–Domain–Responder pattern in Laravel."
 layout: post
+nav: blog
 title: Implementing ADR in Laravel
 ---
 The <abbr class="initialism" title="Model–View–Controller">MVC</abbr> pattern has become widespread in web development,

@@ -1,12 +1,10 @@
 ---
 layout: page
-nav_active: blog
+nav: blog
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="page-header">
-    <h1 class="page-title" itemprop="headline">{{ page.title }}</h1>
-  </header>
-  <p class="text-muted">
+  <h1 class="page-title section-title" itemprop="headline">{{ page.title }}</h1>
+  <p class="small text-muted">
     <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" pubdate="pubdate">{{ page.date | date_to_string }}</time>
   </p>
   <div itemprop="articleBody">

@@ -3,20 +3,16 @@ email: "&#x6d;&#97;r&#x74;&#x69;n&#x40;m&#97;&#114;&#x74;&#105;&#110;&#x62;&#101
 permalink: /blog/:year/:month/:day/:title/
 timezone: Europe/London
 
-author:
-  name: Martin Bean
-  email: martin@martinbean.co.uk
-  uri: http://martinbean.co.uk
-
 disqus_shortname: martinbean
 google_analytics_id: UA-4799998-6
 
-paginate: 5
+paginate: 10
 paginate_path: /blog/page/:num
 
 gems:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-redirect-from
   - jekyll-sitemap
 
 exclude:
@@ -25,10 +21,3 @@ exclude:
   - gulpfile.js
   - package.json
   - README.md
-  - yarn.lock
-
-highlighter: rouge
-
-collections:
-  - books
-  - talks

@@ -1,6 +1,7 @@
 ---
 excerpt: How to create signed S3 object URLs using version 3 of the AWS PHP SDK.
 layout: post
+nav: blog
 title: Creating a signed URL with AWS SDK v3
 ---
 <p class="lead">I used version 3 of the Amazon Web Services <abbr class="initialism" title="PHP: Hypertext Preprocessor">PHP</abbr> <abbr class="initialism" title="Software Development Kit">SDK</abbr> after being a long-time user of version 2.</p>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,17 +14,19 @@
     <meta name="twitter:image" content="{{ page.twitter_card_image }}" />
     {% endif %}
     <meta name="twitter:description" content="{{ page.excerpt }}" />
-    <link href="//www.google-analytics.com" rel="dns-prefetch" />
-    <link href="//gravatar.com" rel="dns-prefetch" />
-    <link href="//cdnjs.cloudflare.com" rel="dns-prefetch" />
-    <link href="//platform.twitter.com" rel="dns-prefetch" />
-    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="//fonts.googleapis.com" rel="preconnect" />
+    <link href="//www.google-analytics.com" rel="preconnect" />
+    <link href="//cdnjs.cloudflare.com" rel="preconnect" />
+    <link href="/css/app.css" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-AIodEDkC8V/bHBkfyxzolUMw57jeQ9CauwhVW6YJ9CA=" crossorigin="anonymous" />
   </head>
   <body>
     {% include analytics.html %}
     {% include header.html %}
     {{ content }}
-    {% include footer.html %}
+    <script src="/js/vendor/jquery.slim.min.js"></script>
+    <script src="/js/vendor/popper.min.js"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
   </body>
 </html>

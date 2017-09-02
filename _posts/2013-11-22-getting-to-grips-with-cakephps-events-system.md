@@ -1,6 +1,7 @@
 ---
 excerpt: Demystifying the events system in CakePHP 2.
 layout: post
+nav: blog
 title: Getting to grips with CakePHP’s events system
 ---
 <p class="alert alert-info">

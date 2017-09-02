@@ -1,15 +1,27 @@
 ---
-layout: master
+layout: default
 ---
-<div class="page p-y-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8" role="main">
-        {{ content }}
-      </div>
-      <div class="col-lg-3 offset-lg-1" role="complementary">
-        {% include sidebar.html %}
+{% if page.home == true %}
+  <header class="jumbotron jumbotron-fluid jumbotron-home bg-primary text-white">
+    <div class="container">
+      <div class="jumbotron-inner">
+        <h1 class="mb-3">
+          <strong>Hello!</strong>
+          I’m Martin Bean, a web developer based in Newcastle upon Tyne,
+          <abbr class="initialism" title="United Kingdom">UK</abbr>.</h1>
+        <p class="lead mb-0">I’m currently a software engineer at
+          <a href="https://www.pitchero.com/" rel="external">Pitchero</a>.</p>
       </div>
     </div>
+  </header>
+{% endif %}
+<div class="container">
+  <div class="row">
+    <main class="col-lg-8 mb-4" role="main">
+      {{ content }}
+    </main>
+    <aside class="col-lg-4 mb-4" role="complementary">
+      {% include sidebar.html %}
+    </aside>
   </div>
 </div>
