@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title | default: site.title }}</title>
+    <title>{{ page.title | default: site.title | append: page.title_suffix }}</title>
     {% if page.excerpt %}<meta name="description" content="{{ page.excerpt }}" />{% endif %}
     <meta name="twitter:card" content="{{ page.twitter_card_type | default: 'summary' }}" />
     <meta name="twitter:site" content="@martinbean" />
