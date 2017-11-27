@@ -29,7 +29,7 @@ Instead, the <abbr class="initialism" title="Software Development Kit">SDK</abbr
 could be added to the service container, so that when classes request an instance
 of `Nexmo\Client`, they get an instance with the credentials already configured.
 
-Services are added to the service contained in Laravel via [service providers][2].
+Services are added to the service container in Laravel via [service providers][2].
 Providers have two “lifetime” methods: `register()` and `boot()`. The `register()`
 method is where you should add bindings to the service container. The `boot()`
 method is for performing actions after _all_ service providers have registered
