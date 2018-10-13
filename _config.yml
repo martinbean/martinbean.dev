@@ -9,7 +9,7 @@ google_analytics_id: UA-4799998-6
 paginate: 10
 paginate_path: /blog/page/:num
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-redirect-from
@@ -21,3 +21,11 @@ exclude:
   - gulpfile.js
   - package.json
   - README.md
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      nav: blog

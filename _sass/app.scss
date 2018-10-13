@@ -39,8 +39,8 @@ pre.highlight {
     bottom: 0;
     left: 0;
     display: block;
-    width: 100px;
-    border-bottom: $hr-border-width solid $hr-border-color;
+    width: 25px;
+    border-bottom: $hr-border-width solid $primary;
   }
 }
 
@@ -69,8 +69,8 @@ pre.highlight {
     bottom: 0;
     left: 0;
     display: block;
-    width: 100px;
-    border-bottom: 2px solid $hr-border-color;
+    width: 25px;
+    border-bottom: 4px solid $primary;
   }
 }
 
@@ -78,10 +78,13 @@ pre.highlight {
   margin-top: -1.5rem;
 
   h1 {
-    font-weight: 300;
+    em {
+      font-style: normal;
+    }
 
     strong {
-      font-weight: 500;
+      color: $primary;
+      font-weight: $headings-font-weight;
     }
   }
 
@@ -104,4 +107,35 @@ pre.highlight {
       padding-right: 33.33%;
     }
   }
+}
+
+.btn {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  text-transform: uppercase;
+}
+
+.btn-outline-dark {
+  .btn-icon {
+    color: $link-color;
+  }
+}
+
+.navbar-dark {
+  .navbar-brand,
+  .navbar-nav {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+  }
+
+  .navbar-brand {
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+
+.page-item .page-link {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  border-radius: 0 !important;
 }
