@@ -139,3 +139,11 @@ pre.highlight {
   font-weight: $headings-font-weight;
   border-radius: 0 !important;
 }
+
+.container-newsletter {
+  max-width: 40rem;
+
+  .btn-primary {
+    font-size: .875rem;
+  }
+}

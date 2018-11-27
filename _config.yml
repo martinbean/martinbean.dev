@@ -29,3 +29,7 @@ defaults:
     values:
       layout: post
       nav: blog
+
+collections:
+  training_schools:
+    output: false

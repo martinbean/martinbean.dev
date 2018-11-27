@@ -1,0 +1,30 @@
+{% if page.newsletter_signup == false %}
+{% else %}
+  <aside class="bg-light" role="complementary">
+    <div class="container container-newsletter py-3 py-lg-4">
+      <header class="text-center">
+        <h1 class="h4">Newsletter</h1>
+        <p>I hate spam as much as the next person, but if you’d like exclusive tips, news and special offers on an infrequent basis, sign up below.</p>
+      </header>
+      <form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="5B5E7037DA78A748374AD499497E309EDBB3D801F3952D5444890902E9E98C4C4A40C3FA056BE0B12E2BD0E877F341DA544F0BE9ABEA3EAEBF75B4FF8BF283C4">
+        <label class="sr-only" for="fieldEmail">Email</label>
+        <div class="media">
+          <div class="media-body">
+            <input id="fieldEmail" name="cm-opyuhh-opyuhh" type="email" class="form-control rounded-0 js-cm-email-input" autocomplete="email" placeholder="you@example.com" required />
+          </div>
+          <div class="media-right pl-1">
+            <button class="btn btn-primary js-cm-submit-button" type="submit">
+              <span class="btn-text">Subscribe</span>
+            </button>
+          </div>
+        </div>
+      </form>
+      <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+    </div>
+  </aside>
+{% endif %}
+<footer class="bg-dark py-3" role="contentinfo">
+  <div class="container text-center">
+    <p class="mb-0 small text-light">&copy; {{ 'now' | date: '%Y' }} Martin Bean. All rights reserved.</p>
+  </div>
+</footer>
