@@ -1,15 +1,7 @@
-@import "custom";
+@import "variables";
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "bootstrap-overrides";
 @import "pygments/manni";
-
-abbr[title] {
-  text-decoration: none;
-  border-bottom: 0;
-}
-
-ins {
-  text-decoration: none;
-}
 
 .headshot {
   width: 150px;

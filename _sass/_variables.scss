@@ -1,3 +1,7 @@
+$enable-deprecation-messages: false;
+$enable-transitions: false;
+$enable-validation-icons: false;
+
 $ignore-warning: true;
 
 $red: #b02027;
@@ -7,11 +11,10 @@ $dark: #080202;
 
 $body-color: $dark;
 
-$font-family-monospace: "Roboto Mono", monospace;
-$font-family-sans-serif: "Droid Sans", "Roboto", sans-serif;
+$font-family-sans-serif: "IBM Plex Sans", sans-serif;
 
-$headings-font-family: "Montserrat", sans-serif;
-$headings-font-weight: 600;
+$headings-font-family: "IBM Plex Sans", sans-serif;
+$headings-font-weight: 700;
 
 $btn-border-width: 2px;
 $btn-border-radius: 0;
@@ -33,3 +36,5 @@ $pagination-active-color: #fff;
 $pagination-active-bg: $primary;
 $pagination-active-border-color: $pagination-border-color;
 $pagination-disabled-border-color: $pagination-border-color;
+
+$code-color: $red;

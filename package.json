@@ -7,8 +7,7 @@
     "gulp-notify": "^3.2.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "jquery": "^3.2.1",
-    "popper.js": "^1.12.5"
+    "jquery": "^3.4.0"
   },
   "scripts": {
     "build": "gulp build",
