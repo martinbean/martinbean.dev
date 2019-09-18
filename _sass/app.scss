@@ -3,6 +3,12 @@
 @import "bootstrap-overrides";
 @import "pygments/manni";
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .headshot {
   width: 150px;
   max-width: 75%;

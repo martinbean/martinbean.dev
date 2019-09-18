@@ -1,6 +1,6 @@
 {% if page.newsletter_signup == false %}
 {% else %}
-  <aside class="bg-light" role="complementary">
+  <aside class="bg-light flex-shrink-0" role="complementary">
     <div class="container container-newsletter py-3 py-lg-4">
       <header class="text-center">
         <h1 class="h4">Newsletter</h1>
@@ -23,7 +23,7 @@
     </div>
   </aside>
 {% endif %}
-<footer class="bg-dark py-3" role="contentinfo">
+<footer class="bg-dark py-3 flex-shrink-0" role="contentinfo">
   <div class="container text-center">
     <p class="mb-0 small text-light">&copy; {{ 'now' | date: '%Y' }} Martin Bean. All rights reserved.</p>
   </div>

@@ -26,7 +26,9 @@
   <body>
     {% include analytics.html %}
     {% include header.html %}
-    {{ content }}
+    <div class="flex-grow-1">
+      {{ content }}
+    </div>
     {% include footer.html %}
     {% include scripts.html %}
   </body>
