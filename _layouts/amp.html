@@ -22,12 +22,18 @@
           "vars": {
             "gtag_id": "{{ site.google_analytics_id }}",
             "config": {
-              "{{ site.google_analytics_id }}": {
-                "groups": "default"
-              }
+              "{{ site.google_analytics_id }}": { "groups": "default" }
             }
           },
-          "triggers": {{ page.triggers | jsonify }}
+          "triggers": {
+            "trackLeads": {
+              "selector": "#hire-me-button",
+              "on": "click",
+              "vars": {
+                "event_name": "generate_lead"
+              }
+            }
+          }
         }
       </script>
     </amp-analytics>
