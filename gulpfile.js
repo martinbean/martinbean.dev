@@ -1,27 +1,13 @@
-const gulp = require('gulp');
-const notify = require('gulp-notify');
+const { dest, src, watch } = require('gulp');
 const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const config = {
-  sass: {
-    outputStyle: 'compressed'
-  }
+
+function build() {
+  return src('_sass/app.scss')
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(dest('_includes/css/'));
+}
+
+exports.build = build;
+exports.default = function () {
+  watch('_sass/*.scss', build);
 };
-
-gulp.task('sass', () => {
-  return gulp
-      .src('./_sass/**/*.scss')
-      .pipe(sourcemaps.init())
-      .pipe(sass(config.sass).on('error', sass.logError))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest('./css'))
-      .pipe(notify('Sass compiled.'));
-});
-
-gulp.task('build', gulp.series('sass'));
-
-gulp.task('watch', () => {
-  return gulp.watch('./_sass/**/*.scss', gulp.series('sass'));
-});
-
-gulp.task('default', gulp.series('build', 'watch'));

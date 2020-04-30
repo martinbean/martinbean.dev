@@ -1,17 +1,49 @@
 ---
-layout: page
-nav: blog
-title_suffix: " - Blog - Martin Bean"
+layout: amp
 ---
-<article itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="page-title section-title" itemprop="headline">{{ page.title }}</h1>
-  <p class="small text-muted">
-    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" pubdate="pubdate">{{ page.date | date_to_string }}</time>
-  </p>
-  <div itemprop="articleBody">
-    {{ content }}
-  </div>
-  <div id="comments">
-    {% include disqus.html %}
-  </div>
-</article>
+<main id="main" role="main">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 itemprop="headline">{{ page.title }}</h1>
+    </header>
+    <footer class="small text-muted">
+      <p>
+        <span>Published</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ page.date | date_to_string }}</time>
+        <span class="sr-only">
+          <span>by</span>
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a href="{{ site.url }}" rel="author" itemprop="url">
+              <span itemprop="name">Martin Bean</span>
+            </a>
+          </span>
+        </span>
+      </p>
+    </footer>
+    <div class="post-body" itemprop="articleBody">
+      {{ content }}
+    </div>
+  </article>
+</main>
+<nav class="post-pagination">
+  {% if page.previous %}
+    <a class="post-pagination-item post-pagination-previous text-left" href="{{ page.previous.url }}">
+      <span class="d-block post-pagination-label">Previous:</span>
+      <span class="d-block font-weight-bold">{{ page.previous.title }}</span>
+    </a>
+  {% endif %}
+  {% if page.next %}
+    <a class="post-pagination-item post-pagination-next text-right" href="{{ page.next.url }}">
+      <span class="d-block post-pagination-label">Next:</span>
+      <span class="d-block font-weight-bold">{{ page.next.title }}</span>
+    </a>
+  {% endif %}
+</nav>
+{% if page.upsell %}
+  <aside class="card" role="complementary">
+    <div class="card-body text-center">
+      <p class="card-text">Did you find this article helpful or informative?<br />Think I could help with something similar?</p>
+      <a class="btn btn-block btn-primary" href="{% link contact.html %}" id="hire-me-button">Hire me</a>
+    </div>
+  </aside>
+{% endif %}

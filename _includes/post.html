@@ -1,9 +1,0 @@
-<article class="post-item" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="post-title" itemprop="headline">
-    <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
-  </h1>
-  <p class="post-meta">
-    <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished" pubdate="pubdate">{{ post.date | date_to_string }}</time>
-  </p>
-  <p class="post-excerpt" itemprop="description">{{ post.excerpt }}</p>
-</article>

@@ -17,8 +17,14 @@ And it’s not in the place you would expect it to be.
 4. Choose **Services** from the left-hand pane.
 5. Within the **Text** group you will see **Add to iTunes as a Spoken Track**. Un-check.
 
-<figure class="m-b-0">
-  <img src="/img/posts/keyboard-preferences.png" alt="Keyboard preferences screen-shot" class="img-fluid" />
+<figure>
+  <amp-img
+    src="/img/posts/keyboard-preferences.png"
+    alt="Keyboard preferences screen-shot"
+    width="1560"
+    height="1386"
+    layout="responsive"
+  />
 </figure>
 
 And that’s it!

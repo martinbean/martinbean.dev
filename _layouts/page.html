@@ -1,26 +1,6 @@
 ---
-layout: default
+layout: amp
 ---
-{% if page.home == true %}
-  <header class="jumbotron jumbotron-fluid jumbotron-home bg-dark text-white">
-    <div class="container">
-      <div class="jumbotron-inner">
-        <h1 class="mb-0">
-          <strong>Hello!</strong>
-          I’m <em>Martin Bean</em>, a <em>web developer</em> based in <em>Newcastle upon Tyne</em>,
-          <abbr class="initialism" title="United Kingdom">UK</abbr>.
-        </h1>
-      </div>
-    </div>
-  </header>
-{% endif %}
-<div class="container">
-  <div class="row">
-    <main class="col-lg-8 mb-4" role="main">
-      {{ content }}
-    </main>
-    <aside class="col-lg-4 mb-4" role="complementary">
-      {% include sidebar.html %}
-    </aside>
-  </div>
-</div>
+<main id="main" role="main">
+  {{ content }}
+</main>

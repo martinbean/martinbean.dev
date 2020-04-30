@@ -29,7 +29,11 @@ defaults:
     values:
       layout: post
       nav: blog
-
-collections:
-  training_schools:
-    output: false
+      title_suffix: ' - Blog - Martin Bean'
+      triggers:
+        button:
+          selector: '#hire-me-button'
+          on: click
+          vars:
+            event_name: generate_lead
+      upsell: true

@@ -2,7 +2,7 @@
 excerpt: Using value objects to give meaning to primitives in your projects.
 title: Using Value Objects to Give Meaning
 ---
-I’m currently re-building a video on demand platform I currently operate, [Your Fight Site VOD][1].
+I’m currently re-building a video on demand platform I operate, [Your Fight Site VOD][1].
 During the build, I’ve found myself using more and more _value objects_.
 
 If you’re unfamiliar with value objects, they’re simply objects that represent simple

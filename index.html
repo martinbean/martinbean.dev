@@ -3,15 +3,109 @@ excerpt: "Martin Bean is a web developer, author, and speaker specialising in PH
 home: true
 layout: page
 nav: home
-title: "Martin Bean: web developer, author &amp; speaker"
+title: "Martin Bean: web developer&thinsp;/&thinsp;software engineer"
 ---
-<section id="latest-blog-posts">
-  <h1 class="section-title">Latest blog posts</h1>
-  {% for post in site.posts limit: 5 %}
-    {% include post.html %}
-  {% endfor %}
-  <a class="btn btn-outline-dark" href="/blog">
-    <span class="btn-text">More blog posts</span>
-    <span class="btn-icon" aria-hidden="true">&raquo;</span>
-  </a>
+<section class="hero">
+  <figure class="mx-auto hero-image">
+    <amp-img
+      src="/img/martin-bean.jpg"
+      alt="Martin Bean"
+      width="188"
+      height="188"
+      class="d-block mx-auto rounded-circle"
+    />
+  </figure>
+  <h1 class="mb-0">
+    <span>Hello!</span>
+    <span class="font-weight-normal">I’m <em class="font-style-normal">Martin Bean</em>, a <em class="font-style-normal">full-stack web developer</em> and <em class="font-style-normal">software engineer</em> based in <em class="font-style-normal">Newcastle upon Tyne, <abbr title="United Kingdom">UK</abbr></em>.</span>
+  </h1>
 </section>
+<section class="latest-posts">
+  <h1 class="h2">Latest blog posts</h1>
+  {% for post in site.posts limit: 5 %}
+    <article class="post-list-item" itemscope itemtype="http://schema.org/BlogPosting">
+      <footer class="post-meta text-muted">
+        <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished" pubdate="pubdate">{{ post.date | date_to_string }}</time>
+      </footer>
+      <header>
+        <h1 class="post-title" itemprop="headline">
+          <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+        </h1>
+      </header>
+      <p class="post-excerpt" itemprop="description">{{ post.excerpt }}</p>
+    </article>
+  {% endfor %}
+</section>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "birthDate": "1989-02-13",
+    "birthPlace": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Darlington",
+        "addressCountry": "GB"
+      }
+    },
+    "familyName": "Bean",
+    "gender": "Male",
+    "givenName": "Martin",
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Software engineer"
+    },
+    "height": {
+      "@type": "QuantitativeValue",
+      "unitCode": "CMT",
+      "value": 181
+    },
+    "homeLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Newcastle upon Tyne",
+        "addressCountry": "GB"
+      }
+    },
+    "image": "/img/martin-bean.jpg",
+    "jobTitle": "Senior developer",
+    "sameAs": [
+      "https://github.com/martinbean",
+      "https://stackoverflow.com/users/102205/martin-bean?tab=profile",
+      "https://twitter.com/martinbean",
+      "https://www.linkedin.com/in/martinbean"
+    ],
+    "url": "https://martinbean.co.uk",
+    "worksFor": [
+      {
+        "@type": "Organization",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Princes Wharf",
+          "addressLocality": "Stockton-on-Tees",
+          "addressRegion": "County Durham",
+          "postalCode": "TS17 6QY",
+          "addressCountry": "GB"
+        },
+        "legalName": "Visualsoft Limited",
+        "name": "Visualsoft",
+        "url": "https://www.visualsoft.co.uk"
+      },
+      {
+        "@type": "Organization",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Clavering Place, Clavering House",
+          "addressLocality": "Newcastle upon Tyne",
+          "postalCode": "NE1 3NG",
+          "addressCountry": "GB"
+        },
+        "legalName": "Your Fight Site Ltd",
+        "name": "Your Fight Site",
+        "url": "https://www.yourfightsite.com"
+      }
+    ]
+  }
+</script>
