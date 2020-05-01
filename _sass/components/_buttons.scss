@@ -1,0 +1,26 @@
+.btn {
+  font-weight: 600;
+  display: inline-block;
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $primary;
+  position: relative;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($primary, 5%);
+  }
+  &:active {
+    color: rgba(#fff, .9);
+    top: .125rem;
+  }
+}

@@ -1,11 +1,1 @@
-@mixin custom-font($font-family, $woff_src, $woff2_src, $font-weight: 400, $font-style: normal) {
-  @font-face {
-    font-family: $font-family;
-    src: local($font-family),
-         url($woff2_src) format("woff2"),
-         url($woff_src) format("woff");
-    font-weight: $font-weight;
-    font-style: $font-style;
-    font-display: swap;
-  }
-}
+@import "mixins/font-face";

@@ -1,0 +1,32 @@
+ol, ul {
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 0;
+  padding-left: 1.5rem;
+
+  li + li {
+    margin-top: .25rem;
+  }
+
+  ol, ul {
+    margin-bottom: 0;
+  }
+}
+
+.list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-inline {
+  @extend .list-unstyled;
+
+  .list-inline-item {
+    display: inline-block;
+
+    & + .list-inline-item {
+      margin-top: 0;
+      margin-left: .5rem;
+    }
+  }
+}

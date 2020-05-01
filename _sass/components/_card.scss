@@ -1,0 +1,14 @@
+.card {
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+
+  .card-body {
+    color: mix(#000, $body-bg, 70%);
+    background-color: darken($body-bg, 3%);
+    padding: 1.25rem 1.5rem;
+
+    .card-text {
+      margin-bottom: .75rem;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.badge {
+  color: #fff;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-shadow: 0 .0625rem .0625rem rgba(#000, .1);
+  background-color: $body-color;
+  position: relative;
+  top: -0.0625rem;
+  margin-left: .25rem;
+  padding: .375rem .75rem .3125rem;
+  border-radius: 10rem;
+}
+
+.badge-secondary {
+  background-color: #ff9c00;
+  box-shadow: 0 .125rem .5rem rgba(#000, .1);
+}

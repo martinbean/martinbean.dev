@@ -1,0 +1,27 @@
+code,
+pre {
+  font-family: "Maison Neue Mono", monospace;
+  font-size: 87.5%;
+  word-wrap: break-word;
+}
+
+code {
+  color: #ff4d93;
+}
+
+pre {
+  color: #fff;
+  background-color: $pre-bg;
+  text-shadow: 0 .0625rem .0625rem #000;
+  margin-right: -1rem;
+  margin-bottom: 1.25rem;
+  margin-left: -1rem;
+  padding: 1rem;
+  padding-left: 1.25rem;
+  overflow: auto;
+
+  code {
+    color: #fff;
+    -webkit-font-smoothing: auto;
+  }
+}

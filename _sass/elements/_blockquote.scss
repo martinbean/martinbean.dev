@@ -1,0 +1,18 @@
+blockquote {
+  color: mix(#000, $body-bg, 80%);
+  font-size: 1.125rem;
+  position: relative;
+  margin: 0 0 1.25rem;
+  padding: 0 0 0 2.5rem;
+
+  &::before {
+    content: "\201C";
+    color: mix($body-color, $body-bg, 20%);
+    font-size: 5rem;
+    font-style: italic;
+    line-height: 1;
+    position: absolute;
+    top: -1rem;
+    left: -0.5rem;
+  }
+}

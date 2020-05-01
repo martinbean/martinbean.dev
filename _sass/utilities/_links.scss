@@ -1,0 +1,16 @@
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: $link-color;
+  }
+
+  code {
+    color: inherit;
+  }
+}
