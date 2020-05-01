@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html amp lang="en-GB">
   <head>
-    <link href="https://cdn.ampproject.org" rel="preconnect" />
-    <link href="https://www.googletagmanager.com" rel="dns-prefetch" />
+    <link href="https://cdn.ampproject.org" rel="preconnect" crossorigin="anonymous" />
+    <link href="https://www.googletagmanager.com" rel="dns-prefetch" crossorigin="anonymous" />
     <meta charset="utf-8" />
+    <title>{{ page.title | append: page.title_suffix }}</title>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
-    <title>{{ page.title | append: page.title_suffix }}</title>
+    {% if page.excerpt %}
+    <meta name="description" content="{{ page.excerpt | strip_html }}" />
+    {% endif %}
+    <meta name="twitter:card" content="{{ page.twitter_card_type | default: 'summary' }}" />
+    <meta name="twitter:site" content="@martinbean" />
+    <meta name="twitter:creator" content="@martinbean" />
+    <meta name="twitter:title" content="{{ page.title }}" />
+    <meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
+    {% if page.twitter_card_image %}
+    <meta name="twitter:image" content="{{ page.twitter_card_image }}" />
+    {% endif %}
     <link href="{{ page.url | prepend: site.url }}" rel="canonical" />
     {% if page.rss_link %}
     <link href="{% link feed.xml %}" rel="alternate" type="application/rss+xml" />
