@@ -9,6 +9,7 @@
   padding-bottom: 1rem;
   z-index: 100;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   a {
     color: #fff;
