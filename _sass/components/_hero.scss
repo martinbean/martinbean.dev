@@ -5,6 +5,9 @@
 
   h1 {
     font-size: 2rem;
+    max-width: 32.5rem;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   @media (min-width: 576px) {

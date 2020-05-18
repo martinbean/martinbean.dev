@@ -1,5 +1,11 @@
 figure {
   display: block;
-  margin: 0 -1rem 1.25rem;
+  margin: 0;
   padding: 0;
+}
+
+.post-body {
+  figure {
+    margin: 0 -1rem 1.25rem;
+  }
 }

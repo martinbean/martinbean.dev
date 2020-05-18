@@ -2,10 +2,19 @@ abbr[title] {
   text-decoration: none;
   border-bottom: 0;
   cursor: help;
+
+  &.initialism {
+    font-size: 93.75%;
+  }
 }
 
 p {
   margin: 0;
   margin-bottom: 1rem;
   padding: 0;
+}
+
+// https://en.wikipedia.org/wiki/Tombstone_(typography)
+.has-tombstone > p:last-child::after {
+  content: "\00A0\220E";
 }
