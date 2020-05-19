@@ -1,23 +1,14 @@
 ---
+excerpt: ""
 layout: amp
 nav: blog
 rss_link: true
 title: "Blog - Martin Bean"
 ---
 <h1 class="section-title">Blog</h1>
-<div itemscope itemtype="http://schema.org/Blog">
+<div itemprop="mainEntity" itemscope itemtype="http://schema.org/Blog">
   {% for post in paginator.posts %}
-    <article class="post-list-item" itemscope itemtype="http://schema.org/BlogPosting">
-      <footer class="post-meta text-muted">
-        <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished" pubdate="pubdate">{{ post.date | date_to_string }}</time>
-      </footer>
-      <header>
-        <h1 class="post-title" itemprop="headline">
-          <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
-        </h1>
-      </header>
-      <p class="post-excerpt" itemprop="description">{{ post.excerpt }}</p>
-    </article>
+    {% include post.html %}
   {% endfor %}
 </div>
 {% include pagination.html %}

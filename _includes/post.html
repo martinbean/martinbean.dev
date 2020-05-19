@@ -1,0 +1,24 @@
+<article class="post-list-item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  <footer class="post-meta text-muted">
+    <dl>
+      <dt class="sr-only">Published</dt>
+      <dd>
+        <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date_to_string }}</time>
+      </dd>
+      <dt class="sr-only">Author</dt>
+      <dd class="sr-only" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a href="{{ site.url }}" itemprop="url" rel="author">
+          <span itemprop="name">Martin Bean</span>
+        </a>
+      </dd>
+    </dl>
+  </footer>
+  <header>
+    <h1 class="post-title">
+      <a href="{{ post.url }}" itemprop="url" rel="bookmark">
+        <span itemprop="headline">{{ post.title }}</span>
+      </a>
+    </h1>
+  </header>
+  <p class="post-excerpt" itemprop="description">{{ post.excerpt }}</p>
+</article>

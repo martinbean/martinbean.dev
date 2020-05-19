@@ -14,6 +14,12 @@ p {
   padding: 0;
 }
 
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
 // https://en.wikipedia.org/wiki/Tombstone_(typography)
 .has-tombstone > p:last-child::after {
   content: "\00A0\220E";

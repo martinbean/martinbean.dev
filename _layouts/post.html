@@ -2,18 +2,18 @@
 layout: amp
 ---
 <main id="main" role="main">
-  <article itemscope itemtype="http://schema.org/BlogPosting">
+  <article itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 itemprop="headline">{{ page.title }}</h1>
     </header>
     <footer class="small text-muted">
       <p>
         <span>Published</span>
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" pubdate>{{ page.date | date_to_string }}</time>
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date_to_string }}</time>
         <span class="sr-only">
           <span>by</span>
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <a href="{{ site.url }}" rel="author" itemprop="url">
+            <a href="{{ site.url }}" itemprop="url" rel="author">
               <span itemprop="name">Martin Bean</span>
             </a>
           </span>
