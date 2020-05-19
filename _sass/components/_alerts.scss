@@ -1,0 +1,11 @@
+.alert {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: .25rem;
+
+  &-info {
+    color: color-yiq($blue, $body-color, $white);
+    background-color: $blue;
+  }
+}

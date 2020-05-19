@@ -1,11 +1,8 @@
 ---
-excerpt: "An example of implementing the Action–Domain–Responder pattern in Laravel."
-layout: post
-nav: blog
+excerpt: An example of implementing the Action–Domain–Responder pattern in Laravel.
 title: Implementing ADR in Laravel
 ---
-The <abbr class="initialism" title="Model–View–Controller">MVC</abbr> pattern has become widespread in web development,
-but it was never meant to be used in websites and web applications.
+The <abbr class="initialism" title="Model–View–Controller">MVC</abbr> pattern has become widespread in web development, but it was never meant to be used in websites and web applications.
 
 Different people have different interpretations of MVC, and what code should go where.
 To this end, a newer pattern meant to build upon MVC but more suited to web applications is **ADR: Action–Domain–Responder**.
@@ -20,7 +17,6 @@ Giving the similarities, it’s also easy to convert an existing MVC application
 So let’s look at implementing the ADR pattern in [Laravel](https://laravel.com/).
 
 ## Directory Structure
-
 As we’re not going to be using MVC, we can be a bit more creative in where to store things.
 A good idea is to keep action, domain and responder classes together.
 So if we had a blog, a simple directory structure may look like this:
@@ -45,7 +41,6 @@ This makes searching for classes relating to a certain part of your _business do
 “I need to find a blog action class. Well that will be in **app/Blog/Actions**.”
 
 ## Routing
-
 Since we’re no longer using controller classes, we need to modify the router slightly.
 Laravel’s opinionated in that it expects routes to be in the **app/Http/Controller** directory.
 
@@ -72,8 +67,6 @@ Listing blog posts is one such action, so we name the class as such.
 An implementation may look like this:
 
 ```php
-<?php
-
 namespace App\Blog\Actions;
 
 use App\Blog\Domain\Repositories\PostRepository;
@@ -104,7 +97,6 @@ In the `__invoke()` method (where the action does its work), we simply retrieve 
 So let’s create that class!
 
 ## Responders
-
 A responder class takes some domain data and displays it.
 It’s only just is to make a response, so it’s akin to a presenter in that instance.
 
@@ -112,8 +104,6 @@ In the action class, I used a `send()` method as it seems more “Laravel-y”.
 So a `ListPostsResponder` class may look like this:
 
 ```php
-<?php
-
 namespace App\Blog\Responders;
 
 use Illuminate\Database\Eloquent\Collection;
@@ -145,7 +135,6 @@ public function send(Collection $posts)
 ```
 
 ## Conclusion
-
 Following the ADR pattern will see an increase in the number of classes in your application
 (as each action has its own class, rather than being a method in a controller class),
 but it does mean each class has a single responsibility and is named after the task it’s performing.

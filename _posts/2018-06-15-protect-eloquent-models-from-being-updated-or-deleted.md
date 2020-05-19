@@ -1,20 +1,17 @@
 ---
 excerpt: How to protect Eloquent models in your Laravel application from being updated or deleted.
-layout: post
 title: Protect Eloquent Models From Being Updated or Deleted
 ---
-Some times in applications, you define models that are meant to be created only
-and never updated nor deleted. Things like audit logs, balance adjustments, etc.
+Some times in applications, you define models that are meant to be created only and never updated nor deleted.
+Things like audit logs, balance adjustments, etc.
 Once created, these models should exist and never be altered or discarded.
 
-I faced this scenario in an application recently. I had `Charge` and `Refund`
-models. Similar to Stripe’s entities of the same name, a charge could be
-created but should then never be updated and deleted (and the same with
-refunds). The reason being: these models are related to _accounting_. We
-should never change accounting entries once written!
+I faced this scenario in an application recently. I had `Charge` and `Refund` models.
+Similar to Stripe’s entities of the same name, a charge could be created but should then never be updated and deleted (and the same with refunds).
+The reason being: these models are related to _accounting_.
+We should never change accounting entries once written!
 
-To stop instances of these models from being updated or deleted, I created some
-traits that I can apply to my models. They look like this:
+To stop instances of these models from being updated or deleted, I created some traits that I can apply to my models. They look like this:
 
 ```php
 namespace App\Concerns;
@@ -59,9 +56,8 @@ class Charge extends Model
 }
 ```
 
-…they override Eloquent’s methods for deleting and updating. Overriding the
-`performUpdate()` method means it’ll also catch any attempts to update instances
-using `save()` calls.
+…they override Eloquent’s methods for deleting and updating.
+Overriding the `performUpdate()` method means it’ll also catch any attempts to update instances using `save()` calls.
 
 It’s also possible to combine these traits in a third trait:
 
@@ -88,5 +84,4 @@ class Charge extends Model
 }
 ```
 
-Let me know what you think of this approach or if you have your own, alternative
-solution to this problem.
+Let me know what you think of this approach or if you have your own, alternative solution to this problem.

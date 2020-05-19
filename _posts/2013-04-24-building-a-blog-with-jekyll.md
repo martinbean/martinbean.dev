@@ -1,8 +1,8 @@
 ---
-excerpt: I’ve re-build my website using Jekyll and share with you how.
-layout: post
-nav: blog
+excerpt: I’ve re-built my website using Jekyll, and share with you how.
 title: Building a blog with Jekyll
+twitter_card_image: /img/posts/2013-04-24-building-a-blog-with-jekyll/hello-world.png
+twitter_card_type: summary_large_image
 ---
 <p class="lead">Although I initially started writing this site in <a href="http://php.net/" rel="external">PHP</a>, I grew bored and realised that what may seem simple and elegant in your head never ends that way when you started coding.
   Therefore, I stopped and re-analysed what I wanted to do: I wanted to display posts in a template that I had created; no clutter that comes with an off-the-shelf platform like <a href="http://wordpress.org/" rel="external nofollow">WordPress</a>.</p>
@@ -121,7 +121,7 @@ This will generate your site, and allow you to view it at [localhost:4000](http:
 
 <figure>
   <amp-img
-    src="/assets/img/posts/2013-04-24-building-a-blog-with-jekyll/hello-world.png"
+    src="/img/posts/2013-04-24-building-a-blog-with-jekyll/hello-world.png"
     alt="Hello, world"
     width="880"
     height="680"

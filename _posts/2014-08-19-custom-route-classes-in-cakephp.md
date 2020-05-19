@@ -1,54 +1,56 @@
 ---
 excerpt: "CakePHP offers the ability to specify custom classes for handling routes in your applications."
-layout: post
-nav: blog
 title: Custom route classes in CakePHP
 ---
-<p class="alert alert-info">
-  <span class="fa fa-info-circle"></span>
-  This article was written about CakePHP 2.x and has been untested with CakePHP 3.x
-</p>
+{% include alert.html type='info' message='This article was written about CakePHP 2.x and has been untested with CakePHP 3.x' %}
 
 Sometimes in CakePHP applications, you want custom routes.
 If you’re using the framework’s default routes, then out of the box they take the format of:
 
-**http://example.com/:controller/:action/:param1/:param2**
+```
+http://example.com/:controller/:action/:param1/:param2
+```
 
 This allows you to dispatch a route such as **http://example.com/articles/view/1** to a controller action like:
 
 ```php
-<?php
-class ArticlesController extends AppController {
+class ArticlesController extends AppController
+{
+    public public view($id = null)
+    {
+        if (!$id || !$this->Article->exists($id)) {
+            throw new NotFoundException('Invalid article');
+        }
 
-	public public view($id = null) {
-		if (!$id || !$this->Article->exists($id)) {
-			throw new NotFoundException('Invalid article');
-		}
-		$article = $this->Article->findById($id);
-		$this->set(compact('article'));
-	}
+        $article = $this->Article->findById($id);
+
+        $this->set(compact('article'));
+    }
 }
 ```
 But this format doesn’t cut it for a lot of situations.
 For example, most website owners like to use slugs (or “friendly” URLs).
-So the above URL would instead become something like **http://example.com/articles/view/lorem-ipsum-dolor-set-amit**.
+So the above URL would instead become something like **http://example.com/articles/view/lorem-ipsum-dolor-set-amit**
 
 Assuming you have a column named `slug` in your `articles` table, you could modify your `view()` action as follows:
 
 ```php
-<?php
-class ArticlesController extends AppController {
+class ArticlesController extends AppController
+{
+    public public view($slug = null)
+    {
+        if (!$id) {
+            throw new NotFoundException('Invalid article');
+        }
 
-	public public view($slug = null) {
-		if (!$id) {
-			throw new NotFoundException('Invalid article');
-		}
-		$article = $this->Article->findBySlug($id);
-		if (!$article) {
-			throw new NotFoundException('Invalid article');
-		}
-		$this->set(compact('article'));
-	}
+        $article = $this->Article->findBySlug($id);
+
+        if (!$article) {
+            throw new NotFoundException('Invalid article');
+        }
+
+        $this->set(compact('article'));
+    }
 }
 ```
 But this isn’t efficient. It’s coupling the parameters our controller action is expecting to the URL parameters.
@@ -62,39 +64,43 @@ To handle this, I created a class called `DateSlugRoute`, and saved it to **app/
 The class looks like this:
 
 ```php
-<?php
-
 App::uses('Article', 'Model');
 App::uses('CakeRoute', 'Routing/Route');
 App::uses('ClassRegistry', 'Utility');
 
-class DateSlugRoute extends CakeRoute {
+class DateSlugRoute extends CakeRoute
+{
+    public function parse($url)
+    {
+        $params = parent::parse($url);
+        if (empty($params)) {
+            return false;
+        }
 
-	public function parse($url) {
-		$params = parent::parse($url);
-		if (empty($params)) {
-			return false;
-		}
-		$this->Article = ClassRegistry::init('Article');
-		$year = $params['year'];
-		$month = $params['month'];
-		$day = $params['day'];
-		$date = sprintf('%04d-%02d-%02d', $year, $month, $day);
-		$article = $this->Article->find('first', array(
-			'conditions' => array(
-				'DATE(Article.created)' => $date,
-				'Article.slug' => $params['slug'],
-				'Article.published' => true,
-			),
-			'fields' => array('Article.id'),
-			'recursive' => -1,
-		));
-		if ($article) {
-			$params['pass'] = array($article['Article']['id']);
-			return $params;
-		}
-		return false;
-	}
+        $this->Article = ClassRegistry::init('Article');
+
+        $year = $params['year'];
+        $month = $params['month'];
+        $day = $params['day'];
+        $date = sprintf('%04d-%02d-%02d', $year, $month, $day);
+
+        $article = $this->Article->find('first', array(
+            'conditions' => array(
+                'DATE(Article.created)' => $date,
+                'Article.slug' => $params['slug'],
+                'Article.published' => true,
+            ),
+            'fields' => array('Article.id'),
+            'recursive' => -1,
+        ));
+
+        if ($article) {
+            $params['pass'] = array($article['Article']['id']);
+            return $params;
+        }
+
+        return false;
+    }
 }
 ```
 

@@ -1,4 +1,5 @@
 ---
+excerpt: About ToroPHP, a tiny PHP library for templating.
 title: ToroPHP and Templates
 ---
 Like most website developers, I’m constantly hunting for that perfect PHP framework that’s going to make my life easier, instead of making my life easier for myself.

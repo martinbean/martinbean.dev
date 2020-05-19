@@ -15,3 +15,10 @@
     margin-bottom: 0;
   }
 }
+
+.post-body {
+  > .alert {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+  }
+}

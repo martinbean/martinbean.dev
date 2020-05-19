@@ -4,7 +4,7 @@
 
   .card-body {
     color: mix(#000, $body-bg, 70%);
-    background-color: darken($body-bg, 3%);
+    background-color: rgba($orange, .1);
     padding: 1.25rem 1.5rem;
 
     .card-text {

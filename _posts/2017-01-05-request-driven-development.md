@@ -1,7 +1,5 @@
 ---
 excerpt: Using form requests to authorise, validate, and perform actions in a Laravel application.
-layout: post
-nav: blog
 title: Request-Driven Development
 ---
 After a well-earned rest over the holiday period, I opened my MacBook to write

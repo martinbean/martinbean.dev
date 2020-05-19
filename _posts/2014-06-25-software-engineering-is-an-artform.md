@@ -1,12 +1,8 @@
 ---
 excerpt: Software engineering is an art-form.
-layout: post
-nav: blog
 title: Software engineering is an art-form
 ---
-<p class="lead">I’m a fan of analogies.
-  I love them.
-  One I’ve come to hold dearly is that, software engineering is an art-form.</p>
+I’m a fan of analogies. I love them. One I’ve come to hold dearly is that, software engineering is an art-form.
 
 This statement can be misinterpreted, however.
 Where software engineering is an art-form, software engineers are indeed the artists.

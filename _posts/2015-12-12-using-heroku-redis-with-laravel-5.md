@@ -1,11 +1,9 @@
 ---
 excerpt: How to set up a Laravel 5 application on Heroku using Heroku’s Redis add-on.
-layout: post
-nav: blog
 title: Using Heroku Redis with Laravel 5
 ---
-<p class="lead">Recently, I moved a Laravel 5 application to <a href="https://heroku.com/" rel="external">Heroku</a>.
-  The application’s previous host allowed access to the file system but Heroku uses an “ephemeral” file system, making it unsuitable for storing sessions, cache data etc.</p>
+Recently, I moved a Laravel 5 application to [Heroku][1].
+The application’s previous host allowed access to the file system but Heroku uses an “ephemeral” file system, making it unsuitable for storing sessions, cache data etc.
 
 With no access to the file system, it means an alternative solution is needed to store this data on Heroku.
 In the end, I settled on Redis using Heroku’s own add-on.
@@ -46,8 +44,6 @@ Back in **database.php**, at the top of the file, before the config array is ope
 Add the following _after_ the opening `<?php` tag, and _before_ the array is opened:
 
 ```php
-<?php
-
 if (getenv('REDIS_URL')) {
     $url = parse_url(getenv('REDIS_URL'));
 

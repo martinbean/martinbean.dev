@@ -1,7 +1,5 @@
 ---
 excerpt: How to install and use Homestead on a per-project basis with Laravel applications.
-layout: post
-nav: blog
 title: Using Homestead on a per-project basis
 ---
 A lot of developers use [Homestead](https://laravel.com/docs/master/homestead) when working on [Laravel](https://laravel.com/)-based projects.
@@ -9,7 +7,6 @@ But the default approach seems to be to install Homestead globally and use it as
 This approach has some drawbacks, which can be mitigated by using Homestead on a per-project basis instead.
 
 ## What is Homestead?
-
 Homestead is a pre-built virtual machine image, tailored for Laravel projects.
 When launched via [VirtualBox](http://www.virtualbox.org/), it acts a computer within your computer, meaning any software installed to isn’t installed on your actual computer.
 These virtual machines can then be booted, shut down, and also quickly created and destroyed.
@@ -18,7 +15,6 @@ Homestead is an [Ubuntu](http://www.ubuntu.com/)-based virtual machine and comes
 [nginx](https://www.nginx.com/), [PHP](http://www.php.net/), [MySQL](https://www.mysql.com/), [PostgreSQL](https://www.postgresql.org/), [Node.js](https://nodejs.org/) and much, much more.
 
 ## Why install on a per-project basis?
-
 Homestead is configured using a [YAML](http://yaml.org/) file.
 This YAML file tells Homestead where to find sites’ files on your computer, databases to create, and so on.
 When you start a new project, you have to add an entry to this file and re-provision.
@@ -28,7 +24,6 @@ That means you can quickly clone a project if it’s under source control (and i
 This is especially helpful when setting an existing project up on a new computer, as you don’t need to manually set up Homestead and configure it for your project.
 
 ## Getting started
-
 If you have a new or existing Laravel project, adding Homestead to it is the same.
 Homestead is installed as a [Composer](https://getcomposer.org/) dependency, so run the following command:
 
@@ -84,11 +79,10 @@ Like a globally-installed Homestead instance it will read your **Homestead.yaml*
 Once provisioned, you can access it via SSH:
 
 ```
-vagrant ssh
+$ vagrant ssh
 ```
 
 ## Working with Homestead on other machines
-
 Once you’ve committed the newly-created files to your source control repository, you can use it on other machines.
 However, it does come with the caveat that the new machine must have Composer installed.
 
@@ -118,7 +112,6 @@ $ composer install
 With the Homestead package installed, you can now run `vagrant up`.
 
 ## Conclusion
-
 It would be nice if Homestead could be used on a per project basis like this _without_ having to install Composer and dependencies first.
 The ideal approach would be to clone a project and be able to run `vagrant up` immediately.
 However, bundling your Homestead configuration with the project it’s serving makes life a little easier.

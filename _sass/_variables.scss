@@ -1,8 +1,13 @@
-$primary: #00cca6;
+$black: #000;
+$white: #fff;
+$blue: #00ace9;
+$magenta: #ff4d93;
+$orange: #fa9f4d;
+$green: #00bdac;
+
+$primary: $green;
 
 $link-color: $primary;
-
-$magenta: #ff4d93;
 
 $body-bg: #fff7ed;
 $body-color: mix(#000, $body-bg, 75%);
