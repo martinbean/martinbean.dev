@@ -18,10 +18,12 @@ pre {
   margin-left: -1rem;
   padding: 1rem;
   padding-left: 1.25rem;
-  overflow: auto;
+  overflow-x: auto;
 
   code {
     color: #fff;
+    white-space: pre;
+    word-wrap: normal;
     -webkit-font-smoothing: auto;
   }
 }
