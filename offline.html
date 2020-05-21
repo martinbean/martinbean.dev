@@ -1,0 +1,35 @@
+---
+layout: amp
+robots: noindex
+title: You are offline
+---
+<h1>You are offline</h1>
+<p><strong>It looks like you’re offline!</strong> I’ve cached some of the pages in my site so you can continue to view them whilst you’re waiting for an Internet connection again.</p>
+<ul class="font-weight-bold">
+  <li><a href="{% link index.html %}">Home</a></li>
+  <li><a href="{% link about.html %}">About</a></li>
+  <li><a href="{% link contact.html %}">Contact</a></li>
+</ul>
+<p>I’ve also made a selection of my blog posts available for reading offline:</p>
+<ul class="offline-post-list">
+  <li>
+    <time class="text-muted" datetime="2019-11-07">7 Nov 2019</time>
+    <a class="font-weight-bold" href="{% post_url 2019-11-07-using-value-objects-in-projects %}">Using Value Objects to Give Meaning</a>
+  </li>
+  <li>
+    <time class="text-muted" datetime="2019-03-21">21 Mar 2019</time>
+    <a class="font-weight-bold" href="{% post_url 2019-03-21-command-bus-in-laravel %}">Command Bus in Laravel</a>
+  </li>
+  <li>
+    <time class="text-muted" datetime="2018-11-06">6 Nov 2018</time>
+    <a class="font-weight-bold" href="{% post_url 2018-11-06-authentication-and-authorisation-tips-for-laravel-applications %}">Authentication and authorisation tips for Laravel applications</a>
+  </li>
+  <li>
+    <time class="text-muted" datetime="2014-07-04">4 Jul 2014</time>
+    <a class="font-weight-bold" href="{% post_url 2014-07-04-re-using-controllers-for-admin-and-non-admin-routes-in-laravel %}">Re-using controllers for admin and non-admin routes in Laravel</a>
+  </li>
+  <li>
+    <time class="text-muted" datetime="2013-11-22">22 Nov 2013</time>
+    <a class="font-weight-bold" href="{% post_url 2013-11-22-getting-to-grips-with-cakephps-events-system %}">Getting to grips with CakePHP’s events system</a>
+  </li>
+</ul>

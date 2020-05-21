@@ -2,6 +2,9 @@
 <html amp lang="en-GB">
   <head>
     <meta charset="utf-8" />
+    {% if page.robots %}
+    <meta name="robots" content="{{ page.robots }}" />
+    {% endif %}
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" />
     {% if page.excerpt %}
     <meta name="description" content="{{ page.excerpt | strip_html }}" />
@@ -21,6 +24,7 @@
     <link href="https://www.googletagmanager.com" rel="preconnect" crossorigin="anonymous" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
     <style amp-custom>{% include css/app.css %}</style>
     <title>{{ page.title | append: page.title_suffix }}</title>
     <link href="/img/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -74,5 +78,6 @@
     <div class="container pb-3">
       {{ content }}
     </div>
+    <amp-install-serviceworker src="/sw.js" data-iframe-src="{{ site.url }}" layout="nodisplay"></amp-install-serviceworker>
   </body>
 </html>
