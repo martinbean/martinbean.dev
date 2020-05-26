@@ -16,6 +16,7 @@ plugins:
   - jekyll-sitemap
 
 exclude:
+  - _redirects
   - node_modules
   - CNAME
   - Gemfile
