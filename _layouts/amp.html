@@ -82,6 +82,6 @@
     <div class="container pb-3">
       {{ content }}
     </div>
-    <amp-install-serviceworker src="{% link /sw.js %}" data-iframe-src="{{ site.url }}" layout="nodisplay"></amp-install-serviceworker>
+    <amp-install-serviceworker src="{{ '/sw.js' | prepend: site.baseurl | prepend: site.url }}" data-iframe-src="{{ site.url }}" layout="nodisplay"></amp-install-serviceworker>
   </body>
 </html>
