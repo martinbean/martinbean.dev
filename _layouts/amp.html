@@ -18,8 +18,8 @@
     <meta name="twitter:image" content="{{ page.twitter_card_image }}" />
     {% endif %}
     <meta name="theme-color" content="#0d0d0d" />
-    <link href="/fonts/maison-neue/book.woff2" rel="preload" as="font" crossorigin="anonymous" />
-    <link href="/fonts/maison-neue-extended/book.woff2" rel="preload" as="font" crossorigin="anonymous" />
+    <link href="{% link /fonts/maison-neue/book.woff2 %}" rel="preload" as="font" crossorigin="anonymous" />
+    <link href="{% link /fonts/maison-neue-extended/book.woff2 %}" rel="preload" as="font" crossorigin="anonymous" />
     <link href="https://cdn.ampproject.org/v0.js" rel="preload" as="script" />
     <link href="https://www.googletagmanager.com" rel="preconnect" crossorigin="anonymous" />
     <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -29,7 +29,7 @@
     <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
     <style amp-custom>{% include css/app.css %}</style>
     <title>{{ page.title | append: page.title_suffix }}</title>
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="{% link /img/apple-touch-icon.png %}" rel="apple-touch-icon" />
     <link href="{{ page.url | prepend: site.url }}" rel="canonical" />
     {% if page.rss_link %}
     <link href="{% link feed.xml %}" rel="alternate" type="application/rss+xml" />
@@ -82,6 +82,6 @@
     <div class="container pb-3">
       {{ content }}
     </div>
-    <amp-install-serviceworker src="{{ '/sw.js' | prepend: site.baseurl | prepend: site.url }}" data-iframe-src="{{ site.url }}" layout="nodisplay"></amp-install-serviceworker>
+    <amp-install-serviceworker src="{% link /sw.js %}" data-iframe-src="{{ site.url }}" layout="nodisplay"></amp-install-serviceworker>
   </body>
 </html>
