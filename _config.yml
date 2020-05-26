@@ -16,13 +16,15 @@ plugins:
   - jekyll-sitemap
 
 exclude:
-  - _redirects
   - node_modules
   - CNAME
   - Gemfile
   - gulpfile.js
   - package.json
   - README.md
+
+include:
+  - _redirects
 
 defaults:
   - scope:
