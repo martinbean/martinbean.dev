@@ -1,9 +1,9 @@
-https://martinbean.co.uk/* https://martinbean.dev/:splat 301!
-https://www.martinbean.co.uk/* https://martinbean.dev/:splat 301!
+https://martinbean.co.uk/*      https://martinbean.dev/:splat 301!
+https://www.martinbean.co.uk/*  https://martinbean.dev/:splat 301!
 
-/books /about 301
-/talks /about 301
-/work /about 301
+/books                          https://martinbean.dev/about/ 301
+/talks                          https://martinbean.dev/about/ 301
+/work                           https://martinbean.dev/about/ 301
 
-/books.html /about 301
-/talks.html /about 301
+/books.html                     https://martinbean.dev/about/ 301
+/talks.html                     https://martinbean.dev/about/ 301
