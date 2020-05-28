@@ -11,6 +11,7 @@ self.addEventListener('install', function (e) {
         '/blog/2018/11/06/authentication-and-authorisation-tips-for-laravel-applications/',
         '/blog/2019/03/21/command-bus-in-laravel/',
         '/blog/2019/11/07/using-value-objects-in-projects/',
+        '/blog/2020/05/28/introducing-amp-server-side-rendering-netlify-plugin/',
         '/contact/',
         '/favicon.ico',
         '/fonts/maison-neue-extended/book.woff2',

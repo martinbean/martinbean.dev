@@ -24,3 +24,11 @@ dd {
 .has-tombstone > p:last-child::after {
   content: "\00A0\220E";
 }
+
+del {
+  text-decoration: line-through;
+}
+
+ins {
+  text-decoration: none;
+}
