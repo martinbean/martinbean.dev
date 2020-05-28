@@ -8,5 +8,8 @@
   "scripts": {
     "build": "gulp build",
     "dev": "gulp"
+  },
+  "dependencies": {
+    "netlify-plugin-amp-server-side-rendering": "^1.0.2"
   }
 }
