@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="{{ page.title }}" />
     <meta name="twitter:description" content="{{ page.excerpt | strip_html }}" />
     {% if page.twitter_card_image %}
-    <meta name="twitter:image" content="{{ page.twitter_card_image }}" />
+    <meta name="twitter:image" content="{{ page.twitter_card_image | prepend: site.baseurl | prepend: site.url }}" />
     {% endif %}
     <meta name="theme-color" content="#0d0d0d" />
     <link href="{% link /fonts/maison-neue/book.woff2 %}" rel="preload" as="font" crossorigin="anonymous" />
