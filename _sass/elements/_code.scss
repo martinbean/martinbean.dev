@@ -18,7 +18,9 @@ pre {
   margin-left: -1rem;
   padding: 1rem;
   padding-left: 1.25rem;
+  border-radius: .1875rem;
   overflow-x: auto;
+  box-shadow: 0 .125rem .3125rem rgba($black, .1);
 
   code {
     color: #fff;

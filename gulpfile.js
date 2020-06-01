@@ -9,5 +9,5 @@ function build() {
 
 exports.build = build;
 exports.default = function () {
-  watch('_sass/*.scss', build);
+  watch('_sass/**/*.scss', build);
 };
