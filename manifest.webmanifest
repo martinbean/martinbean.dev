@@ -1,0 +1,25 @@
+{
+  "background_color": "#fff7ed",
+  "description": "Home of Martin Bean, a software engineer and full-stack web developer.",
+  "dir": "ltr",
+  "display": "minimal-ui",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "/img/icon-192.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "/img/icon-512.png",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en-GB",
+  "name": "Martin Bean",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "Martin Bean",
+  "start_url": "/?utm_source=pwa",
+  "theme_color": "#00bdac"
+}

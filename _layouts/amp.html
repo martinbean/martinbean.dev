@@ -17,11 +17,14 @@
     {% if page.twitter_card_image %}
     <meta name="twitter:image" content="{{ page.twitter_card_image | prepend: site.baseurl | prepend: site.url }}" />
     {% endif %}
-    <meta name="theme-color" content="#0d0d0d" />
+    <meta name="theme-color" content="#00bdac" />
+    <link href="https://cdn.ampproject.org/v0.js" rel="preload" as="script" />
+    <link href="{% link /manifest.webmanifest %}" rel="manifest" />
     <link href="{% link /fonts/maison-neue/book.woff2 %}" rel="preload" as="font" crossorigin="anonymous" />
     <link href="{% link /fonts/maison-neue-extended/book.woff2 %}" rel="preload" as="font" crossorigin="anonymous" />
-    <link href="https://cdn.ampproject.org/v0.js" rel="preload" as="script" />
+    {% if jekyll.environment == "production" %}
     <link href="https://www.googletagmanager.com" rel="preconnect" crossorigin="anonymous" />
+    {% endif %}
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     {% if jekyll.environment == "production" %}
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
