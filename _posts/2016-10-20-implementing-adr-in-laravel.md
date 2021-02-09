@@ -4,22 +4,16 @@ title: Implementing ADR in Laravel
 ---
 The <abbr class="initialism" title="Model–View–Controller">MVC</abbr> pattern has become widespread in web development, but it was never meant to be used in websites and web applications.
 
-Different people have different interpretations of MVC, and what code should go where.
-To this end, a newer pattern meant to build upon MVC but more suited to web applications is **ADR: Action–Domain–Responder**.
+Different people have different interpretations of MVC, and what code should go where. To this end, a newer pattern meant to build upon MVC but more suited to web applications is **ADR: Action–Domain–Responder**.
 
-ADR groups the functionality of applications into _actions_.
-Actions execute any business logic for that action, before passing the result to a _responder_ where it is presented as a view.
+ADR groups the functionality of applications into _actions_. Actions execute any business logic for that action, before passing the result to a _responder_ where it is presented as a view.
 
-As first glance, it seems similar to MVC but it provides a more clear separation of concerns, and there’s no argument as to what goes where. For example, in an MVC application, where do you set response headers?
-The controller? A view class? There’s no definitive answer whereas with ADR there is: the responder class.
-Giving the similarities, it’s also easy to convert an existing MVC application to follow the ADR pattern.
+As first glance, it seems similar to MVC but it provides a more clear separation of concerns, and there’s no argument as to what goes where. For example, in an MVC application, where do you set response headers? The controller? A view class? There’s no definitive answer whereas with ADR there is: the responder class. Giving the similarities, it’s also easy to convert an existing MVC application to follow the ADR pattern.
 
 So let’s look at implementing the ADR pattern in [Laravel](https://laravel.com/).
 
 ## Directory Structure
-As we’re not going to be using MVC, we can be a bit more creative in where to store things.
-A good idea is to keep action, domain and responder classes together.
-So if we had a blog, a simple directory structure may look like this:
+As we’re not going to be using MVC, we can be a bit more creative in where to store things. A good idea is to keep action, domain and responder classes together. So if we had a blog, a simple directory structure may look like this:
 
 * /app
   * /Blog
@@ -37,34 +31,21 @@ So if we had a blog, a simple directory structure may look like this:
       * ListPostsResponder.php
       * ViewPostResponder.php
 
-This makes searching for classes relating to a certain part of your _business domain_ easier.
-“I need to find a blog action class. Well that will be in **app/Blog/Actions**.”
+This makes searching for classes relating to a certain part of your _business domain_ easier. “I need to find a blog action class. Well that will be in **app/Blog/Actions**.”
 
 ## Routing
-Since we’re no longer using controller classes, we need to modify the router slightly.
-Laravel’s opinionated in that it expects routes to be in the **app/Http/Controller** directory.
-
-Open your **app/Providers/RouteServiceProvider.php** file.
-You’ll see the `mapWebRoutes()` method defines a route group.
-Remove the `namespace` key.
-This will allow us to specify the full namespace of our action classes since they are grouped by _domain_.
-
-Using the example classes above, our **routes/web.php** may look like this now:
+From version 8.x, Laravel no longer requires your controller classes to reside in a particular directory, so you can use the new class-based syntax to reference your actions as controllers:
 
 ```php
-// Blog Posts
-Route::get('/blog', 'App\Blog\Actions\ListPostsAction');
-Route::get('/blog/{article}', 'App\Blog\Actions\ViewPostAction');
+use App\Blog\Actions\ListPostsAction;
+use App\Blog\Actions\ViewPostAction;
+
+Route::get('/blog', ListPostsAction::class);
+Route::get('/blog/{article}', ViewPostAction::class);
 ```
 
-In Laravel 5.3, if you do not specify an action then Laravel will attempt to call the `__invoke()` magic method on the named class.
-This is perfect for our single-use action classes!
-
 ## Actions
-
-As above, actions are just classes that represent one specific action in your application.
-Listing blog posts is one such action, so we name the class as such.
-An implementation may look like this:
+As above, actions are just classes that represent one specific action in your application. Listing blog posts is one such action, so we name the class accordingly. An implementation may look like this:
 
 ```php
 namespace App\Blog\Actions;
@@ -74,34 +55,29 @@ use App\Blog\Responders\ListPostsResponder;
 
 class ListPostsAction
 {
-    public function __construct(PostRepository $posts, ListPostsResponder $response)
+    public function __construct(PostRepository $posts, ListPostsResponder $responder)
     {
         $this->posts = $posts;
-        $this->response = $response;
+        $this->responder = $responder;
     }
 
     public function __invoke()
     {
         $posts = $this->posts->all();
 
-        return $this->response->send($posts);
+        return $this->responder->send($posts);
     }
 }
 ```
 
-As the action class would be resolved by Laravel’s service container during routing,
-we can type-hint the dependencies our actions needs in its constructor.
-So we inject the post repository and the action’s corresponding responder class.
+As the action class would be resolved by Laravel’s service container during routing, we can type-hint the dependencies our actions needs in its constructor. So we inject the post repository and the action’s corresponding responder class.
 
-In the `__invoke()` method (where the action does its work), we simply retrieve a collection of posts and then pass it to our (not-yet-existing) responder class.
-So let’s create that class!
+In the `__invoke()` method (where the action does its work), we simply retrieve a collection of posts and then pass it to our (not-yet-existing) responder class. Let’s create that class!
 
 ## Responders
-A responder class takes some domain data and displays it.
-It’s only just is to make a response, so it’s akin to a presenter in that instance.
+A responder class takes some domain data and displays it. It’s only just is to make a response, so it’s akin to a presenter in that instance.
 
-In the action class, I used a `send()` method as it seems more “Laravel-y”.
-So a `ListPostsResponder` class may look like this:
+In the action class, I used a `send()` method as it seems more “Laravel-y”. So a `ListPostsResponder` class may look like this:
 
 ```php
 namespace App\Blog\Responders;
@@ -117,32 +93,42 @@ class ListPostsResponder
 }
 ```
 
-Nothing too advanced here.
-The responder is given a collection of `Post` models and renders it in a view.
+Nothing too advanced here. The responder is given a collection of `Post` models and renders it in a view.
 
-Responders are where you perform _any_ logic related to returning a response.
-So it’s here you’d set any headers (i.e. cache expiration) or render a JSON representation if requested by the user:
+Responders are where you perform _any_ logic related to returning a response. So it’s here you’d set any headers (i.e. cache expiration) or render a JSON representation if requested by the user:
 
 ```php
-public function send(Collection $posts)
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+
+class ListPostsResponder
 {
-    if (request()->wantsJson()) {
-        return response()->json(compact('posts'));
-    } else {
+    protected $request;
+
+    public function __construct(Request $request)
+    {
+        $this->request = $request;
+    }
+
+    public function send(Collection $posts)
+    {
+        if ($this->request->expectsJson()) {
+            return new JsonResponse([
+                'data' => $posts,
+            ]);
+        }
+
         return view('post.index', compact('posts'));
     }
 }
 ```
 
+The `ListPostsResponder` and its dependencies will be resolved by the service container, so we can inject the current `Request` instance.
+
 ## Conclusion
-Following the ADR pattern will see an increase in the number of classes in your application
-(as each action has its own class, rather than being a method in a controller class),
-but it does mean each class has a single responsibility and is named after the task it’s performing.
+Following the ADR pattern will see an increase in the number of classes in your application (as each action has its own class, rather than being a method in a controller class), but it does mean each class has a single responsibility and is named after the task it’s performing.
 
-In a large codebase, it can become difficult to track down which controller an action is in,
-especially if working with many people who have different ideas of how things should be structured.
+In a large codebase, it can become difficult to track down which controller an action is in, especially if working with many people who have different ideas of how things should be structured.
 
-What are your thoughts on ADR?
-Are you already using it?
-Think it may be appropriate for your next project?
-I would love to hear your thoughts in the comments.
+What are your thoughts on ADR? Are you already using it? Think it may be appropriate for your next project? I would love to hear your thoughts in the comments.
