@@ -1,4 +1,4 @@
-var CACHE_NAME = 'martinbean-cache-v1';
+var CACHE_NAME = 'martinbean-cache-v2';
 var urlsToCache = [
   '/',
   '/about/',
@@ -46,9 +46,9 @@ self.addEventListener('fetch', function (event) {
           caches.open(CACHE_NAME).then(function (cache) {
             cache.put(event.request, responseToCache);
           });
-
-          return response;
         }
+
+        return response;
       });
     }).catch(function () {
       return caches.match('/offline/');
