@@ -4,7 +4,7 @@
       <li class="page-item page-item-previous">
         <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
           <span aria-hidden="true">&larr;</span>
-          <span>Older posts</span>
+          <span>Newer posts</span>
         </a>
       </li>
     {% endif %}
@@ -12,7 +12,7 @@
     {% if paginator.next_page %}
       <li class="page-item page-item-next">
         <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
-          <span>Newer posts</span>
+          <span>Older posts</span>
           <span aria-hidden="true">&rarr;</span>
         </a>
       </li>

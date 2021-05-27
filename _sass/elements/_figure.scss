@@ -7,5 +7,16 @@ figure {
 .post-body {
   figure {
     margin: 0 -1rem 1.25rem;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  figcaption {
+    font-size: .875rem;
+    display: block;
+    margin-left: 1rem;
   }
 }

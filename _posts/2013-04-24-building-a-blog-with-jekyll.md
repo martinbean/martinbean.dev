@@ -120,13 +120,7 @@ $ jekyll serve
 This will generate your site, and allow you to view it at [localhost:4000](http://localhost:4000). Run the command and give it a shot.
 
 <figure>
-  <amp-img
-    src="/img/posts/2013-04-24-building-a-blog-with-jekyll/hello-world.png"
-    alt="Hello, world"
-    width="880"
-    height="680"
-    layout="responsive"
-  />
+  <img src="/img/posts/2013-04-23-building-a-blog-with-jekyll/hello-world.png" alt="Hello, world">
 </figure>
 
 ## Going forward

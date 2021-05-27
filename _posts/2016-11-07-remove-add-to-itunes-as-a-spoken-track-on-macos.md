@@ -16,13 +16,7 @@ And it’s not in the place you would expect it to be.
 5. Within the **Text** group you will see **Add to iTunes as a Spoken Track**. Un-check.
 
 <figure>
-  <amp-img
-    src="/img/posts/2016-11-07-remove-add-to-itunes-as-a-spoken-track-on-macos/keyboard-preferences.png"
-    alt="Keyboard preferences screenshot"
-    width="1560"
-    height="1386"
-    layout="responsive"
-  />
+  <img src="/img/posts/2016-11-07-remove-add-to-itunes-as-a-spoken-track-on-macos/keyboard-preferences.png" alt="Keyboard preferences screenshot">
 </figure>
 
 And that’s it!

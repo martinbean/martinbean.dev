@@ -8,26 +8,7 @@ twitter_card_image: /img/martin-bean@2x.jpg
 <h1>About</h1>
 <section class="has-tombstone" id="about">
   <figure class="float-right mt-n2 mb-3 ml-4">
-    <amp-img
-      src="/img/martin-bean@1x.webp"
-      srcset="/img/martin-bean@1x.webp 1x, /img/martin-bean@2x.webp 2x"
-      alt="Martin Bean"
-      width="160"
-      height="160"
-      layout="fixed"
-      class="d-block mx-auto rounded-circle"
-    >
-      <amp-img
-        src="/img/martin-bean@1x.jpg"
-        srcset="/img/martin-bean@1x.jpg 1x, /img/martin-bean@2x.jpg 2x"
-        alt="Martin Bean"
-        width="160"
-        height="160"
-        layout="fixed"
-        class="d-block mx-auto rounded-circle"
-      >
-      </amp-img>
-    </amp-img>
+    {% include headshot.html %}
   </figure>
   <p><strong>Hi!</strong> I’m Martin Bean, a software engineer based in Newcastle upon Tyne, <abbr class="initialism" title="United Kingdom">UK</abbr>. I enjoy creating elegant solutions to complex problems.</p>
   <p>I have over a decade of experience, including nearly five years running my own freelance consultancy. I currently work for <a class="font-weight-bold" href="https://www.pfizer.com/" rel="external noopener" target="_blank">Pfizer</a> as a senior developer in their platform team.</p>
@@ -43,7 +24,7 @@ twitter_card_image: /img/martin-bean@2x.jpg
     I can offer advice and insights on projects, perform code reviews and audits of existing codebases, and development of smaller projects.
     If you think there’s something I may be able to help you with, then feel free to <a class="font-weight-bold" href="{% link contact.html %}">contact me</a> and we can look to arrange something.</p>
 </section>
-<hr />
+<hr>
 <section id="books">
   <h1 class="h2">Books</h1>
   <p>I have been lucky enough to be involved in the creation of the following books:</p>
@@ -167,7 +148,7 @@ twitter_card_image: /img/martin-bean@2x.jpg
     </li>
   </ul>
 </section>
-<hr />
+<hr>
 <section id="talks">
   <h1 class="h2">Talks</h1>
   <p>I’ve also given a handful of talks at my local PHP user group, <a href="http://phpne.org.uk/" rel="external noopener" target="_blank">PHP North East</a>.</p>

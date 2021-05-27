@@ -4,7 +4,7 @@ const sass = require('gulp-sass');
 function build() {
   return src('_sass/app.scss')
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(dest('_includes/css/'));
+    .pipe(dest('css/'));
 }
 
 exports.build = build;

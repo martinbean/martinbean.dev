@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    {% include analytics.html %}
+    <meta charset="utf-8">
+    {% if page.robots %}
+    <meta name="robots" content="{{ page.robots }}">
+    {% endif %}
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    {% if page.excerpt %}
+    <meta name="description" content="{{ page.excerpt | strip_html }}">
+    {% endif %}
+    <meta name="twitter:card" content="{{ page.twitter_card_type | default: 'summary' }}">
+    <meta name="twitter:site" content="@martinbean">
+    <meta name="twitter:creator" content="@martinbean">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:description" content="{{ page.excerpt | strip_html }}">
+    {% if page.twitter_card_image %}
+    <meta name="twitter:image" content="{{ page.twitter_card_image | prepend: site.baseurl | prepend: site.url }}">
+    {% endif %}
+    <meta name="theme-color" content="#00bdac">
+    <link href="{% link /manifest.webmanifest %}" rel="manifest">
+    {% include fonts.html %}
+    <link href="{% link /css/app.css %}" rel="stylesheet">
+    <title>{{ page.title | append: page.title_suffix }}</title>
+    <link href="{% link /img/apple-touch-icon.png %}" rel="apple-touch-icon">
+    <link href="{{ page.url | prepend: site.url }}" rel="canonical">
+    {% if page.rss_link %}
+    <link href="{% link feed.xml %}" rel="alternate" type="application/rss+xml">
+    {% endif %}
+  </head>
+  <body>
+    <a class="sr-only sr-only-focusable skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" role="banner">
+      <div class="container-fluid">
+        <div class="site-header-content">
+          <div class="mr-auto">
+            <a class="site-title" href="/">Martin Bean</a>
+          </div>
+          <div class="ml-auto">
+            <nav role="navigation">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a class="{% if page.nav == 'about' %}active{% endif %}" href="{% link about.html %}">About</a></li>
+                <li class="list-inline-item"><a class="{% if page.nav == 'blog' %}active{% endif %}" href="{% link blog/index.html %}">Blog</a></li>
+                <li class="list-inline-item"><a class="{% if page.nav == 'contact' %}active{% endif %}" href="{% link contact.html %}">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container pb-3">
+      {{ content }}
+    </div>
+    <script src="{% link /js/app.js %}"></script>
+  </body>
+</html>
