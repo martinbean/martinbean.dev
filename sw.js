@@ -1,4 +1,4 @@
-var CACHE_NAME = 'martinbean-cache-v2';
+var CACHE_NAME = 'martinbean-cache-v3';
 var urlsToCache = [
   '/',
   '/about/',
@@ -23,6 +23,20 @@ var urlsToCache = [
   '/js/app.js',
   '/offline/'
 ];
+
+self.addEventListener('activate', function (event) {
+  event.waitUntil(
+    caches.keys().then(function (cacheNames) {
+      return Promise.all(
+        cacheNames.map(function (cacheName) {
+          if (cacheName !== CACHE_NAME) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
