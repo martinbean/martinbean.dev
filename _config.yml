@@ -17,7 +17,7 @@ plugins:
 
 exclude:
   - node_modules
-  - CNAME
+  - vendor
   - Gemfile
   - gulpfile.js
   - package.json

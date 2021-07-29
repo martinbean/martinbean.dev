@@ -1,5 +1,5 @@
-bower_components/
-node_modules/
-_drafts/
-_site/
+/node_modules
+/vendor
+/_drafts
+/_site
 .jekyll-metadata
