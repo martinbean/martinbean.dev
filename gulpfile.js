@@ -1,13 +1,17 @@
-const { dest, src, watch } = require('gulp');
-const sass = require('gulp-sass');
+'use strict';
+
+var gulp = require('gulp');
+var sass = require('gulp-sass')(require('sass'));
 
 function build() {
-  return src('_sass/app.scss')
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(dest('css/'));
+  return gulp
+    .src('_sass/app.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('css'));
 }
 
 exports.build = build;
+
 exports.default = function () {
-  watch('_sass/**/*.scss', build);
+  return gulp.watch('sass/**/*.scss', ['build']);
 };
