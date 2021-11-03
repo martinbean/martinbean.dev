@@ -1,5 +1,6 @@
-/node_modules
-/vendor
 /_drafts
 /_site
+/.bundle
+/node_modules
+/vendor
 .jekyll-metadata
