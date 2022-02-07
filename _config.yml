@@ -16,6 +16,7 @@ plugins:
   - jekyll-sitemap
 
 exclude:
+  - bin
   - node_modules
   - vendor
   - Gemfile
