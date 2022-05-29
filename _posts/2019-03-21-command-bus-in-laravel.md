@@ -22,7 +22,7 @@ The command class for processing a podcast doesn’t look too different to the j
 ```php
 namespace App\Commands;
 
-use App\Podcast;
+use App\Models\Podcast;
 use Illuminate\Foundation\Bus\Dispatchable;
 
 class ProcessPodcast
@@ -49,8 +49,8 @@ The handler class would be where you would implement your `handle()` method:
 ```php
 namespace App\Handlers\Commands;
 
-use App\AudioProcessor;
 use App\Commands\ProcessPodcast;
+use App\Services\AudioProcessor;
 
 class ProcessPodcastHandler
 {
@@ -68,7 +68,10 @@ class ProcessPodcastHandler
 }
 ```
 
-Note: some things _do_ change when implementing your handler in a separate class like this, though.
+{% capture note_content %}
+Some things _do_ change when implementing your handler in a separate class like this, though.
+{% endcapture %}
+{% include note.html content=note_content %}
 
 The `handle()` method now receives a single argument: the command class.
 In the Laravel documentation for queues, it says:
@@ -142,7 +145,7 @@ namespace App\Http\Controllers;
 
 use App\Commands\ProcessPodcast;
 use App\Http\Requests\StorePodcastRequest;
-use App\Podcast;
+use App\Models\Podcast;
 
 class PodcastController extends Controller
 {
@@ -231,7 +234,7 @@ class LogCommand
     {
         $result = $next($command);
 
-        $this->logger->debug('Command handled: '.get_class($command));
+        $this->logger->debug('Command handled: ' . get_class($command));
 
         return $result;
     }
@@ -239,5 +242,5 @@ class LogCommand
 ```
 
 [1]: https://laravel.com/docs/5.0/bus
-[2]: https://laravel.com/docs/master/queues
+[2]: https://laravel.com/docs/queues
 [3]: https://en.wikipedia.org/wiki/Data_transfer_object

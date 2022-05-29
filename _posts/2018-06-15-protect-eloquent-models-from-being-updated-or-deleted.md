@@ -9,12 +9,12 @@ Once created, these models should exist and never be altered or discarded.
 I faced this scenario in an application recently. I had `Charge` and `Refund` models.
 Similar to Stripe’s entities of the same name, a charge could be created but should then never be updated and deleted (and the same with refunds).
 The reason being: these models are related to _accounting_.
-We should never change accounting entries once written!
+We should _never_ change financial data after the fact.
 
 To stop instances of these models from being updated or deleted, I created some traits that I can apply to my models. They look like this:
 
 ```php
-namespace App\Concerns;
+namespace App\Models\Concerns;
 
 trait CannotBeDeleted
 {
@@ -25,7 +25,7 @@ trait CannotBeDeleted
 }
 ```
 ```php
-namespace App\Concerns;
+namespace App\Models\Concerns;
 
 trait CannotBeUpdated
 {
@@ -44,15 +44,16 @@ trait CannotBeUpdated
 When applied to an Eloquent model…
 
 ```php
-namespace App\Billing;
+namespace App\Models;
 
-use App\Concerns\CannotBeDeleted;
-use App\Concerns\CannotBeUpdated;
+use App\Models\Concerns\CannotBeDeleted;
+use App\Models\Concerns\CannotBeUpdated;
 use Illuminate\Database\Eloquent\Model;
 
 class Charge extends Model
 {
-    use CannotBeDeleted, CannotBeUpdated;
+    use CannotBeDeleted;
+    use CannotBeUpdated;
 }
 ```
 
@@ -62,20 +63,21 @@ Overriding the `performUpdate()` method means it’ll also catch any attempts to
 It’s also possible to combine these traits in a third trait:
 
 ```php
-namespace App\Concerns;
+namespace App\Models\Concerns;
 
 trait CanOnlyBeCreated
 {
-    use CannotBeDeleted, CannotBeUpdated;
+    use CannotBeDeleted;
+    use CannotBeUpdated;
 }
 ```
 
 This means you only need to apply a single trait to your model if you wish:
 
 ```php
-namespace App\Billing;
+namespace App\Models;
 
-use App\Concerns\CanOnlyBeCreated;
+use App\Models\Concerns\CanOnlyBeCreated;
 use Illuminate\Database\Eloquent\Model;
 
 class Charge extends Model

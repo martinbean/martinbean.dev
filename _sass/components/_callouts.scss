@@ -1,0 +1,23 @@
+.note,
+.tip {
+  color: $white;
+  background-color: $primary;
+  margin-bottom: 1rem;
+  margin-right: -1rem;
+  margin-left: -1rem;
+  padding: 1rem;
+  padding-bottom: .9375rem;
+  box-shadow: 0 .125rem .3125rem rgba($black, .1);
+
+  code {
+    color: inherit;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 45rem) {
+    border-radius: .1875rem;
+  }
+}

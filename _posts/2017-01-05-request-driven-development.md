@@ -14,8 +14,8 @@ and corresponding controller method for the action. I then created a form
 request class (as it is a Laravel application) and type-hinted it in my
 controller method. I was about to put the toggling logic in the controller
 method when I thought: if the form request class can handle authorization and
-validation, why too could it not perform the actual _logic_ of what the request
-is intending?
+validation, why could it not also perform the actual _logic_ of what the request
+intends?
 
 The form request class represents a _specific_ action in the application. So it
 is not completely unreasonable that if it represents that action, the form
@@ -44,7 +44,7 @@ class PublishArticleRequest extends FormRequest
 }
 ```
 
-The controller just type-hints this class and calls the `handle()` method on the
+The controller just type-hints this class and calls the `handle` method on the
 form request class:
 
 ```php
@@ -56,12 +56,11 @@ class ArticleController extends Controller
 
         return redirect()
             ->route('article.show', $article)
-            ->withSuccess(trans('messages.article_published'));
+            ->with('success', __('Article published'));
     }
 }
 ```
 
-It’s an unusual approach to handling logic in applications. It’s also flawed in
-that the logic can only be performed in a HTTP context; it can’t be re-used in
+It’s admittedly an unusual approach to handling logic in applications. It’s also flawed in that the logic can only be performed in a HTTP context; it can’t be re-used in
 say, a command-line context. But for side projects (as was the case here) or for
 quick-and-dirty prototypes, this approach could be useful.

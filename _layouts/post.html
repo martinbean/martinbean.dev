@@ -20,6 +20,12 @@ layout: default
         </span>
       </p>
     </footer>
+    {% if page.laravel and page.laravel < site.current_laravel_version %}
+      {% capture note_content %}
+        This guide was written for Laravel {{ page.laravel }} and may be outdated or require updates.
+      {% endcapture %}
+      {% include note.html content=note_content %}
+    {% endif %}
     <div class="post-body has-tombstone" itemprop="articleBody">
       {{ content }}
     </div>

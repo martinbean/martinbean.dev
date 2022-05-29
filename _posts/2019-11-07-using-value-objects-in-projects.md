@@ -14,22 +14,27 @@ For example, if I had £10 and you had £10, then those two monetary _values_ wo
 However, individual bank notes are numbered; we can’t have the same bank note, so individual notes would be represented as _entities_ (and probably use their serial numbers as their identifiers).
 
 ## Value objects for single properties
-In my application, I’ve been unearthing values that can be elevated from simple, primitive values to a value object.
+In my application, I’ve been unearthing values that can be elevated from simple, primitive values (like strings and integers) to value objects.
 One is a video’s duration.
-I store this as a simple integer (representing the number of seconds), but this presented the opportunity to create a `Duration` object.
+In the database, I store this as a simple integer (representing the number of seconds), but this presented the opportunity to create a `Duration` object.
 Now that number (i.e. 3,600) has **meaning**. The class looks like this:
 
 ```php
 class Duration
 {
-    private $seconds;
+    protected $seconds;
 
     public function __construct(int $seconds)
     {
         $this->seconds = $seconds;
     }
 
-    public function asMinutes(): int
+    public static function fromSeconds(int $seconds)
+    {
+        return new static($seconds);
+    }
+
+    public function toMinutes(): int
     {
         return (int) floor($this->seconds / 60);
     }
@@ -57,17 +62,15 @@ class Video extends Model
 {
     public function getDurationAttribute($value): ?Duration
     {
-        if ($value > 0) {
-            return new Duration($value);
-        }
-
-        return null;
+        return transform($value, function (int $value) {
+            return Duration::fromSeconds($value);
+        });
     }
 }
 ```
 
 Now when I call `$video->duration`, I’ll get a `Duration` instance (if the duration is greater than zero).
-If I use this attribute in a [Blade][4] template, then it’ll just be cast to a string and the original value presented thanks to the `__toString()` method:
+If I use this attribute in a [Blade][4] template, then it’ll just be cast to a string and the original value presented thanks to the `__toString()` magic method:
 
 ```html
 {% raw %}<p>Duration: {{ $video->duration }}</p>{% endraw %}
@@ -85,7 +88,7 @@ I have three properties representing this:
 Their names are influenced by [Stripe’s `plan` object][5].
 
 * `rental_amount` is an integer, representing the price in pence.
-* `rental_interval` is a constant; one of day, week, month, or year.
+* `rental_interval` is an enumation of either day, week, month, or year.
 * `rental_interval_count` is the number of days/weeks/months/years a customer can rent the video.
 
 Together, these make up what I’ve called the _rental terms_. I’ve therefore created a class that takes the values of these three properties:
@@ -93,9 +96,9 @@ Together, these make up what I’ve called the _rental terms_. I’ve therefore 
 ```php
 class RentalTerms
 {
-    private $amount;
-    private $interval;
-    private $intervalCount;
+    protected $amount;
+    protected $interval;
+    protected $intervalCount;
 
     public function __construct(int $amount, string $interval, int $intervalCount)
     {
@@ -125,10 +128,10 @@ class RentalTerms
         }
     }
 
-    private function ensureIntervalIsValid(string $value): void
+    protected function ensureIntervalIsValid(string $value): void
     {
         if (! in_array($value, ['day', 'week', 'month', 'year'])) {
-            throw new InvalidArgumentException('Interval is invalid');
+            throw new InvalidArgumentException('Invalid interval. Allowed values are day, week, month, and year');
         }
     }
 }

@@ -6,14 +6,14 @@ The <abbr class="initialism" title="Model–View–Controller">MVC</abbr> patter
 
 Different people have different interpretations of MVC, and what code should go where. To this end, a newer pattern meant to build upon MVC but more suited to web applications is **ADR: Action–Domain–Responder**.
 
-ADR groups the functionality of applications into _actions_. Actions execute any business logic for that action, before passing the result to a _responder_ where it is presented as a view.
+ADR groups the functionality of applications into _actions_. Actions execute any business logic for that action, before passing the result to a _responder_ where it is presented as a response.
 
 As first glance, it seems similar to MVC but it provides a more clear separation of concerns, and there’s no argument as to what goes where. For example, in an MVC application, where do you set response headers? The controller? A view class? There’s no definitive answer whereas with ADR there is: the responder class. Giving the similarities, it’s also easy to convert an existing MVC application to follow the ADR pattern.
 
 So let’s look at implementing the ADR pattern in [Laravel](https://laravel.com/).
 
 ## Directory Structure
-As we’re not going to be using MVC, we can be a bit more creative in where to store things. A good idea is to keep action, domain and responder classes together. So if we had a blog, a simple directory structure may look like this:
+As we’re not going to be using MVC, we can be a bit more creative in where to store things. A good idea is to keep action, domain, and responder classes together. So if we had a blog, a simple directory structure may look like this:
 
 * /app
   * /Blog
@@ -34,7 +34,7 @@ As we’re not going to be using MVC, we can be a bit more creative in where to 
 This makes searching for classes relating to a certain part of your _business domain_ easier. “I need to find a blog action class. Well that will be in **app/Blog/Actions**.”
 
 ## Routing
-From version 8.x, Laravel no longer requires your controller classes to reside in a particular directory, so you can use the new class-based syntax to reference your actions as controllers:
+From version 8, Laravel no longer requires your controller classes to reside in a particular directory, so you can use the new class-based syntax to reference your actions as controllers:
 
 ```php
 use App\Blog\Actions\ListPostsAction;
@@ -65,19 +65,17 @@ class ListPostsAction
     {
         $posts = $this->posts->all();
 
-        return $this->responder->send($posts);
+        return $this->responder($posts);
     }
 }
 ```
 
-As the action class would be resolved by Laravel’s service container during routing, we can type-hint the dependencies our actions needs in its constructor. So we inject the post repository and the action’s corresponding responder class.
+As the action class would be resolved by Laravel’s service container during routing, we can type-hint the dependencies our actions needs in its constructor. So we inject a post repository and the action’s corresponding responder class.
 
-In the `__invoke()` method (where the action does its work), we simply retrieve a collection of posts and then pass it to our (not-yet-existing) responder class. Let’s create that class!
+In the `__invoke` method (where the action does its work), we simply retrieve a collection of posts and then pass it to our (not-yet-existing) responder class. Let’s create that class!
 
 ## Responders
-A responder class takes some domain data and displays it. It’s only just is to make a response, so it’s akin to a presenter in that instance.
-
-In the action class, I used a `send()` method as it seems more “Laravel-y”. So a `ListPostsResponder` class may look like this:
+A responder class takes some domain data and displays it. It’s only job is to make a response, so it’s akin to a presenter in that instance. As it only has one job, I make the class invokable (meaning it only has a single method: `__invoke`).
 
 ```php
 namespace App\Blog\Responders;
@@ -86,7 +84,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 class ListPostsResponder
 {
-    public function send(Collection $posts)
+    public function __invoke(Collection $posts)
     {
         return view('post.index', compact('posts'));
     }
@@ -111,7 +109,7 @@ class ListPostsResponder
         $this->request = $request;
     }
 
-    public function send(Collection $posts)
+    public function __invoke(Collection $posts)
     {
         if ($this->request->expectsJson()) {
             return new JsonResponse([

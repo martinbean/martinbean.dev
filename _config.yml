@@ -37,3 +37,5 @@ defaults:
       nav: blog
       title_suffix: ' - Blog - Martin Bean'
       upsell: true
+
+current_laravel_version: 10

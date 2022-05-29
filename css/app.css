@@ -234,7 +234,6 @@ pre {
   margin-left: -1rem;
   padding: 1rem;
   padding-left: 1.25rem;
-  border-radius: 0.1875rem;
   overflow-x: auto;
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
 }
@@ -243,6 +242,11 @@ pre code {
   white-space: pre;
   word-wrap: normal;
   -webkit-font-smoothing: auto;
+}
+@media (min-width: 45rem) {
+  pre {
+    border-radius: 0.1875rem;
+  }
 }
 
 .alert {
@@ -301,6 +305,32 @@ pre code {
 .btn-primary:active {
   color: rgba(255, 255, 255, 0.9);
   top: 0.125rem;
+}
+
+.note,
+.tip {
+  color: #fff;
+  background-color: #00bdac;
+  margin-bottom: 1rem;
+  margin-right: -1rem;
+  margin-left: -1rem;
+  padding: 1rem;
+  padding-bottom: 0.9375rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
+.note code,
+.tip code {
+  color: inherit;
+}
+.note > :last-child,
+.tip > :last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 45rem) {
+  .note,
+.tip {
+    border-radius: 0.1875rem;
+  }
 }
 
 .card {
