@@ -28,6 +28,10 @@ include:
   - _headers
   - _redirects
 
+sass:
+  sass_dir: _sass
+  style: compressed
+
 defaults:
   - scope:
       path: ""

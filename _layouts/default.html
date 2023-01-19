@@ -21,9 +21,9 @@
     <meta name="theme-color" content="#00bdac">
     <link href="{% link /manifest.webmanifest %}" rel="manifest">
     {% include fonts.html %}
-    <link href="{% link /css/app.css %}" rel="stylesheet">
+    <link href="{{ '/css/app.css' | relative_url }}" rel="stylesheet">
     <title>{{ page.title | append: page.title_suffix }}</title>
-    <link href="{% link /img/apple-touch-icon.png %}" rel="apple-touch-icon">
+    <link href="{{ '/img/apple-touch-icon.png' | relative_url }}" rel="apple-touch-icon">
     <link href="{{ page.url | prepend: site.url }}" rel="canonical">
     {% if page.rss_link %}
     <link href="{% link feed.xml %}" rel="alternate" type="application/rss+xml">
