@@ -55,6 +55,9 @@ use App\Blog\Responders\ListPostsResponder;
 
 class ListPostsAction
 {
+    protected $posts;
+    protected $responder;
+
     public function __construct(PostRepository $posts, ListPostsResponder $responder)
     {
         $this->posts = $posts;
