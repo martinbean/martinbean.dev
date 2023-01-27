@@ -9,6 +9,17 @@
   padding-bottom: .9375rem;
   box-shadow: 0 .125rem .3125rem rgba($black, .1);
 
+  a {
+    color: inherit;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
   code {
     color: inherit;
   }
