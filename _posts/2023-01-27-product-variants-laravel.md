@@ -49,7 +49,7 @@ Whilst the above takes care of the one-to-many relation between products and SKU
 ```php
 public function up()
 {
-    Schema::create('skus', function (Blueprint $table) {
+    Schema::create('product_attributes', function (Blueprint $table) {
         $table->id();
         $table->foreignId('product_id')->constrained()->cascadeOnDelete();
         $table->string('name');
