@@ -3,7 +3,13 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics_id }}');
+  </script>
+{% else %}
+  <script>
+    function gtag(){console.log('gtag', arguments);}
   </script>
 {% endif %}
+<script>
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics_id }}');
+</script>

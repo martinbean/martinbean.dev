@@ -6,3 +6,17 @@
 @import "elements";
 @import "components";
 @import "utilities";
+
+a.course-link {
+  color: $white;
+  text-shadow: 0 .1rem .1rem rgba(0, 0, 0, .1);
+  text-decoration: none;
+  background-color: $orange;
+  padding: .75rem 1rem .6875rem;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+    background-color: darken($orange, 10%);
+  }
+}
