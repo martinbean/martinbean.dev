@@ -5,7 +5,7 @@ timezone: Europe/London
 url: https://martinbean.dev
 
 disqus_shortname: martinbean
-google_analytics_id: UA-4799998-6
+google_analytics_id: G-8TTY03ZVJW
 
 paginate: 10
 paginate_path: /blog/page/:num
