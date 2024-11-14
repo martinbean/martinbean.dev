@@ -1,5 +1,7 @@
+@use 'sass:color';
+
 blockquote {
-  color: mix(#000, $body-bg, 80%);
+  color: color.mix(#000, $body-bg, 80%);
   font-size: 1.125rem;
   position: relative;
   margin: 0 0 1.25rem;
@@ -7,7 +9,7 @@ blockquote {
 
   &::before {
     content: "\201C";
-    color: mix($body-color, $body-bg, 20%);
+    color: color.mix($body-color, $body-bg, 20%);
     font-size: 5rem;
     font-style: italic;
     line-height: 1;

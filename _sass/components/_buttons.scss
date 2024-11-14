@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .btn {
   font-weight: 600;
   display: inline-block;
@@ -17,7 +19,7 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: darken($primary, 5%);
+    background-color: color.scale($primary, $lightness: -5%);
   }
   &:active {
     color: rgba(#fff, .9);

@@ -17,12 +17,11 @@ plugins:
 
 exclude:
   - bin
-  - node_modules
-  - vendor
+  - Dockerfile
   - Gemfile
-  - gulpfile.js
-  - package.json
+  - Makefile
   - README.md
+  - vendor
 
 include:
   - _headers
@@ -42,4 +41,4 @@ defaults:
       title_suffix: ' - Blog - Martin Bean'
       upsell: true
 
-current_laravel_version: 9
+current_laravel_version: 11

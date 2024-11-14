@@ -1,6 +1,6 @@
 ---
 excerpt: Need multiple user types in your Laravel application? Use roles instead of multiple user tables.
-laravel: 9
+laravel_version: 9
 layout: post
 title: Simple role-based authentication in Laravel
 ---

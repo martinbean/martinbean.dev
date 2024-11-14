@@ -1,5 +1,5 @@
 ---
-except: Details of my forthcoming ‘Video Streaming with Laravel’ premium video course.
+excerpt: Details of my forthcoming ‘Video Streaming with Laravel’ premium video course.
 has_twitter_embed: true
 title: ‘Video Streaming with Laravel’ course details
 ---

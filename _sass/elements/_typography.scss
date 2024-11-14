@@ -12,6 +12,10 @@ p {
   margin: 0;
   margin-bottom: 1rem;
   padding: 0;
+
+  &.lead {
+    font-size: 1.125rem;
+  }
 }
 
 dl,

@@ -1,5 +1,7 @@
+@use 'sass:color';
+
 h1, h2, h3, h4, h5, h6 {
-  color: mix(#000, $body-bg, 90%);
+  color: color.mix(#000, $body-bg, 90%);
   font-family: $headings-font-family;
   font-weight: 500;
   line-height: 1.2;

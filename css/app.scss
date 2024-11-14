@@ -1,5 +1,7 @@
 ---
 ---
+@use 'sass:color';
+
 @import "mixins";
 @import "functions";
 @import "variables";
@@ -17,6 +19,6 @@ a.course-link {
   &:hover {
     color: $white;
     text-decoration: none;
-    background-color: darken($orange, 10%);
+    background-color: color.scale($orange, $lightness: -10%);
   }
 }

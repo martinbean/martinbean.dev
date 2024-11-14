@@ -1,10 +1,7 @@
-all: install build
-
-install:
-	bundle install
+DOCKER=docker
 
 build:
-	jekyll build
+	$(DOCKER) build --no-cache --tag martinbean:latest .
 
 serve:
-	jekyll serve -w
+	$(DOCKER) run --publish 4000:4000 --volume $(shell pwd):/usr/local/src --workdir /usr/local/src martinbean:latest

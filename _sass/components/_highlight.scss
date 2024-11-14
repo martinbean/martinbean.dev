@@ -1,15 +1,17 @@
+@use 'sass:color';
+
 .highlight {
   .k, .kd, .kn {
-    color: mix(#fff, #fa9f4d, 25%);
+    color: color.mix(#fff, #fa9f4d, 25%);
   }
   .na, .nb, .nc, .nf, .nn, .nt, .nx {
-    color: mix(#fff, #00bdac, 25%);
+    color: color.mix(#fff, #00bdac, 25%);
   }
   .c, .c1, .cd {
-    color: mix(#fff, #00ace9, 75%);
+    color: color.mix(#fff, #00ace9, 75%);
   }
   .s1 {
-    color: mix(#fff, #e8418f);
+    color: color.mix(#fff, #e8418f);
   }
   .cp, .nv {
     color: #fff7ed;
