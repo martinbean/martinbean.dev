@@ -64,15 +64,16 @@ However, data is not always necessarily consistent. For example, the items above
 The first case I handled was `null` values. I decided to output an em dash, with a more helpful label for those using assistive technologies like screen readers:
 
 {% raw %}
-```
-<template v-bind:key="key" v-for="(value, key) in headers">
-    <td>
-        <template v-if="item[key] === null">
-            <span aria-label="No value">&mdash;</span>
-        </template>
-        <template v-else>{{ item[key] }}</template>
-    </td>
-</template>
+```diff
+  <template v-bind:key="key" v-for="(value, key) in headers">
+-     <td>{{ item[key] }}</td>
++     <td>
++         <template v-if="item[key] === null">
++             <span aria-label="No value">&mdash;</span>
++         </template>
++         <template v-else>{{ item[key] }}</template>
++     </td>
+  </template>
 ```
 {% endraw %}
 
@@ -80,45 +81,46 @@ The first case I handled was `null` values. I decided to output an em dash, with
 Next, to have full control over how individual cells rendered, I used a slot with a dynamic name:
 
 {% raw %}
-```
-<td>
-    <template v-if="item[key] === null">
-        <span aria-label="No value">&mdash;</span>
-    </template>
-    <template v-else>
-        <slot v-bind:name="`cell(${key})`" v-bind:value="item[key]">{{ item.key }}</slot>
-    </template>
-</td>
+```diff
+  <td>
+      <template v-if="item[key] === null">
+          <span aria-label="No value">&mdash;</span>
+      </template>
+-     <template v-else>{{ item[key] }}</template>
++     <template v-else>
++         <slot v-bind:name="`cell(${key})`" v-bind:value="item[key]">{{ item.key }}</slot>
++     </template>
+  </td>
 ```
 {% endraw %}
 
 For each cell, a new slot is defined. So for cells for the attribute `name`, there would be a corresponding slot with the name `cell(name)`.
 
-If I don’t use these slots in my template, then they’ll just get the default value as before. But now if I _do_ use these slots in my template, I can control have the value is displayed. So for `birth_date` values, I may want to do some formatting, or use a completely different component to handle the rendering of it:
+If I don’t use these slots in my template, then they’ll just get the default value as before. But now if I _do_ use these slots in my template, I can control how the value is displayed. So for `birth_date` values, I may want to do some formatting, or use a completely different component to handle the rendering of it:
 
-{% raw %}
+```diff
+  <ResourceTable
+      v-bind:headers="{
+          'name': 'Name',
+          'birth_date': 'Birthday'
+      }"
+      v-bind:items="[
+          { 'name': 'John Doe', 'birth_date': null },
+          { 'name': 'Jane Doe', 'birth_date': '1984-03-21' },
+          { 'name': 'Joe Bloggs', 'birth_date' null }
+      ]"
+-  />
++  >
++     <template v-slot:cell(birth_date)="{ value }">
++         <FormattedDate v-model="value" />
++     </template>
++  </ResourceTable>
 ```
-<ResourceTable
-    v-bind:headers="{
-        'name': 'Name',
-        'birth_date': 'Birthday'
-    }"
-    v-bind:items="[
-        { 'name': 'John Doe', 'birth_date': null },
-        { 'name': 'Jane Doe', 'birth_date': '1984-03-21' },
-        { 'name': 'Joe Bloggs', 'birth_date' null }
-    ]"
->
-    <template v-slot:cell(birth_date)="{ value }">
-        <FormattedDate v-model="value" />
-    </template>
-</ResourceTable>
-```
-{% endraw %}
 
 ## Adding row actions
 It’s common in web applications for each row to have associated actions, i.e. edit that record, delete that record, etc. To accomplish this, I used an optional slot. If I defined a slot named `actions` in my template, then it would automatically add a new table heading, and a cell at the end of each row to hold the defined actions:
 
+{% raw %}
 ```diff
   <thead>
       <tr>
@@ -145,40 +147,39 @@ It’s common in web applications for each row to have associated actions, i.e. 
       </tr>
   </tbody>
 ```
+{% endraw %}
 
 The `actions` slot is a scoped slot that makes the `item` available, so that I can use its attributes, i.e. for building URLs:
 
-{% raw %}
+```diff
+  <ResourceTable
+      v-bind:headers="{
+          'name': 'Name',
+          'birth_date': 'Birthday'
+      }"
+      v-bind:items="[
+          { 'name': 'John Doe', 'birth_date': null },
+          { 'name': 'Jane Doe', 'birth_date': '1984-03-21' },
+          { 'name': 'Joe Bloggs', 'birth_date' null }
+      ]"
+  >
+      <template v-slot:cell(birth_date)="{ value }">
+          <FormattedDate v-model="value" />
+      </template>
++     <template v-slot:actions="{ item }">
++         <ResourceTableAction
++             title="Edit"
++             v-bind:url="editUrl(item)"
++         />
++         <ResourceTableAction
++             confirm="Are you sure you want to delete this item?"
++             method="delete"
++             title="Delete"
++             v-bind:url="deleteUrl(item)"
++         />
++     </template>
+  </ResourceTable>
 ```
-<ResourceTable
-    v-bind:headers="{
-        'name': 'Name',
-        'birth_date': 'Birthday'
-    }"
-    v-bind:items="[
-        { 'name': 'John Doe', 'birth_date': null },
-        { 'name': 'Jane Doe', 'birth_date': '1984-03-21' },
-        { 'name': 'Joe Bloggs', 'birth_date' null }
-    ]"
->
-    <template v-slot:cell(birth_date)="{ value }">
-        <FormattedDate v-model="value" />
-    </template>
-    <template v-slot:actions="{ item }">
-        <ResourceTableAction
-            title="Edit"
-            v-bind:url="editUrl(item)"
-        />
-        <ResourceTableAction
-            confirm="Are you sure you want to delete this item?"
-            method="delete"
-            title="Delete"
-            v-bind:url="deleteUrl(item)"
-        />
-    </template>
-</ResourceTable>
-```
-{% endraw %}
 
 ## Conclusion
 I now have a re-usable “resource table” component that will handle most cases by default, but also gives me the ability to have full control over cell values if I need it.
