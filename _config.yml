@@ -42,3 +42,4 @@ defaults:
       upsell: true
 
 current_laravel_version: 11
+current_vue_version: 3

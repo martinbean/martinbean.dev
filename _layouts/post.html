@@ -26,6 +26,18 @@ layout: default
       {% endcapture %}
       {% include note.html content=note_content %}
     {% endif %}
+    {% if page.vue_version and page.vue_version < site.current_vue_version %}
+      {% capture note_content %}
+        This guide was written for Vue {{ page.vue_version }} and may be outdated or require updates.
+      {% endcapture %}
+      {% include note.html content=note_content %}
+    {% endif %}
+    {% if page.vue_version %}
+      {% capture note_content %}
+        I’m working on fixing the syntax highlighting for this post. Unfortunately, the library I’m currently using does not support Vue single-file components.
+      {% endcapture %}
+      {% include note.html content=note_content %}
+    {% endif %}
     <div class="post-body has-tombstone" itemprop="articleBody">
       {{ content }}
     </div>

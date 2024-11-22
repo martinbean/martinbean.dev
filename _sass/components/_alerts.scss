@@ -8,4 +8,9 @@
     color: color-yiq($blue, $body-color, $white);
     background-color: $blue;
   }
+
+  strong {
+    font-size: .875rem;
+    text-transform: uppercase;
+  }
 }
