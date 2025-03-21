@@ -111,7 +111,7 @@ class BusServiceProvider extends ServiceProvider
 }
 ```
 
-If you have a larger application and you have multiple service providers for components or modules in your application, then you can call `Bus::map()` in each of those service providers to add mapping’s for that particular module’s commands and handlers:
+If you have a larger application and you have multiple service providers for components or modules in your application, then you can call `Bus::map()` in each of those service providers to add mappings for that particular module’s commands and handlers:
 
 ```php
 namespace App\Domain\Podcasts;
@@ -128,7 +128,7 @@ class PodcastServiceProvider extends ServiceProvider
         $this->registerCommandHandlers();
     }
 
-    private function registerCommandHandlers()
+    protected function registerCommandHandlers()
     {
         Bus::map([
             ProcessPodcast::class => ProcessPodcastHandler::class,
@@ -138,7 +138,7 @@ class PodcastServiceProvider extends ServiceProvider
 ```
 
 ## Dispatching commands
-Now that you have created your command and handler classes, and mapped them to each other, you can dispatch them from controllers, console commands etc:
+Now that you have created your command and handler classes, and mapped them to each other, you can dispatch them from controllers, console commands, etc:
 
 ```php
 namespace App\Http\Controllers;
@@ -151,7 +151,7 @@ class PodcastController extends Controller
 {
     public function store(StorePodcastRequest $request)
     {
-        $podcast = Podcast::create($request->validated());
+        $podcast = Podcast::query()->create($request->validated());
 
         // Dispatch the command to its handler
         ProcessPodcast::dispatch($podcast);
