@@ -38,8 +38,10 @@ defaults:
     values:
       layout: post
       nav: blog
-      title_suffix: ' - Blog - Martin Bean'
-      upsell: true
+      title_suffix: ', by Martin Bean'
+      upsell: false
 
 current_laravel_version: 12
 current_vue_version: 3
+
+open_to_work: false
