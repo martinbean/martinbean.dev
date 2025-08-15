@@ -4,4 +4,4 @@
 
 Source code of [martinbean.dev](https://martinbean.dev/), which is built with [Jekyll](https://github.com/mojombo/jekyll) and hosted on [Netlify](https://www.netlify.com).
 
-Follow me on Twitter: [@martinbean](https://twitter.com/martinbean)
+Follow me on <span aria-label="X">&Xopf;</span> (formerly Twitter): [@martinbean](https://x.com/martinbean)
