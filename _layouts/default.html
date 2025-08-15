@@ -50,7 +50,7 @@
       </div>
     </header>
     {% include course.html %}
-    <div class="container pb-3">
+    <div class="container pb-3{% if page.offline %} pt-3{% endif %}">
       {{ content }}
     </div>
     <script src="{% link /js/app.js %}"></script>

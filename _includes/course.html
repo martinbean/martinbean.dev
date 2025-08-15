@@ -1,8 +1,11 @@
-<aside class="mb-4" role="complementary">
-  <p class="mb-0">
-    <a class="course-link d-block text-center" href="https://courses.martinbean.dev/video-streaming-with-laravel" id="course-link" target="_blank">
-      <span class="font-weight-normal text-transform-uppercase">Available now<span class="visually-hidden">:</span></span>
-      <span class="font-weight-bold">“Video Streaming with Laravel” course <span aria-hidden="true" class="course-link-icon">&rarr;</span></span>
-    </a>
-  </p>
-</aside>
+{% assign offline = page.offline | default: false %}
+{% if offline == false %}
+  <aside class="mb-4" role="complementary">
+    <p class="mb-0">
+      <a class="course-link d-block text-center" href="https://courses.martinbean.dev/video-streaming-with-laravel" id="course-link" target="_blank">
+        <span class="font-weight-normal text-transform-uppercase">Available now<span class="visually-hidden">:</span></span>
+        <span class="font-weight-bold">“Video Streaming with Laravel” course <span aria-hidden="true" class="course-link-icon">&rarr;</span></span>
+      </a>
+    </p>
+  </aside>
+{% endif %}

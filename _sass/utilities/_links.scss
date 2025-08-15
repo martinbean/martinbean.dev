@@ -10,6 +10,12 @@ a {
     background-color: $link-color;
   }
 
+  &:focus {
+    color: $black;
+    background-color: $orange;
+    outline: none;
+  }
+
   code {
     color: inherit;
   }

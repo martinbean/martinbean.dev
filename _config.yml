@@ -29,6 +29,8 @@ include:
 
 sass:
   sass_dir: _sass
+  silence_deprecations:
+    - import
   style: compressed
 
 defaults:

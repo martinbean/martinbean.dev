@@ -1,4 +1,4 @@
-var CACHE_NAME = 'martinbean-cache-v5';
+var CACHE_NAME = 'martinbean-cache-v6';
 var urlsToCache = [
   '/',
   '/about/',
@@ -10,6 +10,7 @@ var urlsToCache = [
   '/blog/2020/05/28/introducing-amp-server-side-rendering-netlify-plugin/',
   '/blog/2021/07/29/simple-role-based-authentication-laravel/',
   '/blog/2022/03/01/video-streaming-with-laravel-course-details/',
+  '/blog/2023/01/27/product-variants-laravel/',
   '/contact/',
   '/css/app.css',
   '/favicon.ico',

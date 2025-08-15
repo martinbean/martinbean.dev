@@ -1,5 +1,9 @@
 DOCKER=docker
 
+.PHONY: all build serve
+
+all: build serve
+
 build:
 	$(DOCKER) build --no-cache --tag martinbean:latest .
 
