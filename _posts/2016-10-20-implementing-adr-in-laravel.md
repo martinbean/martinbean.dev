@@ -15,21 +15,23 @@ So let’s look at implementing the ADR pattern in [Laravel](https://laravel.com
 ## Directory Structure
 As we’re not going to be using MVC, we can be a bit more creative in where to store things. A good idea is to keep action, domain, and responder classes together. So if we had a blog, a simple directory structure may look like this:
 
-* /app
-  * /Blog
-    * /Actions
-      * ListPostsAction.php
-      * ViewPostAction.php
-    * /Domain
-      * /Collections
-        * PostCollection.php
-      * /Entities
-        * Post.php
-      * /Repositories
-        * PostRepository.php
-    * /Responders
-      * ListPostsResponder.php
-      * ViewPostResponder.php
+```
+app
+└── Blog
+    ├── Actions
+    │   ├── ListPostsAction.php
+    │   └── ViewPostAction.php
+    ├── Domain
+    │   ├── Collections
+    │   │   └── PostCollection.php
+    │   ├── Entities
+    │   │   └── Post.php
+    │   └── Repositories
+    │       └── PostRepository.php
+    └── Responders
+        ├── ListPostsResponder.php
+        └── ViewPostResponder.php
+```
 
 This makes searching for classes relating to a certain part of your _business domain_ easier. “I need to find a blog action class. Well that will be in **app/Blog/Actions**.”
 

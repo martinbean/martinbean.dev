@@ -30,7 +30,10 @@ include:
 sass:
   sass_dir: _sass
   silence_deprecations:
+    - color-functions
+    - global-builtin
     - import
+    - mixed-decls
   style: compressed
 
 defaults:
